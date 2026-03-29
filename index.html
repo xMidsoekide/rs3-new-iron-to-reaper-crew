@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial Island to Reaper Crew</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0}
+#app{display:flex;flex-direction:column;height:100vh;overflow:hidden}
+
+/* Banner */
+#banner{background:linear-gradient(135deg,#1e40af,#7c3aed);padding:12px 24px;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:48px;flex-shrink:0}
+#banner:hover{filter:brightness(1.1)}
+#banner .banner-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.8}
+#banner .banner-text{font-size:15px;font-weight:600}
+#banner .banner-arrow{margin-left:auto;font-size:18px;opacity:.7}
+
+/* Tabs */
+#tabs{display:flex;overflow-x:auto;background:#1e293b;border-bottom:1px solid #334155;flex-shrink:0;scrollbar-width:thin}
+#tabs::-webkit-scrollbar{height:4px}
+#tabs::-webkit-scrollbar-thumb{background:#334155;border-radius:2px}
+.tab{padding:10px 20px;cursor:pointer;white-space:nowrap;font-size:14px;color:#94a3b8;border-bottom:2px solid transparent;transition:all .15s;flex-shrink:0;user-select:none}
+.tab:hover{color:#e2e8f0;background:#334155}
+.tab.active{color:#e2e8f0;border-bottom-color:#3b82f6}
+.tab.done{color:#22c55e}
+.tab .tab-icon{margin-right:6px}
+
+/* Progress bar */
+#progress-bar{background:#1e293b;padding:8px 24px;display:flex;align-items:center;gap:12px;font-size:13px;color:#94a3b8;flex-shrink:0;border-bottom:1px solid #334155}
+#progress-bar .bar-track{flex:1;height:6px;background:#334155;border-radius:3px;overflow:hidden;max-width:400px}
+#progress-bar .bar-fill{height:100%;background:#3b82f6;border-radius:3px;transition:width .3s}
+#progress-bar .bar-label{font-weight:600;color:#e2e8f0}
+
+/* Main split */
+#main{display:flex;flex:1;overflow:hidden}
+
+/* Left panel */
+#checklist-panel{width:420px;min-width:320px;overflow-y:auto;background:#1e293b;border-right:1px solid #334155;flex-shrink:0}
+#checklist-panel::-webkit-scrollbar{width:6px}
+#checklist-panel::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+
+.step-row{display:flex;align-items:center;padding:10px 16px;gap:10px;cursor:pointer;border-left:3px solid transparent;transition:all .12s;border-bottom:1px solid #1e293b}
+.step-row:hover{background:#334155}
+.step-row.current{background:#1e3a5f;border-left-color:#3b82f6}
+.step-row.selected{background:#334155;border-left-color:#60a5fa}
+.step-row.completed .step-text{text-decoration:line-through;color:#94a3b8}
+.step-row.boss-row{background:#1c1108}
+.step-row.boss-row:hover{background:#2a1a0e}
+.step-row.boss-row.current{background:#1e3a5f}
+
+.step-cb{width:20px;height:20px;border-radius:4px;border:2px solid #94a3b8;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all .12s;font-size:13px;color:transparent}
+.step-cb:hover{border-color:#e2e8f0}
+.step-cb.checked{background:#22c55e;border-color:#22c55e;color:#fff}
+
+.step-text{flex:1;font-size:14px;line-height:1.3}
+.step-icon{margin-right:2px}
+
+.type-tag{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;flex-shrink:0;text-transform:capitalize}
+.type-tag.quest{background:#2563eb;color:#dbeafe}
+.type-tag.skill{background:#3b1f7a;color:#a78bfa}
+.type-tag.boss{background:#78350f;color:#fbbf24}
+.type-tag.unlock{background:#064e3b;color:#34d399}
+.type-tag.reward{background:#4a1d6a;color:#e879f9}
+
+/* Right panel */
+#detail-panel{flex:1;overflow-y:auto;padding:32px;background:#0f172a;position:relative}
+#detail-panel::-webkit-scrollbar{width:6px}
+#detail-panel::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+
+.detail-empty{display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:16px}
+
+.detail-header{margin-bottom:24px}
+.detail-title{font-size:24px;font-weight:700;margin-bottom:4px}
+.detail-subtitle{font-size:14px;color:#94a3b8}
+
+.why-box{background:#1e293b;border-left:3px solid #3b82f6;padding:12px 16px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:14px;line-height:1.5;color:#e2e8f0}
+.why-box .why-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:4px}
+
+.detail-section{margin-bottom:20px}
+.detail-section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px}
+
+.tag-list{display:flex;flex-wrap:wrap;gap:6px}
+.tag-item{font-size:13px;padding:4px 10px;background:#334155;border-radius:6px;color:#e2e8f0}
+
+.tips-list{list-style:none;padding:0}
+.tips-list li{font-size:14px;padding:6px 0;color:#e2e8f0;line-height:1.4}
+.tips-list li::before{content:"→ ";color:#3b82f6;font-weight:700}
+
+.method-box{background:#1e293b;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5}
+
+.drops-table{width:100%;border-collapse:collapse}
+.drops-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;padding:6px 10px;border-bottom:1px solid #334155}
+.drops-table td{padding:8px 10px;font-size:14px;border-bottom:1px solid #1e293b}
+.drops-table tr:hover td{background:#1e293b}
+.drops-table .drop-item{font-weight:600;color:#fbbf24}
+
+.moveon-box{background:#064e3b;border-radius:8px;padding:12px 16px;font-size:14px;color:#34d399;line-height:1.4}
+.moveon-box .moveon-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;opacity:.7;margin-bottom:4px}
+
+.link-list{display:flex;flex-wrap:wrap;gap:8px}
+.link-list a{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#60a5fa;text-decoration:none;padding:4px 10px;background:#1e293b;border-radius:6px;transition:background .12s}
+.link-list a:hover{background:#334155}
+
+/* Reaper Crew sidebar */
+#reaper-panel{width:48px;background:#1e293b;border-left:1px solid #334155;flex-shrink:0;overflow:hidden;transition:width .25s ease;display:flex;flex-direction:column;position:relative}
+#reaper-panel.open{width:320px}
+#reaper-toggle{display:flex;align-items:center;gap:8px;padding:12px;cursor:pointer;border-bottom:1px solid #334155;white-space:nowrap;user-select:none;flex-shrink:0;background:linear-gradient(180deg,#2a1a00 0%,#1e293b 100%)}
+#reaper-toggle:hover{filter:brightness(1.2)}
+#reaper-toggle .reaper-icon{font-size:24px;flex-shrink:0;width:28px;text-align:center}
+#reaper-toggle .reaper-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fbbf24}
+#reaper-toggle .reaper-count{font-size:16px;font-weight:700;color:#fbbf24;margin-left:auto}
+#reaper-progress{padding:0 12px;flex-shrink:0;overflow:hidden}
+#reaper-panel.open #reaper-progress{padding:8px 12px}
+#reaper-progress .rp-bar-track{height:6px;background:#334155;border-radius:3px;overflow:hidden}
+#reaper-progress .rp-bar-fill{height:100%;background:linear-gradient(90deg,#b45309,#fbbf24);border-radius:3px;transition:width .3s;box-shadow:0 0 8px rgba(251,191,36,0.4)}
+#reaper-list{flex:1;overflow-y:auto;padding:4px 0;opacity:0;transition:opacity .15s}
+#reaper-panel.open #reaper-list{opacity:1}
+#reaper-list::-webkit-scrollbar{width:4px}
+#reaper-list::-webkit-scrollbar-thumb{background:#334155;border-radius:2px}
+.reaper-entry{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:14px;color:#94a3b8;white-space:nowrap}
+.reaper-entry.killed{color:#fbbf24}
+.reaper-entry.killed .re-icon{color:#fbbf24;text-shadow:0 0 4px rgba(251,191,36,0.5)}
+.reaper-entry .re-icon{width:20px;text-align:center;flex-shrink:0;font-size:14px}
+.reaper-entry .re-name{overflow:hidden;text-overflow:ellipsis}
+
+
+/* Footer */
+#footer{display:flex;gap:16px;padding:8px 24px;background:#1e293b;border-top:1px solid #334155;flex-shrink:0;align-items:center;justify-content:flex-end}
+#footer button{padding:4px 8px;border:none;background:none;color:#64748b;cursor:pointer;font-size:12px;transition:color .12s;text-decoration:underline;text-decoration-color:transparent}
+#footer button:hover{color:#94a3b8;text-decoration-color:#94a3b8}
+#footer button.danger{color:#64748b}
+#footer button.danger:hover{color:#f87171;text-decoration-color:#f87171}
+
+/* Mobile overlay */
+#overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6)}
+#overlay.open{display:flex}
+#overlay-content{position:absolute;right:0;top:0;bottom:0;width:100%;max-width:480px;background:#0f172a;overflow-y:auto;padding:24px;animation:slideIn .2s ease-out}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+#overlay-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#e2e8f0;font-size:24px;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:6px}
+#overlay-close:hover{background:#334155}
+
+/* Confirm dialog */
+#confirm-dialog{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);align-items:center;justify-content:center}
+#confirm-dialog.open{display:flex}
+#confirm-box{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:24px;max-width:400px;width:90%;text-align:center}
+#confirm-box p{margin-bottom:16px;font-size:15px}
+#confirm-box .btn-row{display:flex;gap:8px;justify-content:center}
+#confirm-box button{padding:8px 20px;border-radius:6px;border:none;cursor:pointer;font-size:14px}
+#confirm-box .btn-cancel{background:#334155;color:#e2e8f0}
+#confirm-box .btn-confirm{background:#dc2626;color:#fff}
+
+/* Hidden file input */
+#import-input{display:none}
+
+/* Banner progress */
+
+/* Pulse highlight */
+@keyframes pulse-highlight{0%{background:#3b82f6}100%{background:transparent}}
+.step-row.pulse{animation:pulse-highlight .8s ease-out}
+
+/* Detail close button */
+.detail-close{position:absolute;top:12px;right:12px;background:none;border:1px solid #334155;color:#94a3b8;width:32px;height:32px;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .12s}
+.detail-close:hover{background:#334155;color:#e2e8f0}
+
+/* Skill XP Reference */
+.skill-banner{display:flex;align-items:center;padding:10px 16px;gap:10px;cursor:pointer;border-bottom:1px solid #1e293b;background:#1e293b;transition:all .12s;user-select:none}
+.skill-banner:hover{background:#334155}
+.skill-banner.expanded{background:#253548;border-left:3px solid #3b82f6}
+.skill-banner .skill-icon{font-size:18px;flex-shrink:0;width:24px;text-align:center}
+.skill-banner .skill-name{flex:1;font-size:14px;font-weight:600;color:#e2e8f0}
+.skill-banner .skill-count{font-size:12px;color:#94a3b8;font-weight:600;margin-right:4px}
+.skill-banner .skill-count.all-done{color:#22c55e}
+.skill-banner .skill-arrow{font-size:12px;color:#64748b;transition:transform .15s}
+.skill-banner.expanded .skill-arrow{transform:rotate(90deg)}
+
+.skill-items{overflow:hidden;max-height:0;transition:max-height .25s ease-out}
+.skill-items.open{max-height:2000px;transition:max-height .4s ease-in}
+
+.skill-item-row{display:flex;align-items:center;padding:8px 16px 8px 42px;gap:10px;border-bottom:1px solid #151d2e;cursor:pointer;transition:background .12s}
+.skill-item-row:hover{background:#2a3548}
+.skill-item-row.completed .skill-item-text{text-decoration:line-through;color:#64748b}
+.skill-item-row .skill-item-text{font-size:13px;color:#e2e8f0;flex:1}
+.skill-item-row .skill-item-note{font-size:11px;color:#64748b;margin-top:1px}
+
+.skill-tip{padding:6px 16px 6px 42px;font-size:12px;color:#64748b;line-height:1.4}
+.skill-tip::before{content:"💡 ";font-size:11px}
+
+/* Responsive */
+@media(max-width:768px){
+  #main{flex-direction:column}
+  #checklist-panel{width:100%;border-right:none;flex:1}
+  #detail-panel{display:none}
+  #reaper-panel{display:none}
+  #progress-bar .bar-track{max-width:200px}
+}
+
+/* Celebration overlay */
+#celebration{display:none;position:fixed;inset:0;z-index:300;pointer-events:none}
+#celebration.active{display:block}
+#celebration canvas{width:100%;height:100%}
+#celebration .celeb-msg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:auto;animation:celeb-fade 4s ease-out forwards}
+#celebration .celeb-msg h1{font-size:42px;font-weight:800;background:linear-gradient(135deg,#fbbf24,#f59e0b,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:none;margin-bottom:8px}
+#celebration .celeb-msg p{font-size:18px;color:#e2e8f0;opacity:.9}
+@keyframes celeb-fade{0%{opacity:0;transform:translate(-50%,-50%) scale(.8)}10%{opacity:1;transform:translate(-50%,-50%) scale(1)}80%{opacity:1}100%{opacity:0}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="banner" onclick="onBannerClick()">
+    <div><div class="banner-label">What's Next</div><div class="banner-text" id="banner-text">Loading...</div></div>
+
+    <div class="banner-arrow">→</div>
+  </div>
+  <div id="tabs"></div>
+  <div id="progress-bar">
+    <span class="bar-label" id="progress-label"></span>
+    <div class="bar-track"><div class="bar-fill" id="progress-fill"></div></div>
+  </div>
+  <div id="main">
+    <div id="checklist-panel"></div>
+    <div id="detail-panel"><div class="detail-empty">Select a step to view details</div></div>
+    <div id="reaper-panel">
+      <div id="reaper-toggle" onclick="toggleReaper()">
+        <span class="reaper-icon">💀</span>
+        <span class="reaper-label">Reaper Crew</span>
+        <span class="reaper-count" id="reaper-count">0/58</span>
+      </div>
+      <div id="reaper-progress"><div class="rp-bar-track"><div class="rp-bar-fill" id="reaper-fill"></div></div></div>
+      <div id="reaper-list"></div>
+    </div>
+  </div>
+  <div id="footer">
+    <button onclick="exportProgress()">Export Progress</button>
+    <button onclick="document.getElementById('import-input').click()">Import Progress</button>
+    <input type="file" id="import-input" accept=".json" onchange="importProgress(event)">
+    <button class="danger" onclick="confirmReset()">Reset Progress</button>
+  </div>
+</div>
+
+<div id="overlay"><div id="overlay-content"><button id="overlay-close" onclick="closeOverlay()">✕</button><div id="overlay-detail"></div></div></div>
+<div id="confirm-dialog"><div id="confirm-box"><p>Reset all progress? This cannot be undone.</p><div class="btn-row"><button class="btn-cancel" onclick="closeConfirm()">Cancel</button><button class="btn-confirm" onclick="doReset()">Reset</button></div></div></div>
+<div id="celebration"><canvas id="confetti-canvas"></canvas><div class="celeb-msg"><h1>Reaper Crew Complete</h1><p>From Tutorial Island to the very end. Well played.</p></div></div>
+
+<script src="data.js"></script>
+<script>
+/* ── State ── */
+let completed = new Set();
+let currentPhase = 0;
+let selectedStep = null;
+
+/* ── Persistence ── */
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem('rs3iron-progress');
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (data && Array.isArray(data.completed)) {
+      completed = new Set(data.completed);
+    }
+  } catch (e) { /* ignore corrupt data */ }
+}
+
+function saveProgress() {
+  localStorage.setItem('rs3iron-progress', JSON.stringify({
+    version: 1,
+    completed: Array.from(completed),
+    lastUpdated: new Date().toISOString()
+  }));
+}
+
+/* ── Helpers ── */
+function isMobile() { return window.innerWidth <= 768; }
+
+function phaseCompletion(phase) {
+  if (phase.skills) {
+    let total = 0, done = 0;
+    phase.skills.forEach(function(sk) {
+      total += sk.items.length;
+      sk.items.forEach(function(it) { if (completed.has(it.id)) done++; });
+    });
+    return { done: done, total: total, complete: total > 0 && done === total };
+  }
+  const total = phase.steps.length;
+  const done = phase.steps.filter(s => completed.has(s.id)).length;
+  return { done, total, complete: done === total };
+}
+
+function findActivePhase() {
+  for (let i = 0; i < PHASES.length; i++) {
+    if (!phaseCompletion(PHASES[i]).complete) return i;
+  }
+  return PHASES.length - 1;
+}
+
+function findNextStep() {
+  for (let i = currentPhase; i < PHASES.length; i++) {
+    for (const s of PHASES[i].steps) {
+      if (!completed.has(s.id)) return { phaseIdx: i, step: s };
+    }
+  }
+  for (let i = 0; i < currentPhase; i++) {
+    for (const s of PHASES[i].steps) {
+      if (!completed.has(s.id)) return { phaseIdx: i, step: s };
+    }
+  }
+  return null;
+}
+
+function getStep(id) {
+  for (const p of PHASES) {
+    for (const s of p.steps) {
+      if (s.id === id) return s;
+    }
+    if (p.skills) {
+      for (const sk of p.skills) {
+        for (const it of sk.items) {
+          if (it.id === id) return it;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+function escHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+/* ── Render ── */
+function render() {
+  renderBanner();
+  renderTabs();
+  renderProgress();
+  renderChecklist();
+  renderDetail();
+  if (typeof renderReaper === 'function') renderReaper();
+}
+
+function renderBanner() {
+  const next = findNextStep();
+  const el = document.getElementById('banner-text');
+  if (next) {
+    el.textContent = next.step.text;
+  } else {
+    el.textContent = 'All steps completed! 🎉';
+  }
+}
+
+function renderTabs() {
+  const container = document.getElementById('tabs');
+  let html = '';
+  PHASES.forEach((phase, i) => {
+    const pc = phaseCompletion(phase);
+    let icon = '';
+    if (pc.complete) icon = '✓';
+    else if (i === currentPhase) icon = '●';
+    const cls = i === currentPhase ? 'tab active' : (pc.complete ? 'tab done' : 'tab');
+    html += '<div class="' + cls + '" onclick="switchPhase(' + i + ')">';
+    if (icon) html += '<span class="tab-icon">' + icon + '</span>';
+    html += escHtml(phase.name) + '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function renderProgress() {
+  const phase = PHASES[currentPhase];
+  const pc = phaseCompletion(phase);
+  const pct = phase.steps.length ? Math.round((pc.done / pc.total) * 100) : 0;
+  document.getElementById('progress-label').textContent =
+    'Phase ' + (currentPhase + 1) + ': ' + phase.name + ' — ' + pc.done + ' / ' + pc.total;
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+function renderChecklist() {
+  const phase = PHASES[currentPhase];
+  if (phase.skills) {
+    renderSkillChecklist();
+    return;
+  }
+  const panel = document.getElementById('checklist-panel');
+  const next = findNextStep();
+  let html = '';
+  phase.steps.forEach(function(step) {
+    const done = completed.has(step.id);
+    const isCurrent = next && next.step.id === step.id;
+    const isSelected = selectedStep === step.id;
+    let cls = 'step-row';
+    if (done) cls += ' completed';
+    if (isCurrent && !done) cls += ' current';
+    if (isSelected) cls += ' selected';
+    if (step.type === 'boss') cls += ' boss-row';
+
+    html += '<div class="' + cls + '" data-id="' + step.id + '" onclick="selectStep(\'' + step.id + '\')">';
+    html += '<div class="step-cb' + (done ? ' checked' : '') + '" onclick="toggleStep(event,\'' + step.id + '\')">' + (done ? '✓' : '') + '</div>';
+    if (step.type === 'boss') html += '<span class="step-icon">⚔️</span>';
+    if (step.type === 'reward') html += '<span class="step-icon">🏆</span>';
+    html += '<span class="step-text">' + escHtml(step.text) + '</span>';
+    html += '<span class="type-tag ' + step.type + '">' + step.type + '</span>';
+    html += '</div>';
+  });
+  panel.innerHTML = html;
+}
+
+function buildDetailHtml(step) {
+  if (!step || !step.detail) return '<div class="detail-empty">No details available</div>';
+  const d = step.detail;
+  let h = '';
+
+  // Header
+  h += '<div class="detail-header">';
+  h += '<div class="detail-title">' + escHtml(d.title || step.text) + '</div>';
+  if (d.subtitle) h += '<div class="detail-subtitle">' + escHtml(d.subtitle) + '</div>';
+  h += '</div>';
+
+  // Why
+  if (d.why) {
+    h += '<div class="why-box"><div class="why-label">Why</div>' + escHtml(d.why) + '</div>';
+  }
+
+  // Requirements
+  if (d.requirements && d.requirements.length) {
+    h += '<div class="detail-section"><div class="detail-section-title">Requirements</div><div class="tag-list">';
+    d.requirements.forEach(function(r) { h += '<span class="tag-item">' + escHtml(r) + '</span>'; });
+    h += '</div></div>';
+  }
+
+  // Suggested (boss)
+  if (d.suggested && d.suggested.length) {
+    h += '<div class="detail-section"><div class="detail-section-title">Suggested</div><div class="tag-list">';
+    d.suggested.forEach(function(r) { h += '<span class="tag-item">' + escHtml(r) + '</span>'; });
+    h += '</div></div>';
+  }
+
+  // Tips (quest)
+  if (d.tips && d.tips.length) {
+    h += '<div class="detail-section"><div class="detail-section-title">Tips</div><ul class="tips-list">';
+    d.tips.forEach(function(t) { h += '<li>' + escHtml(t) + '</li>'; });
+    h += '</ul></div>';
+  }
+
+  // Method (skill)
+  if (d.method) {
+    h += '<div class="detail-section"><div class="detail-section-title">Method</div><div class="method-box">' + escHtml(d.method) + '</div></div>';
+  }
+
+  // Drops (boss)
+  if (d.drops && d.drops.length) {
+    h += '<div class="detail-section"><div class="detail-section-title">Key Drops</div>';
+    h += '<table class="drops-table"><thead><tr><th>Item</th><th>Why</th></tr></thead><tbody>';
+    d.drops.forEach(function(dr) {
+      h += '<tr><td class="drop-item">' + escHtml(dr.item) + '</td><td>' + escHtml(dr.why) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+
+  // Move on (boss)
+  if (d.moveOn) {
+    h += '<div class="moveon-box"><div class="moveon-label">When to move on</div>' + escHtml(d.moveOn) + '</div>';
+  }
+
+  // Links
+  if (d.links && d.links.length) {
+    h += '<div class="detail-section" style="margin-top:20px"><div class="detail-section-title">Links</div><div class="link-list">';
+    d.links.forEach(function(l) {
+      h += '<a href="' + escHtml(l.url) + '" target="_blank" rel="noopener">' + escHtml(l.label) + ' ↗</a>';
+    });
+    h += '</div></div>';
+  }
+
+  return h;
+}
+
+function renderDetail() {
+  const panel = document.getElementById('detail-panel');
+  if (!selectedStep) {
+    const phase = PHASES[currentPhase];
+    let h = '<div style="padding:20px 0">';
+    h += '<div style="font-size:22px;font-weight:700;margin-bottom:6px">' + escHtml(phase.name) + '</div>';
+    if (phase.subtitle) h += '<div style="font-size:14px;color:#94a3b8;margin-bottom:20px">' + escHtml(phase.subtitle) + '</div>';
+
+    if (phase.skills) {
+      var totalItems = phase.skills.reduce(function(s, sk) { return s + sk.items.length; }, 0);
+      var doneItems = phase.skills.reduce(function(s, sk) { return s + sk.items.filter(function(it) { return completed.has(it.id); }).length; }, 0);
+      h += '<div style="font-size:15px;color:#e2e8f0;margin-bottom:16px">' + doneItems + ' / ' + totalItems + ' items completed</div>';
+    } else {
+      var pc = phaseCompletion(phase);
+      h += '<div style="font-size:15px;color:#e2e8f0;margin-bottom:20px">' + pc.done + ' / ' + pc.total + ' steps completed</div>';
+
+      var bosses = phase.steps.filter(function(s) { return s.type === 'boss'; });
+      if (bosses.length) {
+        h += '<div style="margin-bottom:20px">';
+        h += '<div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fbbf24;margin-bottom:10px">⚔️ Bosses in this Phase</div>';
+        bosses.forEach(function(b) {
+          var done = completed.has(b.id);
+          var title = (b.detail && b.detail.title) ? b.detail.title : b.text;
+          var sub = (b.detail && b.detail.subtitle) ? b.detail.subtitle : '';
+          h += '<div style="padding:4px 0;display:flex;align-items:baseline;gap:8px">';
+          h += '<span style="color:' + (done ? '#22c55e' : '#64748b') + ';font-size:13px">' + (done ? '✓' : '○') + '</span>';
+          h += '<div><div style="font-size:14px;color:' + (done ? '#22c55e' : '#e2e8f0') + ';font-weight:600">' + escHtml(title) + '</div>';
+          if (sub) h += '<div style="font-size:12px;color:#64748b;margin-top:1px">' + escHtml(sub) + '</div>';
+          h += '</div></div>';
+        });
+        h += '</div>';
+      }
+
+      var rewards = phase.steps.filter(function(s) { return s.type === 'reward' || s.type === 'unlock'; });
+      if (rewards.length) {
+        h += '<div style="margin-bottom:20px">';
+        h += '<div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#e879f9;margin-bottom:10px">🏆 Key Unlocks & Rewards</div>';
+        rewards.forEach(function(r) {
+          var done = completed.has(r.id);
+          var title = (r.detail && r.detail.title) ? r.detail.title : r.text;
+          h += '<div style="padding:3px 0;display:flex;align-items:center;gap:8px">';
+          h += '<span style="color:' + (done ? '#22c55e' : '#64748b') + ';font-size:13px">' + (done ? '✓' : '○') + '</span>';
+          h += '<span style="font-size:13px;color:' + (done ? '#22c55e' : '#e2e8f0') + '">' + escHtml(title) + '</span>';
+          h += '</div>';
+        });
+        h += '</div>';
+      }
+    }
+    h += '</div>';
+    panel.innerHTML = h;
+    return;
+  }
+  const step = getStep(selectedStep);
+  let html = '';
+  if (step && step.detail) {
+    html = '<button class="detail-close" onclick="closeDetail()">✕</button>' + buildDetailHtml(step);
+  } else if (selectedStep.startsWith('skill:')) {
+    const skillId = selectedStep.replace('skill:', '');
+    const phase = PHASES.find(function(p) { return p.skills; });
+    const skill = phase ? phase.skills.find(function(s) { return s.id === skillId; }) : null;
+    if (skill) {
+      html = '<button class="detail-close" onclick="closeDetail()">✕</button>';
+      html += '<div class="detail-header">';
+      html += '<div class="detail-title">' + skill.icon + ' ' + escHtml(skill.name) + '</div>';
+      html += '</div>';
+      if (skill.tips.length) {
+        html += '<div class="detail-section"><div class="detail-section-title">Training Tips</div><ul class="tips-list">';
+        skill.tips.forEach(function(t) { html += '<li>' + escHtml(t) + '</li>'; });
+        html += '</ul></div>';
+      }
+      if (skill.link) {
+        html += '<div class="detail-section" style="margin-top:20px"><div class="detail-section-title">Links</div><div class="link-list">';
+        html += '<a href="' + escHtml(skill.link.url) + '" target="_blank" rel="noopener">' + escHtml(skill.link.label) + ' ↗</a>';
+        html += '</div></div>';
+      }
+    }
+  } else if (selectedStep.startsWith('xp-')) {
+    const phase = PHASES.find(function(p) { return p.skills; });
+    let item = null;
+    if (phase) {
+      phase.skills.forEach(function(sk) {
+        sk.items.forEach(function(it) { if (it.id === selectedStep) item = it; });
+      });
+    }
+    if (item) {
+      html = '<button class="detail-close" onclick="closeDetail()">✕</button>';
+      html += '<div class="detail-header">';
+      html += '<div class="detail-title">' + escHtml(item.text) + '</div>';
+      html += '<div class="detail-subtitle">' + escHtml(item.note) + '</div>';
+      html += '</div>';
+    }
+  }
+  if (!html) {
+    html = '<div class="detail-empty">Select a step to view details</div>';
+  }
+  panel.innerHTML = html;
+}
+
+function closeDetail() {
+  selectedStep = null;
+  render();
+}
+
+/* ── Events ── */
+function switchPhase(idx) {
+  currentPhase = idx;
+  selectedStep = null;
+  render();
+}
+
+function selectStep(id) {
+  selectedStep = id;
+  if (isMobile()) {
+    const step = getStep(id);
+    document.getElementById('overlay-detail').innerHTML = buildDetailHtml(step);
+    document.getElementById('overlay').classList.add('open');
+  }
+  render();
+}
+
+function toggleStep(e, id) {
+  e.stopPropagation();
+  if (completed.has(id)) {
+    completed.delete(id);
+  } else {
+    completed.add(id);
+  }
+  saveProgress();
+  render();
+  if (completed.has(id) && isMainPathComplete()) celebrate();
+}
+
+function onBannerClick() {
+  const next = findNextStep();
+  if (!next) return;
+  currentPhase = next.phaseIdx;
+  selectedStep = next.step.id;
+  render();
+  const row = document.querySelector('.step-row[data-id="' + next.step.id + '"]');
+  if (row) {
+    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    row.classList.add('pulse');
+    row.addEventListener('animationend', function() { row.classList.remove('pulse'); }, { once: true });
+  }
+}
+
+function closeOverlay() {
+  document.getElementById('overlay').classList.remove('open');
+  selectedStep = null;
+  render();
+}
+
+function exportProgress() {
+  const data = {
+    version: 1,
+    completed: Array.from(completed),
+    lastUpdated: new Date().toISOString()
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'rs3iron-progress.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importProgress(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data && Array.isArray(data.completed)) {
+        completed = new Set(data.completed);
+        saveProgress();
+        currentPhase = findActivePhase();
+        selectedStep = null;
+        render();
+      } else {
+        alert('Invalid progress file format.');
+      }
+    } catch (err) {
+      alert('Could not read file: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+function confirmReset() {
+  document.getElementById('confirm-dialog').classList.add('open');
+}
+
+function closeConfirm() {
+  document.getElementById('confirm-dialog').classList.remove('open');
+}
+
+function doReset() {
+  completed = new Set();
+  saveProgress();
+  currentPhase = findActivePhase();
+  selectedStep = null;
+  closeConfirm();
+  render();
+}
+
+/* ── Reaper Crew ── */
+const REAPER_CREW = [
+  { name: "Ivar, King of Bones", stepIds: ["ivar"] },
+  { name: "Silverquill, the Dreadhog", stepIds: ["silverquill"] },
+  { name: "Hermod, the Spirit of War", stepIds: ["hermod"] },
+  { name: "Giant Mole", stepIds: ["giant-mole"] },
+  { name: "The Barrows Brothers", stepIds: ["barrows"] },
+  { name: "King Black Dragon", stepIds: ["king-black-dragon"] },
+  { name: "Chaos Elemental", stepIds: ["chaos-elemental"] },
+  { name: "Dagannoth Kings", stepIds: ["dagannoth-kings"] },
+  { name: "Kalphite Queen", stepIds: ["kalphite-queen"] },
+  { name: "Queen Black Dragon", stepIds: ["queen-black-dragon"] },
+  { name: "Corporeal Beast", stepIds: ["corporeal-beast"] },
+  { name: "TzTok-Jad", stepIds: ["tztok-jad"] },
+  { name: "Har-Aken", stepIds: ["har-aken"] },
+  { name: "Rex Matriarchs", stepIds: ["rex-matriarchs"] },
+  { name: "Osseous", stepIds: ["osseous"] },
+  { name: "General Graardor", stepIds: ["gwd1-graardor"] },
+  { name: "K'ril Tsutsaroth", stepIds: ["gwd1-kril"] },
+  { name: "Kree'arra", stepIds: ["gwd1-kreearra"] },
+  { name: "Commander Zilyana", stepIds: ["gwd1-zilyana"] },
+  { name: "Nex", stepIds: ["nex"] },
+  { name: "Vindicta & Gorvek", stepIds: ["gwd2-vindicta"] },
+  { name: "Helwyr", stepIds: ["gwd2-helwyr"] },
+  { name: "Twin Furies", stepIds: ["gwd2-twins-greg"] },
+  { name: "Gregorovic", stepIds: ["gwd2-twins-greg"] },
+  { name: "Araxxor / Araxxi", stepIds: ["araxxor"] },
+  { name: "Kalphite King", stepIds: ["kalphite-king"] },
+  { name: "Legiones", stepIds: ["legiones"] },
+  { name: "Sanctum Guardian", stepIds: ["ed1-full"] },
+  { name: "Masuta the Ascended", stepIds: ["ed1-full"] },
+  { name: "Seiryu the Azure Serpent", stepIds: ["ed1-full"] },
+  { name: "Croesus", stepIds: ["croesus"] },
+  { name: "Kerapac, the Bound", stepIds: ["kerapac-nm", "kerapac-hm"] },
+  { name: "Arch-Glacor", stepIds: ["arch-glacor-learner", "arch-glacor-nm5", "arch-glacor-hm"] },
+  { name: "Astellarn", stepIds: ["ed2-full"] },
+  { name: "Verak Lith", stepIds: ["ed2-full"] },
+  { name: "Black Stone Dragon", stepIds: ["ed2-full"] },
+  { name: "Crassian Leviathan", stepIds: ["ed3-full"] },
+  { name: "Taraket the Necromancer", stepIds: ["ed3-full"] },
+  { name: "The Ambassador", stepIds: ["ed3-full"] },
+  { name: "The Magister", stepIds: ["magister"] },
+  { name: "TzKal-Zuk", stepIds: ["tzkal-zuk"] },
+  { name: "Raksha", stepIds: ["raksha"] },
+  { name: "Telos, the Warden", stepIds: ["telos"] },
+  { name: "Rise of the Six", stepIds: ["rise-of-the-six"] },
+  { name: "Beastmaster Durzag", stepIds: ["raids-bm-yaka"] },
+  { name: "Yakamaru", stepIds: ["raids-bm-yaka"] },
+  { name: "Nex: Angel of Death", stepIds: ["nex-aod"] },
+  { name: "Vorago", stepIds: ["vorago"] },
+  { name: "Solak", stepIds: ["solak"] },
+  { name: "Zamorak, Lord of Chaos", stepIds: ["zamorak"] },
+  { name: "Rasial", stepIds: ["rasial"] },
+  { name: "Vermyx, Brood Mother", stepIds: ["sanctum-of-rebirth"] },
+  { name: "Kezalam, the Wanderer", stepIds: ["sanctum-of-rebirth"] },
+  { name: "Nakatra, Devourer Eternal", stepIds: ["sanctum-of-rebirth"] },
+  { name: "Zemouregal & Vorkath", stepIds: ["zemouregal-vorkath"] },
+  { name: "Amascut, the Devourer", stepIds: ["amascut"] },
+  { name: "Gate of Elidinis", stepIds: ["gate-of-elidinis"] },
+  { name: "Flesh-hatcher Mhekarnahz", stepIds: ["mhekarnahz"] }
+];
+
+let reaperOpen = false;
+try { reaperOpen = localStorage.getItem('rs3iron-reaper-open') === '1'; } catch(e) {}
+
+function toggleReaper() {
+  reaperOpen = !reaperOpen;
+  document.getElementById('reaper-panel').classList.toggle('open', reaperOpen);
+  try { localStorage.setItem('rs3iron-reaper-open', reaperOpen ? '1' : '0'); } catch(e) {}
+}
+
+function isReaperKilled(entry) {
+  return entry.stepIds.some(function(id) { return completed.has(id); });
+}
+
+function renderReaper() {
+  const killed = REAPER_CREW.filter(isReaperKilled).length;
+  const total = REAPER_CREW.length;
+  const pct = total ? Math.round((killed / total) * 100) : 0;
+  document.getElementById('reaper-count').textContent = killed + '/' + total + (pct > 0 ? ' · ' + pct + '%' : '');
+  document.getElementById('reaper-fill').style.width = pct + '%';
+
+  let html = '';
+  REAPER_CREW.forEach(function(entry) {
+    const done = isReaperKilled(entry);
+    html += '<div class="reaper-entry' + (done ? ' killed' : '') + '">';
+    html += '<span class="re-icon">' + (done ? '💀' : '☠') + '</span>';
+    html += '<span class="re-name">' + escHtml(entry.name) + '</span>';
+    html += '</div>';
+  });
+  document.getElementById('reaper-list').innerHTML = html;
+
+  document.getElementById('reaper-panel').classList.toggle('open', reaperOpen);
+}
+
+/* ── Skill XP Reference rendering ── */
+let expandedSkills = new Set();
+try {
+  const raw = localStorage.getItem('rs3iron-expanded-skills');
+  if (raw) expandedSkills = new Set(JSON.parse(raw));
+} catch(e) {}
+
+function saveExpandedSkills() {
+  try { localStorage.setItem('rs3iron-expanded-skills', JSON.stringify(Array.from(expandedSkills))); } catch(e) {}
+}
+
+function toggleSkillBanner(skillId) {
+  if (expandedSkills.has(skillId)) {
+    expandedSkills.delete(skillId);
+  } else {
+    expandedSkills.add(skillId);
+  }
+  saveExpandedSkills();
+  selectedStep = 'skill:' + skillId;
+  render();
+}
+
+function toggleSkillItem(e, itemId) {
+  e.stopPropagation();
+  if (completed.has(itemId)) {
+    completed.delete(itemId);
+  } else {
+    completed.add(itemId);
+  }
+  saveProgress();
+  render();
+}
+
+function selectSkillItem(itemId) {
+  selectedStep = itemId;
+  render();
+}
+
+function renderSkillChecklist() {
+  const panel = document.getElementById('checklist-panel');
+  const phase = PHASES[currentPhase];
+  if (!phase.skills) return;
+
+  let html = '';
+  phase.skills.forEach(function(skill) {
+    const isExpanded = expandedSkills.has(skill.id);
+    const doneCount = skill.items.filter(function(it) { return completed.has(it.id); }).length;
+    const totalCount = skill.items.length;
+    const allDone = totalCount > 0 && doneCount === totalCount;
+
+    html += '<div class="skill-banner' + (isExpanded ? ' expanded' : '') + '" onclick="toggleSkillBanner(\'' + skill.id + '\')">';
+    html += '<span class="skill-icon">' + skill.icon + '</span>';
+    html += '<span class="skill-name">' + escHtml(skill.name) + '</span>';
+    if (totalCount > 0) {
+      html += '<span class="skill-count' + (allDone ? ' all-done' : '') + '">' + doneCount + '/' + totalCount + '</span>';
+    }
+    html += '<span class="skill-arrow">▶</span>';
+    html += '</div>';
+
+    html += '<div class="skill-items' + (isExpanded ? ' open' : '') + '">';
+    skill.items.forEach(function(item) {
+      const done = completed.has(item.id);
+      html += '<div class="skill-item-row' + (done ? ' completed' : '') + '" onclick="selectSkillItem(\'' + item.id + '\')">';
+      html += '<div class="step-cb' + (done ? ' checked' : '') + '" onclick="toggleSkillItem(event,\'' + item.id + '\')">' + (done ? '✓' : '') + '</div>';
+      html += '<div style="flex:1;min-width:0"><div class="skill-item-text">' + escHtml(item.text) + '</div>';
+      html += '<div class="skill-item-note">' + escHtml(item.note) + '</div></div>';
+      html += '</div>';
+    });
+    skill.tips.forEach(function(tip) {
+      html += '<div class="skill-tip">' + escHtml(tip) + '</div>';
+    });
+    html += '</div>';
+  });
+  panel.innerHTML = html;
+}
+
+/* ── Celebration ── */
+function isMainPathComplete() {
+  for (var i = 0; i < PHASES.length; i++) {
+    var p = PHASES[i];
+    if (p.skills) continue;
+    for (var j = 0; j < p.steps.length; j++) {
+      if (!completed.has(p.steps[j].id)) return false;
+    }
+  }
+  return true;
+}
+
+function celebrate() {
+  var el = document.getElementById('celebration');
+  var canvas = document.getElementById('confetti-canvas');
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  el.classList.add('active');
+
+  var particles = [];
+  var colors = ['#fbbf24','#f59e0b','#22c55e','#3b82f6','#e879f9','#ef4444','#e2e8f0'];
+  for (var i = 0; i < 200; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      vx: (Math.random() - 0.5) * 6,
+      vy: Math.random() * 3 + 2,
+      size: Math.random() * 6 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rot: Math.random() * 360,
+      rv: (Math.random() - 0.5) * 8,
+      life: 1
+    });
+  }
+
+  var start = Date.now();
+  function frame() {
+    var elapsed = Date.now() - start;
+    if (elapsed > 5000) {
+      el.classList.remove('active');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var fade = elapsed > 3500 ? 1 - (elapsed - 3500) / 1500 : 1;
+    particles.forEach(function(p) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.05;
+      p.rot += p.rv;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.globalAlpha = fade;
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+      ctx.restore();
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── Init ── */
+loadProgress();
+currentPhase = findActivePhase();
+render();
+renderReaper();
+</script>
+</body>
+</html>
