@@ -434,9 +434,9 @@ const PHASES = [
       {
         id: "rune-mythos",
         type: "quest",
-        text: "Complete Rune Mythos",
+        text: "Complete Rune Memories",
         detail: {
-          title: "Rune Mythos",
+          title: "Rune Memories",
           subtitle: "Continue Necromancy progression and unlock tier 25+",
           why: "Continues the Necromancy quest chain. Opens up higher-tier rituals and better ink production. Save at least one impure essence from this quest — you'll need it later.",
           requirements: ["24 Necromancy", "Necromancy! quest completed"],
@@ -1816,7 +1816,7 @@ const PHASES = [
             "No skill or quest requirements to start.",
             "Recommended: ~70+ combat stats, protection prayers.",
             "For full rewards, complete Ritual of the Mahjarrat + related quests beforehand (optional).",
-            "You'll receive 3x 100,000 XP lamps (skills 75+) and a 250,000 Prayer XP lamp (80 Prayer) — bank these if you don't meet the level."
+            "You'll receive 3x 100,000 XP lamps (skills 75+), 3x 50,000 combat XP lamps (combat skills 65+), a 110,000 Slayer XP lamp (70 Slayer), and a 250,000 Prayer XP lamp (80 Prayer) — bank these if you don't meet the levels."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_World_Wakes" },
@@ -1929,6 +1929,26 @@ const PHASES = [
         }
       },
       {
+        id: "smoking-kills",
+        type: "quest",
+        text: "Complete Smoking Kills",
+        detail: {
+          title: "Smoking Kills",
+          subtitle: "Doubles Slayer reward points — CRITICAL before Slayer training",
+          why: "Smoking Kills doubles the Slayer reward points earned from task completions. Without this quest, you earn half points. Complete it before starting serious Slayer training to avoid wasting hundreds of tasks at half points.",
+          requirements: ["Icthlarin's Little Helper completed", "25 Crafting", "35 Slayer"],
+          tips: [
+            "Start by talking to Sumona in Pollnivneach.",
+            "Involves combat in the Pollnivneach Slayer Dungeon — bring combat gear and food.",
+            "After completion, all Slayer task completions give full reward points.",
+            "Also unlocks Slayer reward shop access and ability to craft Slayer rings."
+          ],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Smoking_Kills" }
+          ]
+        }
+      },
+      {
         id: "slayer-start",
         type: "skill",
         text: "Train Slayer to 50+",
@@ -1951,7 +1971,7 @@ const PHASES = [
           title: "Troll Stronghold",
           subtitle: "Unlocks Trollheim and GWD1 area access",
           why: "Required for access to the God Wars Dungeon area, which contains GWD1 bosses. Also a prerequisite for Desert Treasure. Gives law rune access via herb farming on Trollheim.",
-          requirements: ["Death Plateau completed", "15 Agility"],
+          requirements: ["Death Plateau completed", "15 Agility", "30 Thieving"],
           tips: [
             "Start by talking to Denulth in Burthorpe.",
             "Involves combat against trolls — bring food and prayers.",
@@ -2035,7 +2055,7 @@ const PHASES = [
           tips: [
             "Switch spellbooks at the altar in Jaldraocht Pyramid or any player-owned house altar.",
             "Blood Barrage: Heals 5% of damage dealt as HP. Amazing for Slayer and multi-target bosses.",
-            "Ice Barrage: AoE freeze for 15 seconds. Useful for mob control.",
+            "Ice Barrage: AoE freeze for 9.6 seconds. Useful for mob control.",
             "You can auto-cast these on your action bar like regular spells."
           ],
           links: [
@@ -2049,8 +2069,8 @@ const PHASES = [
         text: "Complete Rune Mysteries",
         detail: {
           title: "Rune Mysteries",
-          subtitle: "Unlocks Runecrafting altars + Rune Mythos chain",
-          why: "Quick introductory quest with no requirements. Unlocks access to Runecrafting altars and is a prerequisite for Rune Mythos. Also useful as an early quest for quest points.",
+          subtitle: "Unlocks Runecrafting altars + Rune Memories chain",
+          why: "Quick introductory quest with no requirements. Unlocks access to Runecrafting altars and is a prerequisite for Rune Memories. Also useful as an early quest for quest points.",
           requirements: [],
           tips: [
             "Start at the Wizards' Tower south of Draynor.",
@@ -2085,11 +2105,11 @@ const PHASES = [
           title: "Holy Grail",
           subtitle: "Prayer & Defence XP — feeds into King's Ransom",
           why: "Grants significant Prayer and Defence XP. Required for King's Ransom which unlocks Piety.",
-          requirements: ["Merlin's Crystal completed"],
+          requirements: ["Merlin's Crystal completed", "30 Attack"],
           tips: [
             "Start in Camelot — talk to King Arthur.",
             "Involves traveling to various locations including Fisher King's castle.",
-            "No combat or skill requirements."
+            "Requires 30 Attack to wield Excalibur for the boss fight."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Holy_Grail" }
@@ -2104,7 +2124,7 @@ const PHASES = [
           title: "One Small Favour",
           subtitle: "Long but rewarding — final prereq for King's Ransom",
           why: "The last prerequisite quest for King's Ransom. Notorious for being long (chain of favours), but the quest XP rewards are good and King's Ransom + Piety make it all worthwhile.",
-          requirements: ["Shilo Village completed"],
+          requirements: ["Shilo Village completed", "36 Agility", "25 Crafting", "18 Herblore", "30 Smithing"],
           tips: [
             "Start in Shilo Village — talk to Yanni Salika.",
             "This quest sends you all over the map. Use lodestones.",
@@ -2162,7 +2182,7 @@ const PHASES = [
         detail: {
           title: "Piety, Rigour & Augury",
           subtitle: "Major combat prayer upgrades for all styles",
-          why: "Piety gives +8% Attack, +8% Strength, +8% Defence. Rigour gives the same for Ranged. Augury for Magic. These are significant DPS and accuracy boosts you'll use at every boss.",
+          why: "Piety gives +8 Attack levels (accuracy), +8% melee damage, and +8 Defence levels (armour). Rigour and Augury give equivalent boosts for Ranged and Magic respectively. These are significant DPS and accuracy boosts you'll use at every boss.",
           tips: [
             "All require 70 Prayer and 70 Defence to activate.",
             "Use alongside protection prayers — they stack.",
@@ -2182,7 +2202,7 @@ const PHASES = [
           title: "Dream Mentor",
           subtitle: "More Lunar spells — WGS prerequisite",
           why: "Unlocks additional Lunar spells including Humidify. Required for While Guthix Sleeps.",
-          requirements: ["Lunar Diplomacy completed", "85 Combat level"],
+          requirements: ["Lunar Diplomacy completed"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Dream_Mentor" }
           ]
@@ -2196,9 +2216,9 @@ const PHASES = [
           title: "Eyes of Glouphrie",
           subtitle: "WGS prerequisite — Gnome quest chain",
           why: "Part of the Gnome quest chain. Required for Path of Glouphrie and eventually WGS.",
-          requirements: ["The Grand Tree completed"],
+          requirements: ["The Grand Tree completed", "5 Construction", "46 Magic"],
           links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Eyes_of_Glouphrie" }
+            { label: "RS Wiki", url: "https://runescape.wiki/w/The_Eyes_of_Glouphrie" }
           ]
         }
       },
@@ -2210,7 +2230,7 @@ const PHASES = [
           title: "Path of Glouphrie",
           subtitle: "WGS prerequisite — Gnome quest chain",
           why: "Continues the Gnome quest chain. Required for While Guthix Sleeps.",
-          requirements: ["Eyes of Glouphrie completed", "Tree Gnome Village completed"],
+          requirements: ["Eyes of Glouphrie completed", "Tree Gnome Village completed", "Waterfall Quest completed", "45 Agility", "47 Ranged", "56 Slayer", "60 Strength", "56 Thieving"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Path_of_Glouphrie" }
           ]
@@ -2251,7 +2271,8 @@ const PHASES = [
         detail: {
           title: "Tale of the Muspah",
           subtitle: "Curse of Arrav prerequisite",
-          why: "No prerequisites at all. Required for Curse of Arrav.",
+          why: "No quest prerequisites. Required for Curse of Arrav.",
+          requirements: ["6 Firemaking", "10 Magic", "8 Mining", "10 Woodcutting"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Tale_of_the_Muspah" }
           ]
@@ -2265,7 +2286,7 @@ const PHASES = [
           title: "Missing My Mummy",
           subtitle: "Curse of Arrav prerequisite",
           why: "Required for Curse of Arrav.",
-          requirements: ["Icthlarin's Little Helper completed", "The Golem completed"],
+          requirements: ["Icthlarin's Little Helper completed", "The Golem completed", "Diamond in the Rough completed", "35 Construction", "35 Cooking", "35 Crafting", "35 Magic", "35 Prayer"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Missing_My_Mummy" }
           ]
@@ -2324,12 +2345,12 @@ const PHASES = [
         detail: {
           title: "King Black Dragon",
           subtitle: "Classic dragon boss — Reaper Crew requirement",
-          why: "An accessible early-mid boss. KBD drops Dragon Rider boots and gloves (T70 hybrid) and counts toward Reaper Crew. Good practice for dealing with dragonfire mechanics.",
+          why: "An accessible early-mid boss. KBD drops Dragon Rider boots and gloves (T60 hybrid) and counts toward Reaper Crew. Good practice for dealing with dragonfire mechanics.",
           requirements: [],
           suggested: ["70+ combat stats", "60+ Defence", "Anti-dragon shield or Super antifire", "Protection prayers"],
           drops: [
-            { item: "Dragon Rider boots", why: "T70 hybrid boots (1/512)" },
-            { item: "Dragon Rider gloves", why: "T70 hybrid gloves (1/512)" },
+            { item: "Dragon Rider boots", why: "T60 hybrid boots (1/2,000)" },
+            { item: "Dragon Rider gloves", why: "T60 hybrid gloves (1/2,000)" },
             { item: "Draconic visage", why: "Makes Dragonfire shield (1/5,000)" }
           ],
           moveOn: "After a few kills for Reaper Crew. Not a priority farm.",
@@ -2422,16 +2443,16 @@ const PHASES = [
         detail: {
           title: "Queen Black Dragon",
           subtitle: "Solo dragon boss — Royal crossbow + dragonbane ore",
-          why: "QBD is an excellent solo boss that teaches phase-based mechanics and movement. The Royal crossbow (T80 2H ranged, free to forge during the fight) is a great ironman weapon. Song from the Depths quest reduces her damage.",
+          why: "QBD is an excellent solo boss that teaches phase-based mechanics and movement. The Royal crossbow (T80 2H ranged) requires 4 component drops from QBD, a coral crossbow from Song from the Depths, and 70 Smithing to assemble and forge. Song from the Depths quest also reduces her damage.",
           requirements: ["60 Summoning (to access lair)"],
           suggested: ["80+ combat stats", "70+ Defence", "Super antifire potions", "Decent food"],
           drops: [
             {
               item: "Royal crossbow (forged during fight)",
-              why: "T80 2H ranged — free, just bring a Royal crossbow (unforged) and brandish it during her fire wall"
+              why: "T80 2H ranged — requires 4 component drops (stabiliser, frame, sight, torsion spring), coral crossbow from Song from the Depths, and 70 Smithing. Assemble at Thurgo, then brandish during QBD's fire wall to forge."
             },
-            { item: "Dragon kiteshield", why: "Rare (1/256)" },
-            { item: "Dragonbone upgrade kit", why: "Cosmetic upgrade (1/250)" }
+            { item: "Dragon kiteshield", why: "Rare (1/253)" },
+            { item: "Dragonbone upgrade kit", why: "Cosmetic upgrade (2/253)" }
           ],
           moveOn: "After forging the Royal crossbow. Good GP farm if needed.",
           links: [
@@ -2451,7 +2472,7 @@ const PHASES = [
           title: "A Fairy Tale I — Growing Pains",
           subtitle: "Farming XP — fairy ring access prerequisite",
           why: "Starts the Fairy Tale series. Required for Fairy Tale II which unlocks full fairy ring network.",
-          requirements: ["Lost City completed", "Nature Spirit completed", "49 Farming", "57 Herblore"],
+          requirements: ["Lost City completed", "Nature Spirit completed"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/A_Fairy_Tale_I_-_Growing_Pains" }
           ]
@@ -2465,7 +2486,7 @@ const PHASES = [
           title: "A Fairy Tale II — Cure a Queen",
           subtitle: "Unlocks full fairy ring network — RotM prerequisite",
           why: "Unlocks the full fairy ring transport network. Essential for fast travel. RotM prerequisite.",
-          requirements: ["A Fairy Tale I completed", "40 Farming", "49 Herblore", "57 Thieving"],
+          requirements: ["A Fairy Tale I completed", "49 Farming", "57 Herblore", "40 Thieving"],
           tips: ["You can use fairy rings after starting the quest, before finishing it."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/A_Fairy_Tale_II_-_Cure_a_Queen" }
@@ -2480,7 +2501,7 @@ const PHASES = [
           title: "Enakhra's Lament",
           subtitle: "Ritual of the Mahjarrat prerequisite",
           why: "Required for Ritual of the Mahjarrat.",
-          requirements: ["43 Crafting", "45 Firemaking", "39 Magic", "45 Mining", "43 Prayer"],
+          requirements: ["50 Crafting", "45 Firemaking", "13 Magic"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Enakhra%27s_Lament" }
           ]
@@ -2508,7 +2529,7 @@ const PHASES = [
           title: "Wanted!",
           subtitle: "WGS prerequisite",
           why: "White Knights quest. Required for The Slug Menace and eventually WGS.",
-          requirements: ["Recruitment Drive completed", "Lost City completed", "Priest in Peril completed"],
+          requirements: ["Recruitment Drive completed", "Enter the Abyss (miniquest) completed"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Wanted!" }
           ]
@@ -2564,7 +2585,7 @@ const PHASES = [
           title: "You Are It",
           subtitle: "Elder Gods chain — miniquest",
           why: "Short miniquest continuing the Needle storyline.",
-          requirements: ["The Needle Skips completed"],
+          requirements: [],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/You_Are_It" }
           ]
@@ -2578,7 +2599,7 @@ const PHASES = [
           title: "Desperate Times",
           subtitle: "Elder Gods chain — Anachronia",
           why: "Continues the Elder Gods storyline. Introduces Kerapac.",
-          requirements: ["The Needle Skips completed", "You Are It completed", "50 Agility", "50 Mining", "50 Smithing"],
+          requirements: ["The Needle Skips completed", "You Are It completed", "50 Divination", "50 Mining", "50 Smithing"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Desperate_Times" }
           ]
@@ -2594,7 +2615,7 @@ const PHASES = [
           why: "Summer's End is required to access the Corporeal Beast. It's the sequel to Spirit of Summer and involves combat with the Spirit Beast. Complete it before attempting Corp.",
           requirements: ["The Restless Ghost completed", "47 Firemaking", "35 Hunter", "45 Mining", "55 Prayer", "23 Summoning", "37 Woodcutting"],
           tips: [
-            "Spirit of Summer (prerequisite): Requires The Restless Ghost. Needs 19 Construction, 26 Hunter, 35 Prayer, 37 Summoning, 23 Woodcutting.",
+            "Spirit of Summer (prerequisite): Requires The Restless Ghost. Needs 40 Construction, 26 Farming, 35 Prayer, 19 Summoning.",
             "Bring combat gear — you fight the Spirit Beast at the end.",
             "Both quests are in the Wilderness, but instanced — no PvP danger."
           ],
@@ -2617,14 +2638,14 @@ const PHASES = [
           drops: [
             {
               item: "Divine sigil",
-              why: "Creates Divine spirit shield — absorbs 30% of damage from prayer (1/512)"
+              why: "Creates Divine spirit shield — absorbs 30% of damage from prayer (1/2,560)"
             },
             {
               item: "Elysian sigil",
-              why: "Creates Elysian spirit shield — 70% chance to reduce damage by 25% (1/512)"
+              why: "Creates Elysian spirit shield — 70% chance to reduce damage by 25% (1/2,560)"
             },
-            { item: "Arcane sigil", why: "Creates Arcane spirit shield — magic damage boost (1/512)" },
-            { item: "Spectral sigil", why: "Creates Spectral spirit shield — prayer drain reduction (1/512)" },
+            { item: "Arcane sigil", why: "Creates Arcane spirit shield — magic damage boost (1/2,560)" },
+            { item: "Spectral sigil", why: "Creates Spectral spirit shield — prayer drain reduction (1/1,280)" },
             { item: "Holy elixir", why: "Required to create blessed spirit shields (1/171)" }
           ],
           moveOn: "After one kill for Reaper Crew, or after obtaining desired spirit shield.",
@@ -2668,9 +2689,9 @@ const PHASES = [
             { item: "TokHaar-Kal-Ket", why: "BIS melee cape" },
             { item: "TokHaar-Kal-Xil", why: "BIS ranged cape" },
             { item: "TokHaar-Kal-Mej", why: "BIS magic cape" },
-            { item: "Uncut onyx", why: "Guaranteed drop — very valuable" }
+            { item: "Uncut onyx", why: "Alternative reward — choose cape OR onyx per completion" }
           ],
-          moveOn: "After obtaining the TokHaar-Kal cape for your main style. Run it again for other styles.",
+          moveOn: "After obtaining the TokHaar-Kal cape for your main style. Run it again for other styles or an uncut onyx.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Fight_Kiln" },
             { label: "RS Wiki — Strategy", url: "https://runescape.wiki/w/Fight_Kiln/Strategies" }
@@ -2815,7 +2836,7 @@ const PHASES = [
           suggested: ["80+ in any combat style", "70+ Defence", "70+ Prayer"],
           drops: [
             { item: "Saradomin hilt", why: "Saradomin godsword component (1/512)" },
-            { item: "Saradomin sword", why: "T75 2H melee weapon (1/512)" },
+            { item: "Saradomin sword", why: "T75 2H melee weapon (1/320)" },
             { item: "Saradomin's whisper/murmur/hiss", why: "Niche necklaces (1/512 each)" }
           ],
           moveOn: "After at least one kill for Reaper Crew. Farm if you want the Saradomin godsword.",
@@ -2881,7 +2902,7 @@ const PHASES = [
             "Charming imp: Configure to auto-collect gold + green + crimson + blue charms.",
             "Add Charming imp to your tool belt for 500 Slayer points (so you never forget it).",
             "Ring of Vigour: Wear for every boss fight. Later, the Extinction quest makes this passive (frees ring slot).",
-            "Also grab Herbicide when you can — auto-cleans herbs for Herblore XP during Slayer."
+            "Also grab Herbicide when you can — destroys grimy herb drops for double the cleaning Herblore XP during Slayer."
           ],
           links: [
             { label: "RS Wiki — Charming Imp", url: "https://runescape.wiki/w/Charming_imp" },
