@@ -450,9 +450,9 @@ const PHASES = [
       {
         id: "rune-mythos",
         type: "quest",
-        text: "Complete Rune Memories",
+        text: "Complete Rune Mythos",
         detail: {
-          title: "Rune Memories",
+          title: "Rune Mythos",
           subtitle: "Continue Necromancy progression and unlock tier 25+",
           why: "Continues the Necromancy quest chain. Opens up higher-tier rituals and better ink production. Save at least one impure essence from this quest — you'll need it later.",
           requirements: ["24 Necromancy", "Necromancy! quest completed"],
@@ -2501,7 +2501,7 @@ const PHASES = [
             { item: "Warrior ring (Rex)", why: "Melee accuracy ring (1/128)" },
             { item: "Archers' ring (Supreme)", why: "Ranged DPS ring (1/128)" },
             { item: "Seers' ring (Prime)", why: "Magic DPS ring (1/128)" },
-            { item: "Dragon hatchet (any king)", why: "Best hatchet in the game (1/256)" }
+            { item: "Dragon hatchet (any king)", why: "Best hatchet in the game (1/128 from each king)" }
           ],
           moveOn: "After obtaining Berserker ring and/or dragon hatchet. Seers' and Archers' rings are low priority.",
           links: [
@@ -2624,6 +2624,25 @@ const PHASES = [
         }
       },
       {
+        id: "enter-the-abyss",
+        type: "quest",
+        text: "Complete Enter the Abyss (miniquest)",
+        detail: {
+          title: "Enter the Abyss",
+          subtitle: "Miniquest — prerequisite for Wanted! and The Slug Menace",
+          why: "Short miniquest that unlocks the Abyss for Runecrafting and is required for the Wanted! → Slug Menace → WGS quest chain.",
+          requirements: ["Rune Mysteries completed"],
+          tips: [
+            "Talk to the Mage of Zamorak in low-level Wilderness (level 5, north of Edgeville).",
+            "Teleport the mage to the Runecrafting Guild, then talk to him there.",
+            "Very quick — mostly dialogue."
+          ],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Enter_the_Abyss" }
+          ]
+        }
+      },
+      {
         id: "wanted",
         type: "quest",
         text: "Complete Wanted!",
@@ -2708,6 +2727,20 @@ const PHASES = [
         }
       },
       {
+        id: "spirit-of-summer",
+        type: "quest",
+        text: "Complete Spirit of Summer",
+        detail: {
+          title: "Spirit of Summer",
+          subtitle: "Prerequisite for Summer's End → Corporeal Beast",
+          why: "Required before Summer's End, which unlocks the Corporeal Beast. Set in the Wilderness but instanced — no PvP danger.",
+          requirements: ["The Restless Ghost completed", "19 Summoning", "26 Farming", "35 Prayer", "40 Construction"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Spirit_of_Summer" }
+          ]
+        }
+      },
+      {
         id: "summers-end",
         type: "quest",
         text: "Complete Summer's End",
@@ -2715,7 +2748,7 @@ const PHASES = [
           title: "Summer's End",
           subtitle: "Unlocks Corporeal Beast — Spirit of Summer chain",
           why: "Summer's End is required to access the Corporeal Beast. It's the sequel to Spirit of Summer and involves combat with the Spirit Beast. Complete it before attempting Corp.",
-          requirements: ["The Restless Ghost completed", "47 Firemaking", "35 Hunter", "45 Mining", "55 Prayer", "23 Summoning", "37 Woodcutting"],
+          requirements: ["Spirit of Summer completed", "47 Firemaking", "35 Hunter", "45 Mining", "55 Prayer", "23 Summoning", "37 Woodcutting"],
           tips: [
             "Spirit of Summer (prerequisite): Requires The Restless Ghost. Needs 40 Construction, 26 Farming, 35 Prayer, 19 Summoning.",
             "Bring combat gear — you fight the Spirit Beast at the end.",
@@ -2811,7 +2844,7 @@ const PHASES = [
           requirements: [],
           suggested: ["70+ in any combat style", "60+ Defence", "Protection prayers", "Decent food"],
           drops: [
-            { item: "Normal Mode (0-4 mechanics)", why: "No unique drops — this is for practice only" }
+            { item: "Normal Mode (0-4 mechanics)", why: "Unique drops are possible but very rare — primarily for practice" }
           ],
           moveOn: "Once you're comfortable with all 5 individual mechanics, enable all 5 at once.",
           links: [
@@ -2939,7 +2972,7 @@ const PHASES = [
           drops: [
             { item: "Saradomin hilt", why: "Saradomin godsword component (1/512)" },
             { item: "Saradomin sword", why: "T75 2H melee weapon (1/320)" },
-            { item: "Saradomin's whisper/murmur/hiss", why: "Niche necklaces (1/512 each)" }
+            { item: "Saradomin's whisper/murmur/hiss", why: "Niche necklaces (1/320 each)" }
           ],
           moveOn: "After at least one kill for Reaper Crew. Farm if you want the Saradomin godsword.",
           links: [
@@ -3209,7 +3242,7 @@ const PHASES = [
           title: "Defender of Varrock",
           subtitle: "Curse of Arrav + River of Blood prerequisite",
           why: "Required for both Curse of Arrav and River of Blood.",
-          requirements: ["Shield of Arrav completed", "The Knight's Sword completed", "Family Crest completed", "What Lies Below completed"],
+          requirements: ["Shield of Arrav completed", "The Knight's Sword completed", "Family Crest completed", "What Lies Below completed", "51 Agility", "51 Hunter", "59 Mining", "54 Smithing"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Defender_of_Varrock" }
           ]
@@ -3253,6 +3286,34 @@ const PHASES = [
           requirements: ["Mourning's End Part II completed", "69 Agility", "70 Fletching", "75 Ranged", "75 Woodcutting"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Within_the_Light" }
+          ]
+        }
+      },
+      {
+        id: "catapult-construction",
+        type: "quest",
+        text: "Complete Catapult Construction",
+        detail: {
+          title: "Catapult Construction",
+          subtitle: "Plague's End prerequisite",
+          why: "Required for Plague's End. Short quest with low requirements — knock it out before attempting Plague's End.",
+          requirements: ["44 Construction", "54 Fletching", "Smithing (any level)"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Catapult_Construction" }
+          ]
+        }
+      },
+      {
+        id: "making-history",
+        type: "quest",
+        text: "Complete Making History",
+        detail: {
+          title: "Making History",
+          subtitle: "Plague's End prerequisite",
+          why: "Required for Plague's End. Easy quest with no skill requirements — just dialogue and travelling.",
+          requirements: ["Priest in Peril completed"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Making_History" }
           ]
         }
       },
@@ -3326,20 +3387,6 @@ const PHASES = [
         }
       },
       {
-        id: "defender-of-varrock",
-        type: "quest",
-        text: "Complete Defender of Varrock",
-        detail: {
-          title: "Defender of Varrock",
-          subtitle: "Curse of Arrav + River of Blood prerequisite",
-          why: "Required for both Curse of Arrav and River of Blood.",
-          requirements: ["Shield of Arrav completed", "The Knight's Sword completed", "Family Crest completed", "What Lies Below completed", "51 Agility", "51 Hunter", "59 Mining", "54 Smithing"],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Defender_of_Varrock" }
-          ]
-        }
-      },
-      {
         id: "curse-of-arrav",
         type: "quest",
         text: "Complete The Curse of Arrav",
@@ -3399,7 +3446,7 @@ const PHASES = [
         detail: {
           title: "Ancient Curses — Soul Split, Turmoil & More",
           subtitle: "The strongest prayer set in the game",
-          why: "Soul Split (92 Prayer) heals you for a portion of all damage dealt. Turmoil/Torment/Anguish/Desolation (95 Prayer) boost your combat stats significantly while draining the enemy. These prayers are used at every boss from now on.",
+          why: "Soul Split (92 Prayer) heals you for a portion of all damage dealt. Turmoil/Torment/Anguish/Sorrow (95 Prayer) boost your combat stats significantly while draining the enemy. These prayers are used at every boss from now on.",
           tips: [
             "Soul Split (92 Prayer): Heals based on damage dealt with diminishing returns (10% of first 2k, 5% of next 2k, 1.25% above 4k). The most used prayer in PvM.",
             "Turmoil (95 Prayer, melee), Torment (95, magic), Anguish (95, ranged), Sorrow (95, necromancy).",
@@ -3468,7 +3515,7 @@ const PHASES = [
           why: "Cinderbane Gloves are the best-in-slot gloves for ALL four combat styles — they apply a poison effect that stacks with Weapon Poison+++ for massive extra damage. The Amulet of Souls makes protection prayers block 60% instead of 50% and gives Soul Split a 50% chance to heal 25-50% more (averaging ~18.75% more healing). Both are core PvM items.",
           tips: [
             "Cinderbane Gloves: Dropped by creatures in The Lost Grove (Moss golems, Vinecrawlers, Bulbous crawlers). Drop rate is 1/1,500 on task, 1/5,000 off task. Also dropped by Solak (1/1,000).",
-            "Weapon Poison+++ synergy: Always use Weapon Poison+++ alongside Cinderbanes for maximum DPS. Craft from cave nightshade + poison slime + coconut milk.",
+            "Weapon Poison+++ synergy: Always use Weapon Poison+++ alongside Cinderbanes for maximum DPS. Craft from Weapon poison++ (3) + poison slime + primal extract (100 Herblore).",
             "Amulet of Souls: Made from a hydrix gem (cut from uncut hydrix — 400 Reaper Points from Death). Needs 79 Crafting to cut, 99 Crafting (boostable) to make the amulet.",
             "Reaper necklace: Also made from hydrix. +3% hit chance. Used for the Essence of Finality later.",
             "Consider making the Reaper necklace first if accuracy is your bottleneck."
@@ -3737,8 +3784,8 @@ const PHASES = [
         detail: {
           title: "Legiones — Ascension Dungeon",
           subtitle: "Ascension crossbow — T90 ranged dual-wield",
-          why: "The six Legiones each drop a unique Ascension signet (I-VI). Collect all six plus a Dragon crossbow and 100 Ascension keystones to assemble the Ascension crossbow (T90 ranged main-hand). Requires Slayer to access the dungeon.",
-          requirements: ["95 Slayer", "Ascension keystones (100 per crossbow, from Ascension creatures)"],
+          why: "The six Legiones each drop a unique Ascension signet (I-VI). Collect all six plus a Dragon crossbow and 100 Ascension shards to assemble the Ascension crossbow (T90 ranged main-hand). Keystones are consumed 1 per fight to access boss rooms.",
+          requirements: ["95 Slayer", "Ascension keystones (1 per boss fight) + 100 Ascension shards (for assembly)"],
           suggested: ["90+ Ranged", "90+ Defence", "95 Prayer", "96 Herblore"],
           drops: [
             {
@@ -4632,7 +4679,7 @@ const PHASES = [
         detail: {
           title: "Solak, Guardian of the Grove",
           subtitle: "Erethdor's Grimoire — the best pocket slot item in the game",
-          why: "Erethdor's Grimoire is the BIS pocket slot item, providing +12% crit chance and +70 damage to all combat styles. It's a massive DPS increase over Scripture of Jas. Solak also drops T92 Blightbound crossbows.",
+          why: "Erethdor's Grimoire is the BIS pocket slot item, providing +12% crit chance to all combat styles. It's a massive DPS increase over Scripture of Jas. Solak also drops T92 Blightbound crossbows.",
           requirements: [],
           suggested: [
             "99 combat stats",
@@ -4646,7 +4693,7 @@ const PHASES = [
           drops: [
             {
               item: "Erethdor's grimoire",
-              why: "BIS pocket slot — +12% crit chance, +70 damage all styles (1/200)"
+              why: "BIS pocket slot — +12% crit chance all styles (1/200)"
             },
             { item: "Blightbound crossbow (MH)", why: "T92 ranged dual-wield main-hand (1/400)" },
             { item: "Blightbound crossbow (OH)", why: "T92 ranged dual-wield off-hand (1/400)" },
@@ -4666,7 +4713,7 @@ const PHASES = [
         detail: {
           title: "Erethdor's Grimoire",
           subtitle: "Best-in-slot pocket item — +12% crit chance",
-          why: "The Grimoire is the ultimate pocket slot item. +12% critical hit chance and +70 damage across all combat styles is unmatched. This single item represents one of the largest DPS upgrades available.",
+          why: "The Grimoire is the ultimate pocket slot item. +12% critical hit chance across all combat styles is unmatched. This single item represents one of the largest DPS upgrades available.",
           tips: [
             "Requires grimoire pages to charge — each page adds 45 minutes of activation time.",
             "Farm Solak for pages, or activate only during tough boss fights to conserve pages.",
@@ -4896,11 +4943,11 @@ const PHASES = [
       {
         id: "limitless-ingenuity",
         type: "unlock",
-        text: "Obtain Limitless sigil + Ingenuity of the Humans",
+        text: "Obtain Limitless ability + Ingenuity of the Humans",
         detail: {
           title: "Limitless & Ingenuity of the Humans",
-          subtitle: "Core PvM sigils — use thresholds freely + guarantee hits",
-          why: "The Limitless sigil lets you use threshold abilities below 50% adrenaline for 6 seconds — essential for DPS rotations. Ingenuity of the Humans guarantees your next attack hits, bypassing accuracy mechanics entirely. Both are used at every high-level boss.",
+          subtitle: "Core PvM abilities — use thresholds freely + guarantee hits",
+          why: "The Limitless ability lets you use threshold abilities below 50% adrenaline for 6 seconds — essential for DPS rotations. Ingenuity of the Humans guarantees your next attack hits, bypassing accuracy mechanics entirely. Both are used at every high-level boss.",
           tips: [
             "Limitless ability codex: Made from 2,000 vital sparks. Sparks drop from Magister, Sophanem Slayer Dungeon mobs, and Corrupted creatures. Very slow to collect as an ironman.",
             "Ingenuity of the Humans ability codex: Requires 114 Invention to discover blueprint + 80 Crafting. Components: 2 alchemical onyx + 20 stunning components + 100 direct components + 1,500 smooth parts.",
