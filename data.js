@@ -146,10 +146,10 @@ const PHASES = [
         detail: {
           title: "Necromancy! Quest",
           subtitle: "Tier 10 gear and your first real equipment",
-          why: "The Necromancy! quest rewards Death guard (tier 10), Skull lantern (tier 10), and Necromancer robes — your first proper combat set. This is a massive power boost at level 5.",
-          requirements: ["Necromancy 5"],
+          why: "The Necromancy! quest rewards Death guard (tier 10), Skull lantern (tier 10), and Necromancer robes — your first proper combat set. This is a massive power boost at level 5. The quest itself has no level requirements, but training to 5 first is recommended for the combat sections.",
+          requirements: [],
           tips: [
-            "Train at City of Um troll cave (level 7 trolls) to reach 5.",
+            "The quest has no formal requirements — but train to level 5 at City of Um troll cave first for easier combat.",
             "Start the quest at Draynor lodestone.",
             "After completing: buy 1400 weak necroplasm, 500 basic ghostly ink, 100 basic ritual candles from shops."
           ],
@@ -217,7 +217,7 @@ const PHASES = [
         detail: {
           title: "One Piercing Note",
           subtitle: "Unlock Devotion, Transfigure & Sacrifice abilities",
-          why: "Devotion is one of the best defensive abilities in the game — it extends protection prayer duration, making you nearly invincible for a short time. Sacrifice provides free healing. These abilities remain useful into end-game bossing.",
+          why: "Devotion is one of the best defensive abilities in the game — it makes your active protection prayer block 100% of damage for 9.6 seconds, making you nearly invincible. Sacrifice provides free healing. These abilities remain useful into end-game bossing.",
           requirements: [],
           tips: [
             "No combat or skill requirements.",
@@ -237,10 +237,10 @@ const PHASES = [
         detail: {
           title: "Devotion, Transfigure & Sacrifice Abilities",
           subtitle: "Powerful defensive and healing abilities from One Piercing Note",
-          why: "Devotion extends your protection prayer uptime, making you nearly invincible for its duration. Sacrifice heals you for free. Both are used at every boss from early game through end-game.",
+          why: "Devotion makes your active protection prayer block 100% of damage (reducing hits to 1) for 9.6 seconds. Extended by 4.8 seconds per kill (max 2 kills = 19.2s total). Sacrifice heals you for free. Both are used at every boss from early game through end-game.",
           tips: [
             "Add Devotion to your defensive action bar immediately.",
-            "Devotion extends protection prayer by 10 seconds per kill during its effect.",
+            "Devotion makes protection prayers reduce damage to 1 for 9.6 seconds, extended by 4.8s per kill (max 19.2s).",
             "Sacrifice heals 25% of damage dealt — great for sustain between food."
           ],
           links: [
@@ -312,10 +312,10 @@ const PHASES = [
         text: "Complete Violet is Blue",
         detail: {
           title: "Violet is Blue",
-          subtitle: "3 Farming lamps — prerequisite for Violet is Blue Too",
-          why: "Required before Violet is Blue Too, which gives a Summoning XP lamp. The Farming lamps also help unlock Player-Owned Farm content earlier, which generates passive resources useful for Herblore and Prayer.",
+          subtitle: "3 generic XP lamps (1,000 XP each) — prerequisite for Violet is Blue Too",
+          why: "Required before Violet is Blue Too. Rewards 3 generic skill lamps (Lamp of Joy, Lamp of Wonder, Lamp of Laughter — 1,000 XP each, any skill). The Pathway recommends Farming to unlock Player-Owned Farm content earlier, which generates passive resources useful for Herblore and Prayer.",
           requirements: [],
-          tips: ["Short holiday quest — mostly dialogue.", "Use all 3 lamps on Farming."],
+          tips: ["Short holiday quest — mostly dialogue.", "Pathway recommends using all 3 lamps on Farming."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Violet_is_Blue" }
           ]
@@ -327,10 +327,10 @@ const PHASES = [
         text: "Complete Violet is Blue Too",
         detail: {
           title: "Violet is Blue Too",
-          subtitle: "Summoning, Archaeology & Construction XP lamps",
-          why: "Grants a Summoning XP lamp — Summoning is one of the hardest skills to train (requires charms from combat) and is essential for PvM. Familiars provide extra inventory, healing, and combat boosts. Also gives Archaeology and Construction lamps.",
+          subtitle: "3 generic XP lamps (4,000 XP each, any skill)",
+          why: "Rewards 3 generic skill lamps (Lamp of Joy, Lamp of Wonder, Lamp of Laughter — 4,000 XP each, any skill). The Pathway recommends using them on Archaeology, Construction, and Summoning — Summoning is one of the hardest skills to train (requires charms from combat) and is essential for PvM.",
           requirements: ["Violet is Blue completed"],
-          tips: ["Use the Summoning lamp immediately.", "Archaeology and Construction lamps are bonus — use on those skills."],
+          tips: ["Pathway recommends using lamps on Archaeology, Construction, and Summoning.", "All 3 lamps are generic — you can choose any skill for each."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Violet_is_Blue_Too" }
           ]
@@ -342,8 +342,8 @@ const PHASES = [
         text: "Complete Wolf Whistle",
         detail: {
           title: "Wolf Whistle",
-          subtitle: "Introduction to Summoning",
-          why: "Unlocks the Summoning skill. Summoning familiars provide combat bonuses, extra inventory space (Beast of Burden), and healing. Essential for all PvM content.",
+          subtitle: "Introduction to Summoning — 276 Summoning XP + 275 gold charms",
+          why: "Introductory Summoning quest (Summoning is available without this quest). Rewards 276 Summoning XP and 275 gold charms — a significant early boost. Summoning familiars provide combat bonuses, extra inventory space (Beast of Burden), and healing. Essential for all PvM content.",
           requirements: [],
           tips: [
             "Start in Taverley — talk to Pikkupstix.",
@@ -361,8 +361,8 @@ const PHASES = [
         text: "Complete Druidic Ritual",
         detail: {
           title: "Druidic Ritual",
-          subtitle: "Unlock Herblore skill",
-          why: "Herblore unlocks potions — eventually Overloads, the single biggest DPS boost in the game (+17% to all combat stats). Starting early lets you stockpile herbs from Slayer and quests.",
+          subtitle: "Herblore XP boost + free supplies",
+          why: "Introductory Herblore quest (Herblore is available without this quest). Rewards 250 Herblore XP, 15 grimy guams, and 15 eyes of newt — a good early boost. Herblore leads to Overloads, the single biggest DPS boost in the game (+17% to all combat stats). Starting early lets you stockpile herbs from Slayer and quests.",
           requirements: [],
           tips: [
             "Start in Taverley — talk to Kaqemeex.",
@@ -456,13 +456,13 @@ const PHASES = [
         text: "Complete Demon Slayer",
         detail: {
           title: "Demon Slayer",
-          subtitle: "3 Ranged XP lamps — builds off-style combat",
-          why: "The Ranged lamps give you a head start on Ranged, your secondary combat style. You'll need Ranged for certain bosses later (Araxxor, Nex) and for chinchompa AoE training.",
+          subtitle: "3 generic combat XP lamps (100 XP each) — builds off-style combat",
+          why: "Rewards 3 combat XP lamps (100 XP each, choose from Attack/Strength/Defence/Constitution/Ranged/Magic/Necromancy). The Pathway recommends Ranged to build your secondary combat style. You'll need Ranged for certain bosses later (Araxxor, Nex) and for chinchompa AoE training.",
           requirements: [],
           tips: [
             "Start by talking to the Gypsy in Varrock.",
             "Requires killing Delrith — use Necromancy or Melee.",
-            "Use the Ranged lamps immediately."
+            "Pathway recommends using the lamps on Ranged."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Demon_Slayer" }
@@ -475,12 +475,12 @@ const PHASES = [
         text: "Complete Swept Away",
         detail: {
           title: "Swept Away",
-          subtitle: "Herblore XP from XP bowl — feeds Overload progression",
-          why: "The XP bowl rewards Herblore XP, helping you toward potion-making thresholds. Every bit of free Herblore XP matters since the skill is slow to train.",
+          subtitle: "Generic XP bowl (any skill) — feeds Overload progression",
+          why: "Rewards an XP bowl with 10 portions of goulash that grant XP equal to 10x your level in any chosen skill (5x for Invention). The bowl works on any skill. The Pathway recommends Herblore, helping toward potion-making thresholds.",
           requirements: [],
           tips: [
             "During the quest: activate Port Sarim lodestone, buy 10 sardines and 1 chocolate bar.",
-            "Use the XP bowl on Herblore for maximum value.",
+            "Pathway recommends using the XP bowl on Herblore for maximum value.",
             "Short quest — mostly running between NPCs."
           ],
           links: [
@@ -513,14 +513,14 @@ const PHASES = [
         text: "Complete Missing, Presumed Death",
         detail: {
           title: "Missing, Presumed Death",
-          subtitle: "Unlock the Reaper system and Death's office",
-          why: "Unlocks Reaper tasks from Death — daily boss kill assignments that reward Reaper points. These points buy the Aura Refresher, Bonfire Boosts, and eventually the Reaper crew member for Ports. Also unlocks War's Retreat access. The Reaper system is central to PvM progression.",
+          subtitle: "Unlock Death's office, World Guardian title & key quest chains",
+          why: "Unlocks Death's office, the Invitation box (teleport to Empyrean Citadel), and the World Guardian title. A prerequisite for many important quests: Dishonour among Thieves, Fate of the Gods, Kindred Spirits, One of a Kind, and more. Note: Reaper tasks are unlocked separately (45 Slayer + 50 combat level), and War's Retreat requires 60 combat OR 1,000 total level — neither requires this quest.",
           requirements: [],
           tips: [
             "Start by talking to Brother Samwell at the Silvarea entrance east of Varrock.",
             "WARNING: Dangerous combat section for low-level hardcore ironmen.",
-            "After completion, talk to Death in his office to start receiving Reaper tasks.",
-            "You can toggle which bosses appear in your Reaper task pool."
+            "Reaper tasks: visit Death's office via Death's Hourglass near Draynor (requires 45 Slayer, 50 combat level — no quest needed).",
+            "War's Retreat: requires 60 combat level OR 1,000 total level — no quest needed."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Missing,_Presumed_Death" },
@@ -744,13 +744,13 @@ const PHASES = [
         text: "Complete The Tourist Trap",
         detail: {
           title: "The Tourist Trap",
-          subtitle: "2 Agility lamps — needed for Horror from the Deep & Grand Tree",
-          why: "The Agility lamps help you reach the 35-36 Agility needed for Horror from the Deep (God book) and The Grand Tree. Agility is slow to train early, so quest lamps are very efficient.",
+          subtitle: "2x 4,650 XP in chosen skills (Agility/Fletching/Smithing/Thieving)",
+          why: "Rewards 4,650 XP twice in your choice of Agility, Fletching, Smithing, or Thieving (you can pick the same skill twice). This is direct XP, not lamps. The Pathway recommends Agility to reach the 35-36 Agility needed for Horror from the Deep and The Grand Tree.",
           requirements: ["10 Fletching", "20 Smithing"],
           tips: [
             "Located in the desert south of Al Kharid — bring waterskins.",
             "Involves some stealth and combat.",
-            "Use both lamps on Agility."
+            "Pathway recommends choosing Agility twice for 9,300 Agility XP."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Tourist_Trap" }
@@ -887,13 +887,13 @@ const PHASES = [
         text: "Complete The Grand Tree",
         detail: {
           title: "The Grand Tree",
-          subtitle: "Attack XP + Grand Tree travel hub",
-          why: "Big Attack XP reward. Unlocks the Grand Tree as a teleport hub and gnome glider network — critical for fast travel across the map.",
+          subtitle: "Generic combat XP lamp + Grand Tree travel hub",
+          why: "Rewards an 18,400 XP generic combat lamp (choose from Attack/Strength/Defence/Constitution/Ranged/Magic/Necromancy), plus a 7,900 Agility lamp and a 2,150 Magic lamp. Unlocks the Grand Tree as a teleport hub and gnome glider network — critical for fast travel across the map.",
           requirements: ["25 Agility"],
           tips: [
             "Start by talking to King Narnode in the Grand Tree.",
             "Final boss (Black Demon) can be safespotted.",
-            "Grants 1 Attack XP lamp on top of flat XP rewards."
+            "The Pathway recommends using the combat lamp on Attack."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Grand_Tree" }
@@ -927,13 +927,14 @@ const PHASES = [
         detail: {
           title: "Horror from the Deep",
           subtitle: "Unlock God books — a powerful pocket slot item",
-          why: "God books are strong pocket slot items for PvM. The Book of War (Bandos) or Book of Law (Armadyl) are best early picks. This is one of the earliest significant gear upgrades from the PvM unlock guide.",
+          why: "God books are strong pocket slot items for PvM. The quest only offers 3 choices initially: Saradomin (Book of Wisdom), Guthix (Book of Balance), or Zamorak (Book of Chaos). Bandos (Book of War) and Armadyl (Book of Law) can only be purchased from Jossik AFTER obtaining one of the initial 3 books.",
           requirements: ["35 Agility", "Bar Crawl miniquest"],
           tips: [
             "Start at the Lighthouse north of Barbarian Outpost.",
             "Requires some combat — bring food and prayer potions.",
-            "Choose Bandos (Book of War) for melee/general use, or Armadyl (Book of Law) for ranged.",
-            "You'll need to collect page sets to activate the book — pages drop from various monsters."
+            "Initial choice is only Saradomin, Guthix, or Zamorak — pick the one most useful for your style.",
+            "After obtaining your first book, you can buy Bandos (Book of War), Armadyl (Book of Law), and others from Jossik.",
+            "You'll need to collect page sets to activate any book — pages drop from various monsters."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Horror_from_the_Deep" },
@@ -950,8 +951,8 @@ const PHASES = [
           subtitle: "One of the earliest powerful pocket slot items",
           why: "God books are strong pocket slot items that provide stat bonuses and a passive effect. This is one of the first real gear upgrades for the pocket slot, which is otherwise empty for a long time.",
           tips: [
-            "Book of War (Bandos) — melee/general use, good all-rounder.",
-            "Book of Law (Armadyl) — ranged bonus, good for ranged content.",
+            "Initial quest choice: Saradomin (Book of Wisdom), Guthix (Book of Balance), or Zamorak (Book of Chaos).",
+            "After obtaining your first book, buy Book of War (Bandos) or Book of Law (Armadyl) from Jossik for other styles.",
             "You need to collect page sets to activate the book — pages drop from GWD1 and other monsters.",
             "An incomplete book still provides stats, so equip it right away."
           ],
@@ -1034,7 +1035,7 @@ const PHASES = [
           title: "In Search of the Myreque",
           subtitle: "Unlocks the Myreque quest area in Morytania",
           why: "First quest in the Myreque series. Bring 6 steel weapons, 75 steel nails, 6 planks, and a druid pouch.",
-          requirements: ["Nature Spirit completed"],
+          requirements: ["Nature Spirit completed", "25 Agility"],
           tips: ["Bring supplies: 6 steel weapons (any), 75 steel nails, 6 planks, druid pouch."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/In_Search_of_the_Myreque" }
@@ -1166,8 +1167,8 @@ const PHASES = [
         text: "Complete Haunted Mine",
         detail: {
           title: "Haunted Mine",
-          subtitle: "15% damage & accuracy boost vs undead",
-          why: "The Salve amulet (e) gives 15% damage and accuracy against undead monsters. Since you'll be training Necromancy on undead (skeletons, ghosts) for a long time, this is a massive DPS increase. Also essential for Barrows and ED3.",
+          subtitle: "20% damage & accuracy boost vs undead",
+          why: "The Salve amulet (e) gives 20% damage and accuracy against undead monsters. Since you'll be training Necromancy on undead (skeletons, ghosts) for a long time, this is a massive DPS increase. Also essential for Barrows and ED3.",
           requirements: ["15 Agility", "35 Crafting", "Priest in Peril completed"],
           tips: [
             "Upgrade to Salve amulet (e) via the Tarn's Lair miniquest for the enhanced effect.",
@@ -1187,8 +1188,8 @@ const PHASES = [
         text: "Craft Salve amulet (e)",
         detail: {
           title: "Salve Amulet (e)",
-          subtitle: "15% damage & accuracy boost vs undead",
-          why: "One of the strongest PvM items you can get this early. 15% damage AND accuracy against all undead — that includes Barrows brothers, ED3 mobs, and most Necromancy training targets. This single item speeds up your progression significantly.",
+          subtitle: "20% damage & accuracy boost vs undead",
+          why: "One of the strongest PvM items you can get this early. 20% damage AND accuracy against all undead — that includes Barrows brothers, ED3 mobs, and most Necromancy training targets. This single item speeds up your progression significantly.",
           tips: [
             "After Haunted Mine, do the Tarn's Lair miniquest to enchant it into Salve amulet (e).",
             "The enhanced version works with ALL combat styles including Necromancy.",
@@ -1234,7 +1235,7 @@ const PHASES = [
               item: "Bonecrusher maul",
               why: "Two-handed weapon that auto-crushes bones for Prayer XP — excellent ironman QoL"
             },
-            { item: "Colossal bone", why: "Good Prayer XP (guaranteed, capped at 100 kills)" },
+            { item: "Colossal bone", why: "Good Prayer XP (100% drop every kill — cap removed March 2026)" },
             { item: "Magic skull mask", why: "Magic bonus headgear (rare)" }
           ],
           moveOn: "After obtaining the Bonecrusher maul and getting comfortable with prayer switching (~20-50 kills). Move on to War's Retreat unlock, then Silverquill.",
@@ -1276,10 +1277,11 @@ const PHASES = [
           tips: [
             "Teleport via the Wars Retreat lodestone or grouping system.",
             "Requires 10 boss kills total for teleport access (you should have this from Ivar).",
-            "100 boss kills unlocks boss portal — set your current boss for instant teleport.",
-            "200 kills unlocks the altar (restore prayer between kills).",
-            "500 kills unlocks adrenaline crystal reset.",
-            "1,000 kills unlocks campfire for max HP boost."
+            "100 boss kills unlocks east boss portal — set your current boss for instant teleport.",
+            "200 kills unlocks the Altar of War (restore prayer between kills).",
+            "750 kills unlocks War's Grimoire (spellbook swapping).",
+            "1,000 kills unlocks adrenaline crystals.",
+            "The campfire is available immediately — upgrades are purchased with Marks of War from War's Wares."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/War%27s_Retreat" },
@@ -1368,17 +1370,17 @@ const PHASES = [
         detail: {
           title: "Heroes' Quest",
           subtitle: "Multiple XP rewards — WGS prerequisite",
-          why: "Partner quest like Shield of Arrav. Multiple skill XP rewards. Required for Legends' Quest and WGS chain.",
+          why: "Multiple skill XP rewards. Required for Legends' Quest and WGS chain.",
           requirements: [
             "Shield of Arrav completed",
-            "Lost City completed",
             "Dragon Slayer completed",
+            "56 Quest Points",
             "53 Cooking",
             "53 Fishing",
             "25 Herblore",
             "50 Mining"
           ],
-          tips: ["Use FC 'Shieldofarrav' to find a partner for the gang side."],
+          tips: ["Lost City is no longer a prerequisite (removed Feb 2024).", "Requires 56 Quest Points.", "25 Defence only required for Black Arm Gang members — you can switch gangs to avoid it."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Heroes%27_Quest" }
           ]
@@ -1391,8 +1393,8 @@ const PHASES = [
         detail: {
           title: "Rum Deal",
           subtitle: "Ritual of the Mahjarrat prerequisite",
-          why: "Part of the pirate chain. Required eventually for Cabin Fever and RotM.",
-          requirements: ["Pirate's Treasure completed", "42 Crafting", "40 Farming", "50 Fishing", "47 Prayer", "40 Slayer"],
+          why: "Part of the pirate chain. Required eventually for Cabin Fever and RotM. Note: Pirate's Treasure is not a wiki-listed prerequisite, but is kept in guide order for pirate chain continuity.",
+          requirements: ["42 Crafting", "40 Farming", "50 Fishing", "47 Prayer", "42 Slayer"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Rum_Deal" }
           ]
@@ -1472,13 +1474,13 @@ const PHASES = [
         detail: {
           title: "Broken Home",
           subtitle: "Best-in-slot ring for a long time",
-          why: "The Asylum surgeon's ring (from the 37-minute speedrun challenge) is one of the best rings in the game for PvM. It has a chance to save 10% adrenaline on thresholds — a direct DPS increase at every boss. Highlighted in the PvM unlock guide as a high-priority unlock.",
+          why: "The Asylum surgeon's ring (from completing all 3 replay challenges) is one of the best rings in the game for PvM. It has a 10% chance to save 15% adrenaline on any ability (30s cooldown) — a direct DPS increase at every boss. Requires 85 Defence to wear. Highlighted in the PvM unlock guide as a high-priority unlock.",
           requirements: [],
           tips: [
             "The quest itself has no requirements — do it first to learn the layout.",
-            "After completing once, redo it within 37 minutes for the ring.",
-            "Use a guide with the optimal route for the speedrun.",
-            "The ring works with all combat styles including Necromancy.",
+            "After completing once, redo and complete all 3 challenges: no deaths, limited healing (1 or fewer food), AND under 37 minutes — all in one run.",
+            "Use a guide with the optimal route for the challenge run.",
+            "The ring requires 85 Defence to wear and works with all combat styles including Necromancy.",
             "This ring is used until you get Ring of Death or better — a LONG time."
           ],
           links: [
@@ -1497,13 +1499,13 @@ const PHASES = [
         text: "Obtain Asylum surgeon's ring",
         detail: {
           title: "Asylum Surgeon's Ring",
-          subtitle: "Best-in-slot ring until Ring of Death",
-          why: "A chance to save 10% adrenaline on every threshold ability — a direct, passive DPS increase at every boss. This ring is used for an extremely long time. Highlighted in the PvM unlock guide as a high-priority unlock.",
+          subtitle: "Best-in-slot ring until Ring of Death (requires 85 Defence)",
+          why: "10% chance to save 15% adrenaline on any ability (30s cooldown) — a direct, passive DPS increase at every boss. Requires 85 Defence to wear. This ring is used for an extremely long time. Highlighted in the PvM unlock guide as a high-priority unlock.",
           tips: [
             "Complete Broken Home once to learn the layout.",
-            "Redo it within 37 minutes for the ring reward.",
-            "Use a guide with the optimal speedrun route — it's tight but doable.",
-            "Works with all combat styles including Necromancy."
+            "Redo and complete all 3 challenges in one run: no deaths, 1 or fewer food, AND under 37 minutes.",
+            "Use a guide with the optimal route — it's tight but doable.",
+            "Requires 85 Defence to wear. Works with all combat styles including Necromancy."
           ],
           links: [
             {
@@ -1535,7 +1537,7 @@ const PHASES = [
           title: "Necromancy to 65",
           subtitle: "Tier 60 weapons + ready for The Spirit of War",
           why: "Tier 60 is where Necromancy starts to feel truly powerful. Level 65 is needed for The Spirit of War quest, which drops hermodic plates for tier 90 armor. Continue upgrading via Kili's Knowledge at 50 and 60.",
-          method: "Levels 40-65: Continue at Lumbridge Catacombs with AoE. Use Salve amulet (e) for the 15% boost on undead. Complete Kili's Knowledge III (50) and IV (60) for weapon upgrades. Stock up on necroplasm and ink via rituals. At level 50+, consider training at Abyss creatures for variety.",
+          method: "Levels 40-65: Continue at Lumbridge Catacombs with AoE. Use Salve amulet (e) for the 20% boost on undead. Complete Kili's Knowledge III (50) and IV (60) for weapon upgrades. Stock up on necroplasm and ink via rituals. At level 50+, consider training at Abyss creatures for variety.",
           links: [
             { label: "RS Wiki — Necromancy Training", url: "https://runescape.wiki/w/Necromancy_training" }
           ]
@@ -1578,7 +1580,7 @@ const PHASES = [
           drops: [
             { item: "Mole claw + Mole skin", why: "Trade to Wyson the Gardener for bird nests (seeds, rings)" },
             { item: "Dragon 2h sword", why: "Rare drop — decent melee weapon" },
-            { item: "Clingy mole pet", why: "Boss pet (cosmetic)" }
+            { item: "Molly (boss pet)", why: "Boss pet (cosmetic)" }
           ],
           moveOn: "After you're comfortable with the mechanics and have obtained useful drops. Giant Mole doesn't have critical ironman drops — treat it as practice. Move on to Barrows.",
           links: [
@@ -1677,7 +1679,8 @@ const PHASES = [
           title: "The Fremennik Trials",
           subtitle: "Unlocks Fremennik area — Dagannoth Kings access + Lunar Diplomacy prerequisite",
           why: "Unlocks the Fremennik area and is prerequisite for Lunar Diplomacy and DKs access.",
-          tips: ["No quest prerequisites. Complete all 7 trials."],
+          requirements: ["40 Crafting", "25 Fletching", "40 Woodcutting"],
+          tips: ["No quest prerequisites. Complete all 7 trials.", "You need a raw shark (or raw manta ray/sea turtle) — obtain before starting."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Fremennik_Trials" }
           ]
@@ -1691,7 +1694,7 @@ const PHASES = [
           title: "Temple of Ikov",
           subtitle: "Curse of Arrav prerequisite",
           why: "Quick quest. Required for the Curse of Arrav chain.",
-          requirements: ["40 Thieving"],
+          requirements: ["40 Ranged", "42 Thieving"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Temple_of_Ikov" }
           ]
@@ -1704,8 +1707,8 @@ const PHASES = [
         detail: {
           title: "Shield of Arrav",
           subtitle: "WGS + Curse of Arrav prerequisite",
-          why: "Partner quest — use FC 'Shieldofarrav' to find a partner. Prerequisite for Heroes' Quest, Defender of Varrock, and many chains.",
-          tips: ["Use FC 'Shieldofarrav' or 'OSRS SOA' to find a quest partner."],
+          why: "Soloable since the 2017 rework — no partner needed. Prerequisite for Heroes' Quest, Defender of Varrock, and many chains.",
+          tips: ["Fully soloable — you can switch gangs by talking to Straven or Katrine.", "No skill requirements, just 20 coins."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Shield_of_Arrav" }
           ]
@@ -1749,7 +1752,7 @@ const PHASES = [
           title: "Darkness of Hallowvale",
           subtitle: "Continues vampyre chain — Myreque series",
           why: "Continues the vampyre quest series deeper into Meiyerditch.",
-          requirements: ["In Aid of the Myreque completed", "26 Agility", "32 Crafting", "33 Magic", "20 Mining", "40 Strength"],
+          requirements: ["In Aid of the Myreque completed", "26 Agility", "5 Construction", "32 Crafting", "33 Magic", "20 Mining", "40 Strength", "22 Thieving"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Darkness_of_Hallowvale" }
           ]
