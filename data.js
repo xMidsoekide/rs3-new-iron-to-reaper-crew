@@ -3833,18 +3833,18 @@ const PHASES = [
         text: "Boss: The Magister",
         detail: {
           title: "The Magister",
-          subtitle: "Khopesh of the Kharidian — T92 melee dual-wield",
-          why: "The Magister drops Scraps of Scripture which combine into the Khopesh of the Kharidian (T92 main-hand) and Off-hand Khopesh (T92 off-hand). These are the BIS melee dual-wield weapons, outclassing Drygores.",
-          requirements: ["115 Slayer", "Access to Sophanem Slayer Dungeon", "Key to the Crossing (from feathers of Ma'at — 50 per fight)"],
+          subtitle: "Khopesh of Tumeken & Khopesh of Elidinis — T92 melee dual-wield",
+          why: "The Magister drops phylacteries (1/18 per kill) containing 5-25 Scraps of Scripture (avg 10). 300 scraps create 3 Blessings to upgrade a T82 Khopesh of the Kharidian into the T92 Khopesh of Tumeken (main-hand) or Khopesh of Elidinis (off-hand). These are powerful melee dual-wield weapons.",
+          requirements: ["115 Slayer", "Access to Sophanem Slayer Dungeon", "Key to the Crossing (monster drop: 1/75 on-task from Sophanem Slayer Dungeon creatures, 1/128 from the Magister)"],
           suggested: ["95+ combat stats", "95 Prayer", "96 Herblore", "T90+ weapons"],
           drops: [
             {
-              item: "Scraps of Scripture (100 per Khopesh)",
-              why: "Combine into T92 melee swords — ~1/18 per kill"
+              item: "Phylactery → Scraps of Scripture (300 per T92 khopesh)",
+              why: "Phylactery: 1/18 per kill, contains 5-25 scraps. 300 scraps = 3 Blessings → upgrade T82 khopesh to T92"
             },
-            { item: "Vital spark", why: "Used for Vital spark enhancers" }
+            { item: "Vital spark", why: "Used for Limitless ability codex" }
           ],
-          moveOn: "After assembling both Khopesh main-hand and off-hand (200 scraps total).",
+          moveOn: "After assembling both Khopesh of Tumeken (MH) and Khopesh of Elidinis (OH) — 600 scraps total.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Magister" },
             { label: "RS Wiki — Strategy", url: "https://runescape.wiki/w/The_Magister/Strategies" }
@@ -3877,8 +3877,8 @@ const PHASES = [
         text: "Train Summoning to 90",
         detail: {
           title: "Summoning to 90",
-          subtitle: "Unlock Kal'gerion Demon familiar (+6% crit)",
-          why: "Kal'gerion Demon provides a 6% critical hit chance boost. When accuracy isn't an issue (lower-defence bosses), the crit boost outperforms Nihils for raw DPS.",
+          subtitle: "Unlock Kal'gerion Demon familiar (+1% passive crit / +5% from special)",
+          why: "Kal'gerion Demon provides a passive +1% critical strike chance, and its special move (Crit-i-Kal scroll) grants +5% critical strike chance for 60 seconds. When accuracy isn't an issue (lower-defence bosses), the crit boost outperforms Nihils for raw DPS.",
           method: "Continue using saved charms. Only 3 levels from 87 — focus on crimson and blue charms for efficiency.",
           links: [
             { label: "RS Wiki — Kal'gerion Demon (familiar)", url: "https://runescape.wiki/w/Kal%27gerion_demon_%28familiar%29" },
@@ -3924,12 +3924,13 @@ const PHASES = [
             },
             { item: "Igneous Kal-Xil (ranged)", why: "BIS ranged cape — upgrades Deadshot" },
             { item: "Igneous Kal-Ket (melee)", why: "BIS melee cape — upgrades Overpower" },
+            { item: "Igneous Kal-Mor (necromancy)", why: "BIS necromancy cape — upgrades Death Skulls" },
             {
               item: "Igneous Kal-Zuk (all styles)",
-              why: "Combined BIS cape — requires all three style capes + TzKal-Zuk HM completion"
+              why: "Combined BIS cape — requires all four style capes (Ket, Xil, Mej, Mor) + 90 Crafting + TzKal-Zuk HM flawless completion"
             }
           ],
-          moveOn: "After obtaining all three style-specific Igneous capes. Return for Hard Mode later for the combined cape.",
+          moveOn: "After obtaining all four style-specific Igneous capes. Return for Hard Mode later for the combined cape.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/TzKal-Zuk" },
             { label: "RS Wiki — Strategy", url: "https://runescape.wiki/w/TzKal-Zuk/Strategies" },
@@ -4028,6 +4029,8 @@ const PHASES = [
           why: "Required for While Guthix Sleeps.",
           requirements: [
             "Heroes' Quest completed",
+            "Jungle Potion completed",
+            "107 Quest Points",
             "50 Agility",
             "50 Crafting",
             "45 Herblore",
@@ -4054,11 +4057,16 @@ const PHASES = [
           why: "One of the most important quests in the game. Required for Ritual of the Mahjarrat.",
           requirements: [
             "Legends' Quest completed",
+            "Defender of Varrock completed",
             "Dream Mentor completed",
             "Path of Glouphrie completed",
+            "Shilo Village completed",
             "Tears of Guthix completed",
-            "The Slug Menace completed",
+            "Temple of Ikov completed",
+            "Wanted! completed",
             "The Hunt for Surok completed",
+            "25 Agility",
+            "40 Defence",
             "65 Farming",
             "65 Herblore",
             "55 Hunter",
@@ -4108,16 +4116,16 @@ const PHASES = [
           title: "Rise of the Six (RotS)",
           subtitle: "Malevolent energy (T90 melee armor) + T90 shields",
           why: "Rise of the Six is an advanced Barrows encounter featuring shadow versions of the Barrows brothers. It drops Malevolent energy for T90 melee power armor and T90 shields for all styles. A good team boss for building group PvM experience.",
-          requirements: ["Ritual of the Mahjarrat quest completed", "Barrows — Rise of the Six access"],
+          requirements: ["Access to Barrows: Rise of the Six (requires Morytania access)"],
           suggested: ["95+ combat stats", "95 Prayer", "96 Herblore", "T90 weapons", "Team of 4 recommended"],
           drops: [
             {
               item: "Malevolent energy",
-              why: "Crafts T90 melee power armor — Malevolent armor (3/10 chance, 2 per roll)"
+              why: "Crafts T90 melee power armor — Malevolent armor (1 guaranteed per kill, 50% chance of a 2nd)"
             },
-            { item: "Shield of the Barrows", why: "T90 shields — melee/magic/ranged variants (1/100 each)" }
+            { item: "Shield of the Barrows", why: "T90 shields — melee/magic/ranged variants (1/240 each)" }
           ],
-          moveOn: "After obtaining enough Malevolent energy for a full armor set (42 energy).",
+          moveOn: "After obtaining enough Malevolent energy for a full armor set (84 energy: 14 helm, 42 cuirass, 28 greaves).",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Barrows:_Rise_of_the_Six" },
             {
@@ -4144,12 +4152,12 @@ const PHASES = [
           drops: [
             {
               item: "Achto armor pieces",
-              why: "T90 tank armor with passive: chance to reset Defensive cooldowns (1/20 BM, 1/15 Yaka)"
+              why: "T90 tank armor with passive: chance to reset Defensive cooldowns (1/20 from both BM and Yaka, 1/18 with max reputation)"
             },
-            { item: "Teci", why: "Raids currency — buy abilities, armor, and codices (1,500-3,000 per kill)" },
+            { item: "Teci", why: "Raids currency — buy abilities, armor, and codices (750-1,500 from BM, 1,000-1,750 from Yaka)" },
             {
               item: "Mazcab ability codex (Yaka)",
-              why: "Unlocks Onslaught, Corruption Blast, Corruption Shot, Storm Shards/Shatter (1/50)"
+              why: "Unlocks Onslaught, Corruption Blast, Corruption Shot, Storm Shards/Shatter (1/30 from Yaka)"
             }
           ],
           moveOn: "After obtaining codices you need (especially Corruption abilities) and at least one kill each for Reaper Crew.",
@@ -4197,7 +4205,7 @@ const PHASES = [
           title: "Desperate Measures",
           subtitle: "Elder Gods chain — Anachronia",
           why: "Continues the Elder Gods storyline on Anachronia.",
-          requirements: ["Desperate Times completed", "50 Agility", "50 Hunter", "50 Mining", "50 Smithing"],
+          requirements: ["Desperate Times completed", "50 Agility", "50 Archaeology"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Desperate_Measures" }
           ]
@@ -4211,7 +4219,7 @@ const PHASES = [
           title: "Desperate Creatures",
           subtitle: "Elder Gods chain",
           why: "Continues the Elder Gods storyline.",
-          requirements: ["Desperate Measures completed", "55 Agility", "55 Hunter"],
+          requirements: ["Desperate Measures completed"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Desperate_Creatures" }
           ]
@@ -4225,7 +4233,7 @@ const PHASES = [
           title: "Vault of Shadows",
           subtitle: "Elder Gods chain — Raksha access",
           why: "Short quest leading to the Raksha boss encounter miniquest.",
-          requirements: ["Desperate Creatures completed"],
+          requirements: ["58 Archaeology", "60 Divination"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Vault_of_Shadows" }
           ]
@@ -4239,7 +4247,7 @@ const PHASES = [
           title: "Azzanadra's Quest",
           subtitle: "Elder Gods chain — major lore quest",
           why: "Major quest in the Elder Gods storyline. Requires multiple completed quest chains.",
-          requirements: ["Vault of Shadows completed", "Desperate Creatures completed", "58 Archaeology"],
+          requirements: ["Vault of Shadows completed", "Desperate Creatures completed", "58 Agility", "58 Archaeology", "70 Divination"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Azzanadra%27s_Quest" }
           ]
@@ -4266,8 +4274,8 @@ const PHASES = [
         detail: {
           title: "City of Senntisten (quest)",
           subtitle: "Elder Gods chain — opens Senntisten area",
-          why: "Opens the City of Senntisten area. Requires both Battle of the Monolith and Desert Treasure.",
-          requirements: ["Battle of the Monolith completed", "Desert Treasure completed", "Temple at Senntisten completed"],
+          why: "Opens the City of Senntisten area. Requires Battle of the Monolith (Desert Treasure and Temple at Senntisten are NOT required).",
+          requirements: ["Battle of the Monolith completed", "74 Archaeology", "74 Magic", "75 Slayer"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/City_of_Senntisten" }
           ]
@@ -4281,7 +4289,7 @@ const PHASES = [
           title: "Eye of Het I",
           subtitle: "Elder Gods chain",
           why: "Continues the Elder Gods storyline in Senntisten.",
-          requirements: ["City of Senntisten quest completed"],
+          requirements: ["City of Senntisten quest completed", "65 Agility"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Eye_of_Het_I" }
           ]
@@ -4309,7 +4317,7 @@ const PHASES = [
           title: "Sins of the Father",
           subtitle: "Elder Gods chain — final quest before Extinction",
           why: "The final quest before Extinction. Completes the Elder Gods storyline arc.",
-          requirements: ["Eye of Het II completed"],
+          requirements: ["Eye of Het II completed", "85 in one of: Crafting, Runecrafting, Smithing, or Invention"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Sins_of_the_Father" }
           ]
@@ -4323,7 +4331,7 @@ const PHASES = [
           title: "Extinction",
           subtitle: "Passivize Ring of Vigour — free your ring slot permanently",
           why: "The Extinction quest lets you combine your Ring of Vigour with a warped gem, making the adrenaline-saving effect permanent and passive. This frees your ring slot for a better ring (like Ring of Death or Asylum surgeon's ring).",
-          requirements: ["Sins of the Father completed", "Eye of Het II completed"],
+          requirements: ["Sins of the Father completed"],
           tips: [
             "See the Elder Gods quest chain step above — covers the full Needle Skips → Sins of the Father prerequisite web.",
             "Also rewards 4x 175,000 XP lamps (level 75+ skills).",
@@ -4440,9 +4448,9 @@ const PHASES = [
           requirements: ["Alpha vs Omega quest completed", "95 Necromancy", "77 Dungeoneering", "86 Archaeology", "66 Magic", "40 Prayer"],
           suggested: ["95 Necromancy (required)", "90+ Defence", "95 Prayer", "96 Herblore"],
           drops: [
-            { item: "Omni guard", why: "T95 main-hand Necromancy — Death Spark passive (1/640)" },
-            { item: "Soulbound lantern", why: "T95 off-hand Necromancy — +2 Residual Soul stacks (1/640)" },
-            { item: "First Necromancer's robes (5 pieces)", why: "T95 Necromancy armor set (1/640 each)" }
+            { item: "Omni guard", why: "T95 main-hand Necromancy — Death Spark passive (1/320 effective, two rolls per kill)" },
+            { item: "Soulbound lantern", why: "T95 off-hand Necromancy — +2 Residual Soul stacks (1/320 effective, two rolls per kill)" },
+            { item: "First Necromancer's robes (5 pieces)", why: "T95 Necromancy armor set (1/128 effective per piece via separate armor roll)" }
           ],
           moveOn: "After obtaining Omni guard + Soulbound lantern at minimum.",
           links: [
@@ -4520,7 +4528,7 @@ const PHASES = [
           subtitle: "Best-in-slot pocket item — +12% crit chance",
           why: "The Grimoire is the ultimate pocket slot item. +12% critical hit chance and +70 damage across all combat styles is unmatched. This single item represents one of the largest DPS upgrades available.",
           tips: [
-            "Requires grimoire pages to charge — costs 1 page per 45 seconds of activation.",
+            "Requires grimoire pages to charge — each page adds 45 minutes of activation time.",
             "Farm Solak for pages, or activate only during tough boss fights to conserve pages.",
             "Replaces Scripture of Jas permanently once obtained.",
             "Works with all combat styles including Necromancy."
@@ -4551,7 +4559,8 @@ const PHASES = [
             {
               item: "Vestments of Havoc (4 pieces)",
               why: "T95 melee power armor — set bonuses: +15% adren regen, +6s Berserk, +20% max adrenaline"
-            }
+            },
+            { item: "Codex of Lost Knowledge", why: "Generates a new chest of rewards — additional loot" }
           ],
           moveOn: "Farm until you have your priority drops. This boss has enrage scaling up to 60,000%.",
           links: [
@@ -4621,8 +4630,8 @@ const PHASES = [
         text: "Boss: Zemouregal & Vorkath",
         detail: {
           title: "Zemouregal & Vorkath",
-          subtitle: "Dracolich armor (T90 tank ranged) + Lord of Bones codex",
-          why: "Zemouregal & Vorkath is a Necromancy boss from the Battle of Forinthry quest line. It drops undead dragonhide and Vorkath's spikes to craft T90 Dracolich ranged tank armor, plus the Invoke Lord of Bones codex for Necromancy. Required for Reaper Crew.",
+          subtitle: "Dracolich armor (T90 power ranged) + Lord of Bones codex",
+          why: "Zemouregal & Vorkath is a Necromancy boss from the Battle of Forinthry quest line. It drops undead dragonhide and Vorkath's spikes to craft T90 Dracolich ranged power armor, plus the Invoke Lord of Bones codex for Necromancy. Required for Reaper Crew.",
           requirements: ["Battle of Forinthry quest progression"],
           suggested: ["90+ Necromancy", "90+ Defence", "95 Prayer", "T90+ Necromancy weapons"],
           drops: [
@@ -4680,10 +4689,10 @@ const PHASES = [
           requirements: ["Ode of the Devourer quest completed", "75 Necromancy", "86 Archaeology", "54 Construction"],
           suggested: ["90+ in relevant skills (Agility, Construction, Crafting, Divination, Mining)", "Team of 4+ recommended"],
           drops: [
-            { item: "Scripture of Elidinis", why: "Pocket slot item (1/120)" },
-            { item: "Eclipsed Soul prayer codex", why: "Prayer unlock (1/120)" },
-            { item: "Memory dowser", why: "Divination tool — very valuable (1/120)" },
-            { item: "Runic attuner", why: "Runecrafting tool (1/120)" }
+            { item: "Scripture of Elidinis", why: "Pocket slot item (1/480)" },
+            { item: "Eclipsed Soul prayer codex", why: "Prayer unlock (1/480)" },
+            { item: "Memory dowser", why: "Divination tool — very valuable (1/480)" },
+            { item: "Runic attuner", why: "Runecrafting tool (1/480)" }
           ],
           moveOn: "After one kill for Reaper Crew, or farm for unique drops.",
           links: [
@@ -4724,10 +4733,10 @@ const PHASES = [
           title: "Essence of Finality",
           subtitle: "The most important amulet in end-game PvM",
           why: "The Essence of Finality combines Amulet of Souls + Reaper Necklace effects AND lets you store a weapon special attack that can be used with any weapon. This is THE end-game amulet — you'll eventually want multiple EoFs with different stored specs.",
-          requirements: ["Amulet of Souls", "Reaper necklace", "100 Crafting (to combine)"],
+          requirements: ["Amulet of Souls", "Reaper necklace", "99 Crafting (to combine)"],
           tips: [
-            "Made by combining: Amulet of Souls + Reaper necklace + 25 cut onyx + an alchemical hydrix.",
-            "Alchemical hydrix: Made from hydrix + 50 fortunate components (from disassembling treasure trail rewards). Needs 107 Invention.",
+            "Made by combining: Amulet of Souls + Reaper necklace + Alchemical hydrix at 99 Crafting.",
+            "Alchemical hydrix: Made from hydrix + 50 fortunate components + 50 refined components + 10 precious components + 2 rumbling components. Needs 117 Invention (boostable from 100).",
             "Popular stored specs: Dark bow (ranged EoF), Granite maul (melee EoF), Guthix staff (magic EoF), Armadyl battlestaff (magic EoF).",
             "You'll want at least 2-3 EoFs over time, one per main combat style.",
             "Keep your first EoF general-purpose, then build style-specific ones as you progress."
@@ -4753,8 +4762,8 @@ const PHASES = [
           subtitle: "Core PvM sigils — use thresholds freely + guarantee hits",
           why: "The Limitless sigil lets you use threshold abilities below 50% adrenaline for 6 seconds — essential for DPS rotations. Ingenuity of the Humans guarantees your next attack hits, bypassing accuracy mechanics entirely. Both are used at every high-level boss.",
           tips: [
-            "Limitless sigil: Made from vital sparks (1,000 needed). Sparks drop from Magister, Sophanem Slayer Dungeon mobs, and Corrupted creatures. Very slow to collect as an ironman.",
-            "Ingenuity of the Humans: Made from 114 Invention (alchemical onyx + 100 direct components + 100 refined components). The 114 Invention requirement is the main bottleneck.",
+            "Limitless ability codex: Made from 2,000 vital sparks. Sparks drop from Magister, Sophanem Slayer Dungeon mobs, and Corrupted creatures. Very slow to collect as an ironman.",
+            "Ingenuity of the Humans ability codex: Requires 114 Invention to discover blueprint + 80 Crafting. Components: 2 alchemical onyx + 20 stunning components + 100 direct components + 1,500 smooth parts.",
             "Use Limitless at the start of boss fights for a damage burst — activate → rapidfire/assault without needing 50% adrenaline.",
             "Use Ingenuity for high-damage specials that need to land (like Guthix Staff spec or SGB spec on low-affinity bosses)."
           ],
