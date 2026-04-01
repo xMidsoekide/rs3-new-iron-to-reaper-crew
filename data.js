@@ -192,16 +192,89 @@ const PHASES = [
         }
       },
       {
+        id: "train-crafting-15",
+        type: "skill",
+        text: "Train Crafting to level 15",
+        detail: {
+          title: "Crafting to 15",
+          subtitle: "Required to craft tier 20 Deathwarden armor",
+          why: "You need 15 Crafting to craft the tier 20 Deathwarden robes after Kili Row. Pottery is the fastest method at this stage.",
+          method: "Mine clay, add water to make soft clay, then use the potter's wheel and kiln in Barbarian Village or Draynor. Bowls and pie dishes give decent XP.",
+          links: [
+            { label: "RS Wiki — Crafting Training", url: "https://runescape.wiki/w/Crafting_training" }
+          ]
+        }
+      },
+      {
+        id: "death-plateau",
+        type: "quest",
+        text: "Complete Death Plateau",
+        detail: {
+          title: "Death Plateau",
+          subtitle: "3 generic XP lamps — use on Smithing for Knight's Sword",
+          why: "Rewards 3 generic XP lamps (any skill). Use them on Smithing to reach the level needed for The Knight's Sword, which gives 15+ Smithing required to craft tier 20 Deathwarden weapons.",
+          requirements: [],
+          tips: [
+            "Start in Burthorpe — talk to Commander Denulth.",
+            "Short quest with minor combat.",
+            "Use the Smithing lamps immediately."
+          ],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Death_Plateau" }
+          ]
+        }
+      },
+      {
+        id: "whats-mine-is-yours",
+        type: "quest",
+        text: "Complete What's Mine is Yours",
+        detail: {
+          title: "What's Mine is Yours",
+          subtitle: "Smithing XP — continues the Smithing chain",
+          why: "Grants Smithing XP via the Gofannon amulet, pushing you closer to the Smithing needed for The Knight's Sword.",
+          requirements: ["5 Smithing"],
+          tips: [
+            "Start in Burthorpe — talk to Doric.",
+            "Involves mining and smelting — gather materials as you go.",
+            "Use the Gofannon amulet's XP bonus."
+          ],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/What%27s_Mine_is_Yours" }
+          ]
+        }
+      },
+      {
+        id: "knights-sword",
+        type: "quest",
+        text: "Complete The Knight's Sword",
+        detail: {
+          title: "The Knight's Sword",
+          subtitle: "Huge Smithing XP jump — reach level 30+",
+          why: "One of the biggest early Smithing XP rewards in the game. Jumps you to level 30+ Smithing, well past the 15 needed for tier 20 Deathwarden armor. Also a long-term step toward the 80 Smithing needed for Invention.",
+          requirements: ["10 Mining", "10 Cooking", "10 Smithing"],
+          tips: [
+            "Start by talking to the Squire in Falador Castle.",
+            "Requires mining blurite ore in the icy dungeon below Port Sarim — bring food for ice warriors.",
+            "The quest gives enough Smithing XP to significantly boost your level."
+          ],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/The_Knight%27s_Sword" }
+          ]
+        }
+      },
+      {
         id: "reward-necro-t20",
         type: "reward",
-        text: "Collect tier 20 Necromancy gear",
+        text: "Craft tier 20 Necromancy gear",
         detail: {
           title: "Tier 20 Death Guard, Skull Lantern & Deathwarden Armor",
           subtitle: "Major early gear upgrade from Kili Row",
           why: "Tier 20 weapons nearly double your damage output compared to tier 10. This is your first significant gear upgrade and sets the pattern — return to Kili every 10 Necromancy levels for weapon upgrades.",
+          requirements: ["15 Crafting", "15 Smithing", "20 Defence", "Kili Row completed"],
           tips: [
             "Upgrade your Death guard and Skull lantern to tier 20.",
-            "Craft Deathwarden armor from ensouled bars.",
+            "Craft Deathwarden armor from ensouled bars — requires 15 Crafting and 15 Smithing.",
+            "You need 20 Defence to equip tier 20 gear. Train Defence via combat if you haven't already.",
             "You'll return to Kili at levels 30, 40, 50, and 60 for further weapon upgrades."
           ],
           links: [
@@ -371,63 +444,6 @@ const PHASES = [
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Druidic_Ritual" }
-          ]
-        }
-      },
-      {
-        id: "death-plateau",
-        type: "quest",
-        text: "Complete Death Plateau",
-        detail: {
-          title: "Death Plateau",
-          subtitle: "3 Smithing XP lamps — feeds into Knight's Sword requirements",
-          why: "The Smithing lamps help you reach level 30 Smithing for The Knight's Sword, which in turn feeds into the long-term Invention requirement (80 Smithing). Efficient early XP while you're already in the Burthorpe area.",
-          requirements: [],
-          tips: [
-            "Start in Burthorpe — talk to Commander Denulth.",
-            "Short quest with minor combat.",
-            "Use the Smithing lamps immediately."
-          ],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Death_Plateau" }
-          ]
-        }
-      },
-      {
-        id: "whats-mine-is-yours",
-        type: "quest",
-        text: "Complete What's Mine is Yours",
-        detail: {
-          title: "What's Mine is Yours",
-          subtitle: "Smithing XP — continues the Smithing chain",
-          why: "Grants Smithing XP via the Gofannon amulet, pushing you closer to the 30 Smithing needed for The Knight's Sword. Part of the efficient Smithing leveling chain.",
-          requirements: ["5 Smithing"],
-          tips: [
-            "Start in Burthorpe — talk to Doric.",
-            "Involves mining and smelting — gather materials as you go.",
-            "Use the Gofannon amulet's XP bonus."
-          ],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/What%27s_Mine_is_Yours" }
-          ]
-        }
-      },
-      {
-        id: "knights-sword",
-        type: "quest",
-        text: "Complete The Knight's Sword",
-        detail: {
-          title: "The Knight's Sword",
-          subtitle: "Huge Smithing XP jump — reach level 30+",
-          why: "One of the biggest early Smithing XP rewards in the game. Jumps you to level 30+ Smithing, which is a long-term step toward the 80 Smithing needed for Invention — one of the most powerful PvM skills.",
-          requirements: ["10 Mining", "10 Cooking", "10 Smithing"],
-          tips: [
-            "Start by talking to the Squire in Falador Castle.",
-            "Requires mining blurite ore in the icy dungeon below Port Sarim — bring food for ice warriors.",
-            "The quest gives enough Smithing XP to significantly boost your level."
-          ],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/The_Knight%27s_Sword" }
           ]
         }
       },
@@ -644,6 +660,20 @@ const PHASES = [
         }
       },
       {
+        id: "train-thieving-25",
+        type: "skill",
+        text: "Train Thieving to 25",
+        detail: {
+          title: "Thieving to 25",
+          subtitle: "Needed for The Dig Site and Creature of Fenkenstrain",
+          why: "The Dig Site (Ancient Curses chain) and Creature of Fenkenstrain (Morytania chain) both require 25 Thieving. No quests in the guide grant Thieving XP, so train it directly.",
+          method: "Pickpocket men/women in Lumbridge or Edgeville to level 5, then steal from bakery stalls in Ardougne to 25. Bakery stalls are fast and give free food.",
+          links: [
+            { label: "RS Wiki — Thieving Training", url: "https://runescape.wiki/w/Thieving_training" }
+          ]
+        }
+      },
+      {
         id: "the-golem",
         type: "quest",
         text: "Complete The Golem",
@@ -654,6 +684,20 @@ const PHASES = [
           requirements: ["20 Crafting", "25 Thieving"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Golem" }
+          ]
+        }
+      },
+      {
+        id: "train-cooking-50",
+        type: "skill",
+        text: "Train Cooking to 50",
+        detail: {
+          title: "Cooking to 50",
+          subtitle: "Needed for A Tail of Two Cats (ironman) and general food supply",
+          why: "A Tail of Two Cats requires making a chocolate cake (50 Cooking on ironman). Also provides better food for PvM. Cook trout and salmon at the Yeti Town bonfire for bonus XP.",
+          method: "Fish trout/salmon at Barbarian Village, cook them on the nearby fire or at Yeti Town bonfire for 10% bonus XP. Alternatively, use the Lumbridge range for reduced burn rate.",
+          links: [
+            { label: "RS Wiki — Cooking Training", url: "https://runescape.wiki/w/Cooking_training" }
           ]
         }
       },
@@ -687,20 +731,6 @@ const PHASES = [
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Recruitment_Drive" }
-          ]
-        }
-      },
-      {
-        id: "train-thieving-25",
-        type: "skill",
-        text: "Train Thieving to 25",
-        detail: {
-          title: "Thieving to 25",
-          subtitle: "Needed for The Dig Site and Creature of Fenkenstrain",
-          why: "The Dig Site (Ancient Curses chain) and Creature of Fenkenstrain (Morytania chain) both require 25 Thieving. No quests in the guide grant Thieving XP, so train it directly.",
-          method: "Pickpocket men/women in Lumbridge or Edgeville to level 5, then steal from bakery stalls in Ardougne to 25. Bakery stalls are fast and give free food.",
-          links: [
-            { label: "RS Wiki — Thieving Training", url: "https://runescape.wiki/w/Thieving_training" }
           ]
         }
       },
@@ -1021,7 +1051,7 @@ const PHASES = [
           title: "Hazeel Cult",
           subtitle: "Thieving XP — Ritual of the Mahjarrat prerequisite",
           why: "Quick quest with Thieving XP. Required later for Ritual of the Mahjarrat.",
-          requirements: ["18 Thieving"],
+          requirements: [],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Hazeel_Cult" }
           ]
@@ -1050,7 +1080,7 @@ const PHASES = [
           title: "In Aid of the Myreque",
           subtitle: "Continues the Myreque series — unlocks Burgh de Rott",
           why: "Continues the vampyre quest chain. Gives access to Burgh de Rott and the vyrewatch area.",
-          requirements: ["In Search of the Myreque completed", "25 Crafting", "15 Mining"],
+          requirements: ["In Search of the Myreque completed", "25 Crafting", "7 Magic", "15 Mining"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/In_Aid_of_the_Myreque" }
           ]
@@ -1106,20 +1136,6 @@ const PHASES = [
           links: [
             { label: "RS Wiki — EW I", url: "https://runescape.wiki/w/Elemental_Workshop_I" },
             { label: "RS Wiki — EW II", url: "https://runescape.wiki/w/Elemental_Workshop_II" }
-          ]
-        }
-      },
-      {
-        id: "train-firemaking-30",
-        type: "skill",
-        text: "Train Firemaking to 30",
-        detail: {
-          title: "Firemaking to 30",
-          subtitle: "Needed for Sea Slug",
-          why: "Sea Slug requires 30 Firemaking. No quests in the guide grant Firemaking XP, so train it directly. Quick to train by burning logs.",
-          method: "Chop oak logs near Seers' Village or Draynor and burn them. ~290 oak logs gets you from 1 to 30 Firemaking. You also get Woodcutting XP as a bonus.",
-          links: [
-            { label: "RS Wiki — Firemaking Training", url: "https://runescape.wiki/w/Firemaking_training" }
           ]
         }
       },
@@ -1328,23 +1344,16 @@ const PHASES = [
         }
       },
       {
-        id: "hermod",
-        type: "boss",
-        text: "Boss: Hermod, the Spirit of War",
+        id: "train-firemaking-50",
+        type: "skill",
+        text: "Train Firemaking to 50",
         detail: {
-          title: "Hermod, the Spirit of War",
-          subtitle: "Necromancy quest boss — teaches combat rotations",
-          why: "Hermod is a Necromancy quest boss encountered during the Spirit Warrior quest. He's a significant step up in difficulty and teaches proper combat rotations. Required for Reaper Crew.",
-          requirements: ["The Spirit of War quest (Necromancy quest line part 4)"],
-          suggested: ["40+ Necromancy", "Protection prayers", "Good food supply"],
-          drops: [
-            { item: "Hermodic plate", why: "Crafting material (1/10)" },
-            { item: "Hermod's armour spike", why: "Cosmetic unlock (1/2,000, threshold 400)" }
-          ],
-          moveOn: "After defeating Hermod to continue the Necromancy quest line. Farm for Hermodic plates if desired.",
+          title: "Firemaking to 50",
+          subtitle: "Needed for Tears of Guthix, Haunted Mine, and Desert Treasure",
+          why: "49 Firemaking needed for Tears of Guthix (weekly free XP — do this ASAP), 35 for Haunted Mine, and 50 for Desert Treasure. Quick to train.",
+          method: "Burn maple logs (30→50). Alternatively, do the Shattered Worlds minigame for XP lamps. Book of Char (Members' Loyalty Programme) can also help if available.",
           links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Hermod,_the_Spirit_of_War" },
-            { label: "PvME — Hermod Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/hermod/" }
+            { label: "RS Wiki — Firemaking Training", url: "https://runescape.wiki/w/Firemaking_training" }
           ]
         }
       },
@@ -1356,10 +1365,54 @@ const PHASES = [
           title: "Tears of Guthix",
           subtitle: "Unlocks free weekly XP in your lowest skill",
           why: "Essential weekly activity. Free XP in your lowest skill every week — never skip this.",
-          requirements: ["43 Quest Points", "49 Firemaking", "20 Mining", "20 Crafting"],
+          requirements: ["44 Quest Points", "49 Firemaking", "20 Mining", "20 Crafting"],
           tips: ["Do this EVERY week. The XP scales with quest points."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Tears_of_Guthix" }
+          ]
+        }
+      },
+      {
+        id: "shield-of-arrav",
+        type: "quest",
+        text: "Complete Shield of Arrav",
+        detail: {
+          title: "Shield of Arrav",
+          subtitle: "WGS + Curse of Arrav prerequisite",
+          why: "Partner quest — use FC 'Shieldofarrav' to find a partner. Prerequisite for Heroes' Quest, Defender of Varrock, and many chains.",
+          tips: ["Use FC 'Shieldofarrav' or 'OSRS SOA' to find a quest partner."],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Shield_of_Arrav" }
+          ]
+        }
+      },
+      {
+        id: "lost-city",
+        type: "quest",
+        text: "Complete Lost City",
+        detail: {
+          title: "Lost City",
+          subtitle: "Unlocks Zanaris + fairy rings — key WGS prerequisite",
+          why: "Unlocks Zanaris which has useful shops and is the gateway to the fairy ring network.",
+          requirements: ["31 Crafting", "36 Woodcutting"],
+          tips: ["Bring food for the tree spirit fight."],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Lost_City" }
+          ]
+        }
+      },
+      {
+        id: "dragon-slayer",
+        type: "quest",
+        text: "Complete Dragon Slayer",
+        detail: {
+          title: "Dragon Slayer",
+          subtitle: "Good combat XP — Heroes' Quest prerequisite",
+          why: "Solid Strength and Defence XP reward. Required for Heroes' Quest.",
+          requirements: ["33 Quest Points"],
+          tips: ["Use anti-dragon shield (from Duke Horacio in Lumbridge)."],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Dragon_Slayer" }
           ]
         }
       },
@@ -1387,6 +1440,33 @@ const PHASES = [
         }
       },
       {
+        id: "pirate-treasure",
+        type: "quest",
+        text: "Complete Pirate's Treasure",
+        detail: {
+          title: "Pirate's Treasure",
+          subtitle: "Rum Deal prerequisite",
+          why: "Very quick quest with no requirements. Starts the pirate quest chain leading to Cabin Fever.",
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Pirate%27s_Treasure" }
+          ]
+        }
+      },
+      {
+        id: "train-prayer-47",
+        type: "skill",
+        text: "Train Prayer to 47",
+        detail: {
+          title: "Prayer to 47",
+          subtitle: "Needed for Rum Deal and protection prayers",
+          why: "47 Prayer is needed for Rum Deal. Protection prayers (unlocked at 37-43) are essential for PvM. Train at the Chaos Temple in the Wilderness for 2x XP with dragon bones.",
+          method: "Collect dragon bones from blue dragons or buy from Boneyard. Use the Chaos Temple altar in level 38 Wilderness for guaranteed 2x XP. Bring 1 inventory at a time to minimize risk. ~200 dragon bones gets you from 1 to 47.",
+          links: [
+            { label: "RS Wiki — Prayer Training", url: "https://runescape.wiki/w/Prayer_training" }
+          ]
+        }
+      },
+      {
         id: "rum-deal",
         type: "quest",
         text: "Complete Rum Deal",
@@ -1401,6 +1481,20 @@ const PHASES = [
         }
       },
       {
+        id: "train-smithing-50",
+        type: "skill",
+        text: "Train Smithing to 50",
+        detail: {
+          title: "Smithing to 50",
+          subtitle: "Needed for Cabin Fever and Deathwarden weapons",
+          why: "Cabin Fever requires 50 Smithing. Also needed for upgrading Deathwarden mainhand and off-hand weapons. Knight's Sword gave you ~30 — train the rest at an anvil.",
+          method: "Smith burial sets at the Artisans' Workshop in Falador. Burial ingots give 2x Smithing XP and are the fastest method. Mine ore at the nearby Mining Guild or use stored ore.",
+          links: [
+            { label: "RS Wiki — Smithing Training", url: "https://runescape.wiki/w/Smithing_training" }
+          ]
+        }
+      },
+      {
         id: "cabin-fever",
         type: "quest",
         text: "Complete Cabin Fever",
@@ -1408,9 +1502,23 @@ const PHASES = [
           title: "Cabin Fever",
           subtitle: "Ritual of the Mahjarrat prerequisite",
           why: "Continues the pirate chain. Required for Ritual of the Mahjarrat.",
-          requirements: ["Pirate's Treasure completed", "Rum Deal completed", "42 Agility", "45 Crafting", "50 Ranged", "40 Smithing"],
+          requirements: ["Pirate's Treasure completed", "Rum Deal completed", "42 Agility", "45 Crafting", "40 Ranged", "50 Smithing"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Cabin_Fever" }
+          ]
+        }
+      },
+      {
+        id: "darkness-of-hallowvale",
+        type: "quest",
+        text: "Complete Darkness of Hallowvale",
+        detail: {
+          title: "Darkness of Hallowvale",
+          subtitle: "Continues vampyre chain — Myreque series",
+          why: "Continues the vampyre quest series deeper into Meiyerditch.",
+          requirements: ["In Aid of the Myreque completed", "26 Agility", "32 Crafting", "33 Magic", "20 Mining", "40 Strength"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Darkness_of_Hallowvale" }
           ]
         }
       },
@@ -1523,7 +1631,7 @@ const PHASES = [
           title: "Necromancy to 40",
           subtitle: "Upgrade weapons through tier 30 and 40 via Kili",
           why: "Each 10-level tier gives significant weapon upgrades. Tier 40 weapons are a big jump in power. Keep up with Kili's Knowledge tasks — they're free damage increases.",
-          method: "Train at Lumbridge Catacombs skeletons using AoE abilities. Return to Kili at levels 30 and 40 to complete Knowledge tasks and upgrade your Death guard and Skull lantern. Alternate combat with communion rituals to stock souls.",
+          method: "Train at Lumbridge Catacombs skeletons using AoE abilities. Return to Kili at levels 30 and 40 to complete Knowledge tasks and upgrade your Death guard and Skull lantern. Alternate combat with communion rituals to stock souls. Note: Deathwarden armor requires matching Defence levels (30/40) to equip — weapons only need the Necromancy level.",
           links: [
             { label: "RS Wiki — Necromancy Training", url: "https://runescape.wiki/w/Necromancy_training" }
           ]
@@ -1537,9 +1645,37 @@ const PHASES = [
           title: "Necromancy to 65",
           subtitle: "Tier 60 weapons + ready for The Spirit of War",
           why: "Tier 60 is where Necromancy starts to feel truly powerful. Level 65 is needed for The Spirit of War quest, which drops hermodic plates for tier 90 armor. Continue upgrading via Kili's Knowledge at 50 and 60.",
-          method: "Levels 40-65: Continue at Lumbridge Catacombs with AoE. Use Salve amulet (e) for the 20% boost on undead. Complete Kili's Knowledge III (50) and IV (60) for weapon upgrades. Stock up on necroplasm and ink via rituals. At level 50+, consider training at Abyss creatures for variety.",
+          method: "Levels 40-65: Continue at Lumbridge Catacombs with AoE. Use Salve amulet (e) for the 20% boost on undead. Complete Kili's Knowledge III (50) and IV (60) for weapon upgrades. Stock up on necroplasm and ink via rituals. At level 50+, consider training at Abyss creatures for variety. Note: Deathwarden armor requires matching Defence levels (50/60) to equip — weapons only need the Necromancy level. Combat training should keep Defence on pace naturally.",
           links: [
             { label: "RS Wiki — Necromancy Training", url: "https://runescape.wiki/w/Necromancy_training" }
+          ]
+        }
+      },
+      {
+        id: "ghosts-ahoy",
+        type: "quest",
+        text: "Complete Ghosts Ahoy",
+        detail: {
+          title: "Ghosts Ahoy",
+          subtitle: "Port Phasmatys access — Vessel of the Harbinger prerequisite",
+          why: "Grants access to Port Phasmatys and the ectofuntus for Prayer training. Required for Vessel of the Harbinger and The Spirit of War in the Necromancy quest chain.",
+          requirements: ["The Restless Ghost completed", "Priest in Peril completed", "25 Agility", "20 Cooking"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Ghosts_Ahoy" }
+          ]
+        }
+      },
+      {
+        id: "vessel-of-the-harbinger",
+        type: "quest",
+        text: "Complete Vessel of the Harbinger",
+        detail: {
+          title: "Vessel of the Harbinger",
+          subtitle: "Necromancy quest chain part 3 — Spirit of War prerequisite",
+          why: "Continues the Necromancy quest line. Required to unlock The Spirit of War and the Hermod boss fight.",
+          requirements: ["Rune Mythos completed", "Ghosts Ahoy completed", "46 Necromancy", "40 Prayer"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Vessel_of_the_Harbinger" }
           ]
         }
       },
@@ -1551,7 +1687,7 @@ const PHASES = [
           title: "The Spirit of War",
           subtitle: "Hermodic plates — critical for tier 90 Necromancy armor",
           why: "This quest boss drops hermodic plates, which are ESSENTIAL for crafting tier 90 Necromancy armor later. Start farming them now. CRITICAL: Do NOT upgrade armor past tier 70 until you have tier 90 materials — it's a waste of hermodic plates.",
-          requirements: ["Necromancy 65"],
+          requirements: ["Vessel of the Harbinger completed", "Ghosts Ahoy completed", "65 Necromancy"],
           tips: [
             "Save ALL hermodic plates — you need many for the tier 90 upgrade.",
             "Don't rush past this. Farm the boss for plates before moving on.",
@@ -1559,6 +1695,27 @@ const PHASES = [
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Spirit_of_War" }
+          ]
+        }
+      },
+      {
+        id: "hermod",
+        type: "boss",
+        text: "Boss: Hermod, the Spirit of War",
+        detail: {
+          title: "Hermod, the Spirit of War",
+          subtitle: "Necromancy quest boss — teaches combat rotations",
+          why: "Hermod is a Necromancy quest boss encountered during the Spirit Warrior quest. He's a significant step up in difficulty and teaches proper combat rotations. Required for Reaper Crew.",
+          requirements: ["The Spirit of War quest (Necromancy quest line part 4)"],
+          suggested: ["40+ Necromancy", "Protection prayers", "Good food supply"],
+          drops: [
+            { item: "Hermodic plate", why: "Crafting material (1/10)" },
+            { item: "Hermod's armour spike", why: "Cosmetic unlock (1/2,000, threshold 400)" }
+          ],
+          moveOn: "After defeating Hermod to continue the Necromancy quest line. Farm for Hermodic plates if desired.",
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Hermod,_the_Spirit_of_War" },
+            { label: "PvME — Hermod Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/hermod/" }
           ]
         }
       },
@@ -1644,19 +1801,6 @@ const PHASES = [
         }
       },
       {
-        id: "pirate-treasure",
-        type: "quest",
-        text: "Complete Pirate's Treasure",
-        detail: {
-          title: "Pirate's Treasure",
-          subtitle: "Rum Deal prerequisite",
-          why: "Very quick quest with no requirements. Starts the pirate quest chain leading to Cabin Fever.",
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Pirate%27s_Treasure" }
-          ]
-        }
-      },
-      {
         id: "big-chompy-bird-hunting",
         type: "quest",
         text: "Complete Big Chompy Bird Hunting",
@@ -1668,6 +1812,20 @@ const PHASES = [
           tips: ["Get 3 extra raw chompy meat for Recipe for Disaster later."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Big_Chompy_Bird_Hunting" }
+          ]
+        }
+      },
+      {
+        id: "train-fletching-25",
+        type: "skill",
+        text: "Train Fletching to 25",
+        detail: {
+          title: "Fletching to 25",
+          subtitle: "Needed for The Fremennik Trials",
+          why: "The Fremennik Trials requires 25 Fletching. Quick to train from your current level.",
+          method: "Chop oak logs, fletch into shortbows. From 10 to 25 takes about 10 minutes.",
+          links: [
+            { label: "RS Wiki — Fletching Training", url: "https://runescape.wiki/w/Fletching_training" }
           ]
         }
       },
@@ -1687,6 +1845,21 @@ const PHASES = [
         }
       },
       {
+        id: "train-thieving-42",
+        type: "skill",
+        text: "Train Thieving to 42",
+        detail: {
+          title: "Thieving to 42",
+          subtitle: "Needed for Temple of Ikov and Rum Deal",
+          why: "Temple of Ikov requires 42 Thieving (wiki says 40 but guide lists 40). Thieves' Guild training is fast and efficient.",
+          method: "Train at Thieves' Guild cell doors from 25 to 41, then complete Lost Her Marbles miniquest for bonus XP to reach 43. Access Thieves' Guild via the trapdoor in Lumbridge.",
+          links: [
+            { label: "RS Wiki — Thieving Training", url: "https://runescape.wiki/w/Thieving_training" },
+            { label: "RS Wiki — Lost Her Marbles", url: "https://runescape.wiki/w/Lost_Her_Marbles" }
+          ]
+        }
+      },
+      {
         id: "temple-of-ikov",
         type: "quest",
         text: "Complete Temple of Ikov",
@@ -1697,64 +1870,6 @@ const PHASES = [
           requirements: ["40 Ranged", "42 Thieving"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Temple_of_Ikov" }
-          ]
-        }
-      },
-      {
-        id: "shield-of-arrav",
-        type: "quest",
-        text: "Complete Shield of Arrav",
-        detail: {
-          title: "Shield of Arrav",
-          subtitle: "WGS + Curse of Arrav prerequisite",
-          why: "Soloable since the 2017 rework — no partner needed. Prerequisite for Heroes' Quest, Defender of Varrock, and many chains.",
-          tips: ["Fully soloable — you can switch gangs by talking to Straven or Katrine.", "No skill requirements, just 20 coins."],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Shield_of_Arrav" }
-          ]
-        }
-      },
-      {
-        id: "lost-city",
-        type: "quest",
-        text: "Complete Lost City",
-        detail: {
-          title: "Lost City",
-          subtitle: "Unlocks Zanaris + fairy rings — key WGS prerequisite",
-          why: "Unlocks Zanaris which has useful shops and is the gateway to the fairy ring network.",
-          requirements: ["31 Crafting", "36 Woodcutting"],
-          tips: ["Bring food for the tree spirit fight."],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Lost_City" }
-          ]
-        }
-      },
-      {
-        id: "dragon-slayer",
-        type: "quest",
-        text: "Complete Dragon Slayer",
-        detail: {
-          title: "Dragon Slayer",
-          subtitle: "Good combat XP — Heroes' Quest prerequisite",
-          why: "Solid Strength and Defence XP reward. Required for Heroes' Quest.",
-          requirements: ["33 Quest Points"],
-          tips: ["Use anti-dragon shield (from Duke Horacio in Lumbridge)."],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Dragon_Slayer" }
-          ]
-        }
-      },
-      {
-        id: "darkness-of-hallowvale",
-        type: "quest",
-        text: "Complete Darkness of Hallowvale",
-        detail: {
-          title: "Darkness of Hallowvale",
-          subtitle: "Continues vampyre chain — Myreque series",
-          why: "Continues the vampyre quest series deeper into Meiyerditch.",
-          requirements: ["In Aid of the Myreque completed", "26 Agility", "5 Construction", "32 Crafting", "33 Magic", "20 Mining", "40 Strength", "22 Thieving"],
-          links: [
-            { label: "RS Wiki", url: "https://runescape.wiki/w/Darkness_of_Hallowvale" }
           ]
         }
       },
@@ -1919,9 +2034,10 @@ const PHASES = [
             "61 Crafting",
             "40 Defence",
             "49 Firemaking",
+            "5 Herblore",
             "65 Magic",
-            "55 Mining",
-            "60 Woodcutting"
+            "60 Mining",
+            "55 Woodcutting"
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Lunar_Diplomacy" }
@@ -1993,20 +2109,6 @@ const PHASES = [
           method: "Continue bakery stalls or Ardougne knights (25→53). Blackjacking at 45+ is faster but click-intensive. Safecracking (62+) is best long-term but you won't reach that yet.",
           links: [
             { label: "RS Wiki — Thieving Training", url: "https://runescape.wiki/w/Thieving_training" }
-          ]
-        }
-      },
-      {
-        id: "train-firemaking-50",
-        type: "skill",
-        text: "Train Firemaking to 50",
-        detail: {
-          title: "Firemaking to 50",
-          subtitle: "Required for Desert Treasure",
-          why: "50 Firemaking is required to start Desert Treasure. A quick skill to train.",
-          method: "Burn maple logs (30→50). Alternatively, do the Shattered Worlds minigame for XP lamps. Book of Char (Members' Loyalty Programme) can also help if available.",
-          links: [
-            { label: "RS Wiki — Firemaking Training", url: "https://runescape.wiki/w/Firemaking_training" }
           ]
         }
       },
@@ -2299,12 +2401,12 @@ const PHASES = [
         detail: {
           title: "Enhanced Excalibur",
           subtitle: "Free healing cooldown — used at every boss",
-          why: "Enhanced Excalibur heals 4% of your max HP every 2 seconds for 20 seconds (40% total) on a 5-minute cooldown. It's a free heal with no food cost, used at virtually every boss encounter. Requires completing the Hard Seer's Village achievement set.",
+          why: "Enhanced Excalibur heals 4% of your max HP every 4.2 seconds, 5 times (20% total) on a 5-minute cooldown with Hard Seer's Village tasks. Elite tasks double it to 10 times (40% total). Free heal with no food cost — used at virtually every boss.",
           requirements: ["King's Ransom completed", "Hard Seer's Village achievements"],
           tips: [
             "Get the base Excalibur from Merlin's Crystal (already completed via King's Ransom chain).",
             "Complete Hard Seer's Village achievements to enhance it. Needs various skills at 50-60.",
-            "Elite Seer's Village achievements double the healing (8% per tick = 80% total).",
+            "Elite Seer's Village achievements double the healing to 40% total (10 heals of 4%).",
             "Keep it on your action bar — use it on cooldown during bossing for free sustain."
           ],
           links: [
@@ -2325,7 +2427,7 @@ const PHASES = [
           subtitle: "Bladed Dive + Double Surge + Double Escape — essential PvM movement",
           why: "These abilities are fundamental to boss movement. Bladed Dive is an instant targeted teleport (also deals damage). Double Surge and Double Escape let you use Surge/Escape twice in quick succession. Used at virtually every boss.",
           tips: [
-            "Bladed Dive: Bought from Shattered Worlds reward shop (63 Slayer, needs ~2,500 Shattered Anima). Works with melee + Laceration Boots.",
+            "Bladed Dive: Bought from Shattered Worlds reward shop (65 Attack required, costs 63,000,000 Shattered Anima). Works with melee + Laceration Boots.",
             "Double Surge codex: Found on Anachronia (from Agility course or Big Game Hunter). Lets you Surge twice.",
             "Double Escape codex: Also from Anachronia. Lets you Escape twice.",
             "Dive ability (from Succession quest): Basic forward dash. No requirements.",
@@ -3224,6 +3326,20 @@ const PHASES = [
         }
       },
       {
+        id: "defender-of-varrock",
+        type: "quest",
+        text: "Complete Defender of Varrock",
+        detail: {
+          title: "Defender of Varrock",
+          subtitle: "Curse of Arrav + River of Blood prerequisite",
+          why: "Required for both Curse of Arrav and River of Blood.",
+          requirements: ["Shield of Arrav completed", "The Knight's Sword completed", "Family Crest completed", "What Lies Below completed", "51 Agility", "51 Hunter", "59 Mining", "54 Smithing"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Defender_of_Varrock" }
+          ]
+        }
+      },
+      {
         id: "curse-of-arrav",
         type: "quest",
         text: "Complete The Curse of Arrav",
@@ -3286,7 +3402,7 @@ const PHASES = [
           why: "Soul Split (92 Prayer) heals you for a portion of all damage dealt. Turmoil/Torment/Anguish/Desolation (95 Prayer) boost your combat stats significantly while draining the enemy. These prayers are used at every boss from now on.",
           tips: [
             "Soul Split (92 Prayer): Heals based on damage dealt with diminishing returns (10% of first 2k, 5% of next 2k, 1.25% above 4k). The most used prayer in PvM.",
-            "Turmoil (95 Prayer, melee), Torment (95, magic), Anguish (95, ranged), Desolation (95, necromancy).",
+            "Turmoil (95 Prayer, melee), Torment (95, magic), Anguish (95, ranged), Sorrow (95, necromancy).",
             "You can flick between Soul Split and protection prayers for both healing and damage reduction.",
             "Requires 92-95 Prayer to use the best curses — train Prayer at Chaos Altar or with dragon bones."
           ],
@@ -3351,9 +3467,9 @@ const PHASES = [
           subtitle: "Stage 1 PvME upgrades for ALL combat styles",
           why: "Cinderbane Gloves are the best-in-slot gloves for ALL four combat styles — they apply a poison effect that stacks with Weapon Poison+++ for massive extra damage. The Amulet of Souls makes protection prayers block 60% instead of 50% and gives Soul Split a 50% chance to heal 25-50% more (averaging ~18.75% more healing). Both are core PvM items.",
           tips: [
-            "Cinderbane Gloves: Dropped by Manifest shadows in Sophanem Slayer Dungeon (requires 115 Slayer via boost or 105 natural). Can also buy from GE if not ironman.",
+            "Cinderbane Gloves: Dropped by creatures in The Lost Grove (Moss golems, Vinecrawlers, Bulbous crawlers). Drop rate is 1/1,500 on task, 1/5,000 off task. Also dropped by Solak (1/1,000).",
             "Weapon Poison+++ synergy: Always use Weapon Poison+++ alongside Cinderbanes for maximum DPS. Craft from cave nightshade + poison slime + coconut milk.",
-            "Amulet of Souls: Made from a hydrix gem (cut from uncut hydrix — 400 Reaper Points from Death). Needs 79 Crafting to cut, 90 Crafting to make the amulet.",
+            "Amulet of Souls: Made from a hydrix gem (cut from uncut hydrix — 400 Reaper Points from Death). Needs 79 Crafting to cut, 99 Crafting (boostable) to make the amulet.",
             "Reaper necklace: Also made from hydrix. +3% hit chance. Used for the Essence of Finality later.",
             "Consider making the Reaper necklace first if accuracy is your bottleneck."
           ],
