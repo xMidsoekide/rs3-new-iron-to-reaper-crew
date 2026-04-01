@@ -3167,7 +3167,7 @@ const PHASES = [
           title: "The Branches of Darkmeyer",
           subtitle: "Vampyre chain — Darkmeyer access",
           why: "Continues the vampyre series into Darkmeyer.",
-          requirements: ["Legacy of Seergaze completed", "63 Fletching", "63 Crafting", "64 Slayer", "70 Woodcutting"],
+          requirements: ["Legacy of Seergaze completed", "63 Agility", "64 Crafting", "63 Farming", "70 Fletching", "70 Magic", "67 Slayer", "76 Woodcutting"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Branches_of_Darkmeyer" }
           ]
@@ -3179,8 +3179,8 @@ const PHASES = [
         text: "Complete Kindred Spirits",
         detail: {
           title: "Kindred Spirits",
-          subtitle: "Vampyre chain — continues Myreque series",
-          why: "Continues the Myreque story. Required before Lord of Vampyrium.",
+          subtitle: "Sliske's Game series — unlocks Linza's armor for River of Blood",
+          why: "Part of Sliske's Game series (not the vampyre chain). Required for River of Blood but not directly part of the Myreque questline.",
           requirements: ["Missing, Presumed Death completed", "60 Agility", "60 Crafting", "60 Herblore", "60 Smithing"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Kindred_Spirits" }
@@ -3195,9 +3195,23 @@ const PHASES = [
           title: "The Lord of Vampyrium",
           subtitle: "Vampyre chain — high-level combat quest",
           why: "Major vampyre quest. High combat requirements.",
-          requirements: ["Kindred Spirits completed", "75 Attack", "75 Constitution", "79 Construction", "75 Defence", "76 Hunter", "78 Slayer", "75 Strength"],
+          requirements: ["Branches of Darkmeyer completed", "71 Agility", "76 Fletching", "78 Attack", "78 Magic", "78 Ranged", "78 Strength"],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Lord_of_Vampyrium" }
+          ]
+        }
+      },
+      {
+        id: "defender-of-varrock",
+        type: "quest",
+        text: "Complete Defender of Varrock",
+        detail: {
+          title: "Defender of Varrock",
+          subtitle: "Curse of Arrav + River of Blood prerequisite",
+          why: "Required for both Curse of Arrav and River of Blood.",
+          requirements: ["Shield of Arrav completed", "The Knight's Sword completed", "Family Crest completed", "What Lies Below completed"],
+          links: [
+            { label: "RS Wiki", url: "https://runescape.wiki/w/Defender_of_Varrock" }
           ]
         }
       },
@@ -3211,6 +3225,7 @@ const PHASES = [
           why: "Final vampyre quest. Rewards the Sunspear, an augmentable hybrid weapon excellent for Slayer.",
           requirements: [
             "Lord of Vampyrium completed",
+            "Defender of Varrock completed",
             "All Fired Up completed",
             "78 Attack",
             "80 Constitution",
@@ -3386,7 +3401,7 @@ const PHASES = [
           subtitle: "The strongest prayer set in the game",
           why: "Soul Split (92 Prayer) heals you for a portion of all damage dealt. Turmoil/Torment/Anguish/Desolation (95 Prayer) boost your combat stats significantly while draining the enemy. These prayers are used at every boss from now on.",
           tips: [
-            "Soul Split (92 Prayer): Heals ~10% of damage dealt. The most used prayer in PvM.",
+            "Soul Split (92 Prayer): Heals based on damage dealt with diminishing returns (10% of first 2k, 5% of next 2k, 1.25% above 4k). The most used prayer in PvM.",
             "Turmoil (95 Prayer, melee), Torment (95, magic), Anguish (95, ranged), Sorrow (95, necromancy).",
             "You can flick between Soul Split and protection prayers for both healing and damage reduction.",
             "Requires 92-95 Prayer to use the best curses — train Prayer at Chaos Altar or with dragon bones."
@@ -3402,9 +3417,9 @@ const PHASES = [
         text: "Train Herblore to 96 for Overloads",
         detail: {
           title: "Overloads",
-          subtitle: "The biggest single potion upgrade in PvM — +17% to all combat stats",
-          why: "Overloads boost all combat stats by 17% for 6 minutes and cannot be reduced. They are the single largest DPS increase from a consumable. Every serious boss encounter uses an Overload.",
-          method: "Chain: Super potions (45-79) → Extreme potions (88-93) → Overloads (96). The 96 can be boosted from 90 with spicy stew (+6) or from 89 with advanced pulse core (+7). Grow your own herbs via herb runs. Use Scroll of Cleansing from Dungeoneering to save secondaries. Crystal flasks from Prif make 6-dose Overload flasks.",
+          subtitle: "The biggest single potion upgrade in PvM — 15% of stat level + 3 to all combat stats",
+          why: "Overloads boost all combat stats by 15% of level + 3 (up to +17 at level 99, +21 at 120) for 6 minutes and cannot be reduced. They are the single largest DPS increase from a consumable. Every serious boss encounter uses an Overload.",
+          method: "Chain: Super potions (45-79) → Extreme potions (88-93) → Overloads (96). The 96 can be boosted from 89 with spicy stew (+6) or pulse core (+7). Grow your own herbs via herb runs. Use Scroll of Cleansing from Dungeoneering to save secondaries. Crystal flasks from Prif make 6-dose Overload flasks.",
           links: [
             { label: "RS Wiki — Overload", url: "https://runescape.wiki/w/Overload" },
             { label: "RS Wiki — Herblore Training", url: "https://runescape.wiki/w/Herblore_training" },
@@ -3424,11 +3439,11 @@ const PHASES = [
           subtitle: "Weapon Poison+++, Vulnerability Bombs, food upgrades & ammo",
           why: "Consumables are a massive DPS boost that many players overlook. Weapon Poison+++ with Cinderbane Gloves adds thousands of extra damage per minute. Vulnerability Bombs apply a 10% damage debuff on bosses. Using the right food, potions, and ammunition is essential.",
           tips: [
-            "Weapon Poison+++ (82 Herblore): Cave nightshade + poison slime + coconut milk. ALWAYS use alongside Cinderbane Gloves for passive poison stacking.",
-            "Vulnerability Bombs (86 Herblore, Plague's End): Throw at boss for 10% damage boost for 1 minute. Very important DPS increase.",
-            "Spiritual Prayer potions (79 Prayer + 81 Herblore): Restore familiar spec points. Essential for Ripper Demon familiar's spec spam.",
-            "Adrenaline Renewal potion (115 Herblore): Restores 30% adrenaline over 30s. Elite Dungeon drop or make yourself.",
-            "Elder Overload (106 Herblore): Supreme overload + primal extract. Direct upgrade to standard overloads.",
+            "Weapon Poison+++ (100 Herblore): Weapon poison++ (3) + poison slime + primal extract. ALWAYS use alongside Cinderbane Gloves for passive poison stacking.",
+            "Vulnerability Bombs (103 Herblore, Plague's End): Throw at boss for 10% damage boost for 1 minute. Very important DPS increase.",
+            "Spiritual Prayer potions (110 Herblore): Restore familiar spec points. Essential for Ripper Demon familiar's spec spam. Recipe from Meilyr clan shop.",
+            "Adrenaline Renewal potion (115 Herblore): Restores 40% adrenaline over 6 seconds. Elite Dungeon drop or make yourself.",
+            "Elder Overload (106 Herblore): Supreme overload + clean fellstalk + primal extract. Direct upgrade to standard overloads.",
             "Bakriminel bolts (enchanted): Hydrix bolts (adren on proc), Ruby bolts (% damage), Onyx bolts (healing). Essential ranged ammo.",
             "Food: Sharks (76 Cooking) → Rocktails (93) → Sailfish (99) → Blue Blubber Jellyfish (95, no adrenaline drain).",
             "Incense sticks: Kwuarm (10% increased potion timers), Lantadyme (+4% potion XP). Use at War's Retreat campfire."
@@ -3450,7 +3465,7 @@ const PHASES = [
         detail: {
           title: "Cinderbane Gloves & Amulet of Souls",
           subtitle: "Stage 1 PvME upgrades for ALL combat styles",
-          why: "Cinderbane Gloves are the best-in-slot gloves for ALL four combat styles — they apply a poison effect that stacks with Weapon Poison+++ for massive extra damage. The Amulet of Souls makes protection prayers block 60% instead of 50% and boosts Soul Split healing by 50%. Both are core PvM items.",
+          why: "Cinderbane Gloves are the best-in-slot gloves for ALL four combat styles — they apply a poison effect that stacks with Weapon Poison+++ for massive extra damage. The Amulet of Souls makes protection prayers block 60% instead of 50% and gives Soul Split a 50% chance to heal 25-50% more (averaging ~18.75% more healing). Both are core PvM items.",
           tips: [
             "Cinderbane Gloves: Dropped by creatures in The Lost Grove (Moss golems, Vinecrawlers, Bulbous crawlers). Drop rate is 1/1,500 on task, 1/5,000 off task. Also dropped by Solak (1/1,000).",
             "Weapon Poison+++ synergy: Always use Weapon Poison+++ alongside Cinderbanes for maximum DPS. Craft from cave nightshade + poison slime + coconut milk.",
@@ -3486,7 +3501,7 @@ const PHASES = [
           drops: [
             {
               item: "Dragon Rider Lance",
-              why: "T85 halberd-range melee weapon — ironman staple (1/512 base, 1/256 max rep)"
+              why: "T85 halberd-range melee weapon — ironman staple (1/510 base, 1/255 max rep)"
             },
             { item: "Crest of Zaros", why: "Makes Anima Core of Zaros armor (T80)" },
             { item: "Dormant Anima Core pieces", why: "T80 armor base components" }
@@ -3548,7 +3563,7 @@ const PHASES = [
           title: "Twin Furies & Gregorovic — GWD2",
           subtitle: "Complete your GWD2 weapon set and Telos access",
           why: "Twin Furies drop T85 dual-wield melee blades, Gregorovic drops T85 ranged glaives. You need one kill of each GWD2 boss for Telos access (which requires defeating all 4 generals at least once).",
-          requirements: ["80 in any combat style for GWD2 area access", "40 Zamorakian KC / 40 Sliskean KC"],
+          requirements: ["80 Ranged (Twin Furies) / 80 Prayer (Gregorovic)", "40 Zamorakian KC / 40 Sliskean KC"],
           suggested: ["80+ combat stats", "80+ Prayer (Soul Split at 92 ideal)", "85+ Herblore (Overloads at 96 ideal)"],
           drops: [
             { item: "Blade of Avaryss + Nymora (Twin Furies)", why: "T85 dual-wield melee (1/512 each)" },
@@ -3573,10 +3588,10 @@ const PHASES = [
           title: "Osseous — Necromancy Boss",
           subtitle: "Occultist's ring — BIS Necromancy ring",
           why: "Osseous is a Necromancy-specific boss on PvME's recommended bossing path. It drops the Occultist's ring, the best ring for Necromancy. This is a solo boss with straightforward mechanics — a good Necromancy skill check before tackling Araxxor.",
-          requirements: ["80 Necromancy", "Slayer task (Osseous can only be fought on task)"],
+          requirements: ["70 Necromancy", "30 Archaeology", "Osseous Rex miniquest completed"],
           suggested: ["90+ Necromancy", "T70+ Necromancy gear", "95 Prayer"],
           drops: [
-            { item: "Occultist's ring", why: "BIS Necromancy ring — boosts Necromancy damage (1/500)" },
+            { item: "Occultist's ring", why: "BIS Necromancy ring — boosts Necromancy damage (2/399 base)" },
             { item: "Necromancy XP", why: "Good Necromancy XP per kill" }
           ],
           moveOn: "After obtaining the Occultist's ring.",
@@ -3605,9 +3620,9 @@ const PHASES = [
           ],
           drops: [
             { item: "Spider leg pieces (top/mid/bottom)", why: "1/40 each — combine all 3 into a spider leg" },
-            { item: "Araxxi's fang", why: "Fang + leg = Noxious scythe (T90 2H melee, halberd range) — 1/120" },
-            { item: "Araxxi's eye", why: "Eye + leg = Noxious staff (T90 2H magic) — 1/120" },
-            { item: "Araxxi's web", why: "Web + leg = Noxious longbow (T90 2H ranged) — 1/120" }
+            { item: "Araxxi's fang", why: "Fang + leg = Noxious scythe (T90 2H melee, halberd range) — 1/240 matching style, 1/480 off-style" },
+            { item: "Araxxi's eye", why: "Eye + leg = Noxious staff (T90 2H magic) — 1/240 matching style, 1/480 off-style" },
+            { item: "Araxxi's web", why: "Web + leg = Noxious longbow (T90 2H ranged) — 1/240 matching style, 1/480 off-style" }
           ],
           moveOn: "After assembling your primary T90 weapon. Noxious scythe first (halberd range for Slayer), then staff or longbow depending on your next goals.",
           links: [
@@ -3643,7 +3658,7 @@ const PHASES = [
         detail: {
           title: "Nex — The Original",
           subtitle: "T80 Torva/Pernix/Virtus power armor — massive defense upgrade",
-          why: "Nex drops the best T80 power armor sets for all combat styles: Torva (melee), Pernix (ranged), and Virtus (magic). These are direct upgrades over GWD1 and Anima Core armor. Nex also drops the Zaryte bow (T80 ranged) and components for Nihil pouches (95 Summoning).",
+          why: "Nex drops the best T80 power armor sets for all combat styles: Torva (melee), Pernix (ranged), and Virtus (magic). These are direct upgrades over GWD1 and Anima Core armor. Nex also drops the Zaryte bow (T80 ranged) and Virtus wand/book (T80 magic dual-wield).",
           requirements: ["70 Agility, Constitution, Ranged, Strength", "Frozen Key (from GWD1 generals) or Ancient ceremonial robes"],
           suggested: ["90+ combat stats", "90+ Defence", "95 Prayer (Ancient Curses)", "96 Herblore (Overloads)", "T85+ weapons"],
           drops: [
@@ -3654,7 +3669,7 @@ const PHASES = [
             { item: "Pernix armor", why: "T80 ranged power armor (1/384 each)" },
             { item: "Virtus armor", why: "T80 magic power armor (1/384 each)" },
             { item: "Zaryte bow", why: "T80 2H ranged bow (1/384)" },
-            { item: "Nihil ingredients", why: "Needed for Nihil Summoning pouches at 87+ Summoning" }
+            { item: "Virtus wand + book", why: "T80 magic dual-wield (1/384 each)" }
           ],
           moveOn: "After obtaining armor set(s) for your primary combat style(s). Torva is the priority for melee users.",
           links: [
@@ -3670,14 +3685,14 @@ const PHASES = [
         text: "Boss: Rex Matriarchs",
         detail: {
           title: "Rex Matriarchs — Orikalka, Pthentraken & Rathis",
-          subtitle: "T82 Rex rings + dinosaur components",
-          why: "The three Rex Matriarchs on Anachronia each use a different combat style and drop Rings of the Matriarchs (T82 hybrid rings). All three must be killed for Reaper Crew. They're good mid-level bosses for practicing style-switching.",
+          subtitle: "BIS combat rings (tierless) + dinosaur components",
+          why: "The three Rex Matriarchs on Anachronia each use a different combat style and drop best-in-slot combat rings (tierless). All three must be killed for Reaper Crew. They're good mid-level bosses for practicing style-switching.",
           requirements: ["Access to Anachronia", "Slayer task recommended (not required)"],
           suggested: ["80+ combat stats", "70+ Prayer", "T80+ weapons"],
           drops: [
-            { item: "Orikalka's Bane (melee ring)", why: "T82 melee ring — from Orikalka (1/500)" },
-            { item: "Pthentraken's Claw (ranged ring)", why: "T82 ranged ring — from Pthentraken (1/500)" },
-            { item: "Rathis' Dagger (magic ring)", why: "T82 magic ring — from Rathis (1/500)" }
+            { item: "Champion's ring (melee)", why: "BIS melee ring — from Orikalka (melee boss, 1/200 for Heart of the Warrior)" },
+            { item: "Channeller's ring (magic)", why: "BIS magic ring — from Pthentraken (magic boss, 1/200 for Heart of the Seer)" },
+            { item: "Stalker's ring (ranged)", why: "BIS ranged ring — from Rathis (ranged boss, 1/200 for Heart of the Archer)" }
           ],
           moveOn: "After one kill of each for Reaper Crew. Farm for rings if desired.",
           links: [
@@ -3700,7 +3715,7 @@ const PHASES = [
           drops: [
             {
               item: "Drygore longsword/mace/rapier (MH + OH)",
-              why: "T90 melee dual-wield — 6 weapon variants (1/43 per unique)"
+              why: "T90 melee dual-wield — 6 weapon variants (1/252 per unique)"
             },
             { item: "Perfect chitin", why: "Used in T90 melee shields" }
           ],
@@ -3723,7 +3738,7 @@ const PHASES = [
           title: "Legiones — Ascension Dungeon",
           subtitle: "Ascension crossbow — T90 ranged dual-wield",
           why: "The six Legiones each drop a unique Ascension signet (I-VI). Collect all six plus a Dragon crossbow and 100 Ascension keystones to assemble the Ascension crossbow (T90 ranged main-hand). Requires Slayer to access the dungeon.",
-          requirements: ["81 Slayer", "Ascension keystones (~300 per crossbow on average — 1 keystone per fight, ~1/50 signet rate, 6 signets needed)"],
+          requirements: ["95 Slayer", "Ascension keystones (100 per crossbow, from Ascension creatures)"],
           suggested: ["90+ Ranged", "90+ Defence", "95 Prayer", "96 Herblore"],
           drops: [
             {
@@ -3744,18 +3759,18 @@ const PHASES = [
         text: "Boss: Elite Dungeon 1 — Temple of Aminishi",
         detail: {
           title: "Elite Dungeon 1 — Temple of Aminishi",
-          subtitle: "Seiryu's claw + ancient scales for T82 armor",
-          why: "ED1 features three bosses (Sanctum Guardian, Masuta the Ascended, Seiryu the Azure Serpent). Drops include ancient scales for craftable T82 armor and the Seiryu's claw for an upgraded halberd weapon.",
+          subtitle: "Seiryu's claw (Mizuyari T85 spear) + ancient scales for T92 armor",
+          why: "ED1 features three bosses (Sanctum Guardian, Masuta the Ascended, Seiryu the Azure Serpent). Drops include ancient scales for craftable T92 Elite Sirenic/Dracolith armor and Seiryu's claw to craft the Mizuyari (T85 spear).",
           requirements: ["Impressing the Locals miniquest completed"],
           suggested: ["90+ combat stats", "96 Herblore (Overloads)", "95 Prayer", "96 Summoning"],
           drops: [
             {
               item: "Seiryu's claw",
-              why: "Upgrades Dragon Rider Lance to T85.5 halberd — Seiryu drop (1/55 solo)"
+              why: "Crafts Mizuyari (T85 spear) — does NOT upgrade Dragon Rider Lance (1/55 solo)"
             },
-            { item: "Ancient scales", why: "Crafts T82 Elite Sirenic/Tectonic/Primeval armor" }
+            { item: "Ancient scales", why: "Crafts T92 Elite Sirenic/Dracolith armor" }
           ],
-          moveOn: "After obtaining Seiryu's claw if still using Dragon Rider Lance, or clearing for Reaper Crew.",
+          moveOn: "After obtaining Seiryu's claw for Mizuyari, or clearing for Reaper Crew.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Temple_of_Aminishi" },
             { label: "PvME — ED1 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed1-basic/" }
@@ -3769,17 +3784,17 @@ const PHASES = [
         detail: {
           title: "Croesus — Skilling Boss",
           subtitle: "Cryptbloom armor (T90 magic tank) + Scripture of Bik",
-          why: "Croesus is a unique skilling boss — no combat required! You fight it using Woodcutting, Mining, Fishing, and Hunter. It drops Cryptbloom armor (T90 magic tank armor with a flat passive damage reduction: 12% magic/8% melee at 2 pieces, scaling up with more pieces) and the Scripture of Bik.",
-          requirements: ["Access to Senntisten (City of Senntisten quest)", "Recommended: 80+ in Woodcutting, Mining, Fishing, Hunter"],
+          why: "Croesus is a unique skilling boss — no combat required! You fight it using Woodcutting, Mining, Fishing, and Hunter. It drops Cryptbloom armor (T90 magic tank armor with Nature's Envoy passive: damage reduction + Fungal Shield at low HP) and the Scripture of Bik.",
+          requirements: ["No quest required", "Recommended: 80+ in Woodcutting, Mining, Fishing, Hunter"],
           suggested: ["90+ Woodcutting, Mining, Fishing, Hunter", "Team of 4 (one per skill)"],
           drops: [
             {
               item: "Cryptbloom armor (helm/top/bottom/gloves/boots)",
-              why: "T90 magic tank armor — passive: reduce incoming damage based on missing HP (1/512 per piece)"
+              why: "T90 magic tank armor — passive: reduces magic/melee damage, Fungal Shield activates below 20% HP (drop rate varies by contribution, ~1/450 at max)"
             },
             {
               item: "Scripture of Bik",
-              why: "Pocket slot — procs produce resources from monster drops (1/512)"
+              why: "Pocket slot — procs produce resources from monster drops (drop rate varies by contribution)"
             }
           ],
           moveOn: "After obtaining Cryptbloom top + bottom at minimum. Full set for maximum tank value.",
@@ -3860,7 +3875,7 @@ const PHASES = [
         detail: {
           title: "Archaeology to 97",
           subtitle: "Unlock Fury of the Small relic",
-          why: "Fury of the Small makes basic abilities generate 1% more adrenaline (from 8% to 9%). This compounds across every rotation — you reach thresholds and ultimates faster, which is a meaningful DPS increase at every boss.",
+          why: "Fury of the Small makes basic abilities generate 1% more adrenaline (from 9% to 10%). This compounds across every rotation — you reach thresholds and ultimates faster, which is a meaningful DPS increase at every boss.",
           method: "Continue excavating at the highest-level dig site available. Archaeology is a slow skill but consistent. Use auto-screener and material manual for efficiency. Tetras and chronotes from completed collections help speed things up.",
           links: [
             { label: "RS Wiki — Fury of the Small", url: "https://runescape.wiki/w/Fury_of_the_Small" },
