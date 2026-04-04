@@ -278,7 +278,16 @@ let selectedStep = null;
 const GIST_FILENAME = 'rs3iron-progress.json';
 let syncStatus = 'idle'; // idle | syncing | synced | error
 let syncTimer = null;
-let isOwner = !!localStorage.getItem('rs3iron-gist-token');
+const _urlGist = new URLSearchParams(window.location.search).get('gist') || '';
+let isOwner = !!localStorage.getItem('rs3iron-gist-token') && (!_urlGist || _urlGist === localStorage.getItem('rs3iron-gist-id'));
+
+function getGistId() {
+  return _urlGist || localStorage.getItem('rs3iron-gist-id') || '';
+}
+
+function isViewer() {
+  return !isOwner && !!getGistId();
+}
 
 /* ── Persistence ── */
 function buildProgressData() {
@@ -303,7 +312,7 @@ async function loadProgress() {
 
   // Viewers (have gist ID but no token): always fetch fresh from Gist
   // Owner with no local data: also fetch from Gist
-  const hasGist = !!localStorage.getItem('rs3iron-gist-id');
+  const hasGist = !!getGistId();
   if (hasGist && !isOwner) {
     await fetchFromGist();
   } else if (hasGist && completed.size === 0) {
@@ -312,7 +321,7 @@ async function loadProgress() {
 }
 
 async function fetchFromGist() {
-  const gistId = localStorage.getItem('rs3iron-gist-id') || '';
+  const gistId = getGistId();
   if (!gistId) return;
   try {
     const resp = await fetch('https://api.github.com/gists/' + gistId + '?t=' + Date.now(), {
@@ -376,7 +385,7 @@ async function createGist(token) {
 function renderSyncStatus() {
   const el = document.getElementById('sync-status');
   if (!el) return;
-  if (!isOwner && localStorage.getItem('rs3iron-gist-id')) {
+  if (isViewer()) {
     el.textContent = '👁 viewing shared progress';
     el.style.color = '#94a3b8';
     return;
@@ -732,7 +741,7 @@ let jefMsgIndex = 0;
 
 function toggleStep(e, id) {
   e.stopPropagation();
-  if (!isOwner && localStorage.getItem('rs3iron-gist-id')) {
+  if (isViewer()) {
     showJefMessage();
     return;
   }
@@ -965,7 +974,7 @@ function toggleSkillBanner(skillId) {
 
 function toggleSkillItem(e, itemId) {
   e.stopPropagation();
-  if (!isOwner && localStorage.getItem('rs3iron-gist-id')) {
+  if (isViewer()) {
     showJefMessage();
     return;
   }
@@ -1182,13 +1191,6 @@ function disconnectSync() {
 
 /* ── Init ── */
 (async function init() {
-  // Support ?gist=ID in URL for easy sharing
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlGist = urlParams.get('gist');
-  if (urlGist) {
-    localStorage.setItem('rs3iron-gist-id', urlGist);
-  }
-
   await loadProgress();
   currentPhase = findActivePhase();
   render();
