@@ -231,15 +231,40 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
     </div>
   </div>
   <div id="footer">
-    <button onclick="exportProgress()">Export Progress</button>
-    <button onclick="document.getElementById('import-input').click()">Import Progress</button>
+    <span id="sync-status" style="font-size:12px;margin-right:auto"></span>
+    <button onclick="openSyncSetup()">⚙ Sync</button>
+    <button onclick="exportProgress()">Export</button>
+    <button onclick="document.getElementById('import-input').click()">Import</button>
     <input type="file" id="import-input" accept=".json" onchange="importProgress(event)">
-    <button class="danger" onclick="confirmReset()">Reset Progress</button>
+    <button class="danger" onclick="confirmReset()">Reset</button>
   </div>
 </div>
 
 <div id="overlay"><div id="overlay-content"><button id="overlay-close" onclick="closeOverlay()">✕</button><div id="overlay-detail"></div></div></div>
 <div id="confirm-dialog"><div id="confirm-box"><p>Reset all progress? This cannot be undone.</p><div class="btn-row"><button class="btn-cancel" onclick="closeConfirm()">Cancel</button><button class="btn-confirm" onclick="doReset()">Reset</button></div></div></div>
+<div id="sync-dialog" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);align-items:center;justify-content:center">
+  <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:24px;max-width:460px;width:90%">
+    <h3 style="margin-bottom:12px;font-size:16px;color:#e2e8f0">Sync Setup</h3>
+    <p style="font-size:13px;color:#94a3b8;margin-bottom:16px;line-height:1.5">
+      Syncs your progress to a GitHub Gist so others can view it.<br>
+      Create a token at GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) with <b>gist</b> scope only.
+    </p>
+    <div style="margin-bottom:12px">
+      <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:4px">GitHub Token</label>
+      <input id="sync-token-input" type="password" placeholder="ghp_..." style="width:100%;padding:8px;background:#0f172a;border:1px solid #334155;border-radius:6px;color:#e2e8f0;font-size:13px">
+    </div>
+    <div style="margin-bottom:12px">
+      <label style="font-size:12px;color:#94a3b8;display:block;margin-bottom:4px">Gist ID (leave blank to create new)</label>
+      <input id="sync-gist-input" type="text" placeholder="abc123..." style="width:100%;padding:8px;background:#0f172a;border:1px solid #334155;border-radius:6px;color:#e2e8f0;font-size:13px">
+    </div>
+    <div id="sync-error" style="font-size:12px;color:#f87171;margin-bottom:12px;display:none"></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button onclick="closeSyncSetup()" style="padding:8px 16px;border-radius:6px;border:none;background:#334155;color:#e2e8f0;cursor:pointer;font-size:13px">Cancel</button>
+      <button id="sync-disconnect-btn" onclick="disconnectSync()" style="padding:8px 16px;border-radius:6px;border:none;background:#dc2626;color:#fff;cursor:pointer;font-size:13px;display:none">Disconnect</button>
+      <button onclick="saveSyncSetup()" style="padding:8px 16px;border-radius:6px;border:none;background:#3b82f6;color:#fff;cursor:pointer;font-size:13px">Save & Sync</button>
+    </div>
+  </div>
+</div>
 <div id="celebration"><canvas id="confetti-canvas"></canvas><div class="celeb-msg"><h1>Reaper Crew Complete</h1><p>From Tutorial Island to the very end. Well played.</p></div></div>
 
 <script src="data.js"></script>
@@ -249,24 +274,119 @@ let completed = new Set();
 let currentPhase = 0;
 let selectedStep = null;
 
-/* ── Persistence ── */
-function loadProgress() {
-  try {
-    const raw = localStorage.getItem('rs3iron-progress');
-    if (!raw) return;
-    const data = JSON.parse(raw);
-    if (data && Array.isArray(data.completed)) {
-      completed = new Set(data.completed);
-    }
-  } catch (e) { /* ignore corrupt data */ }
-}
+/* ── Gist Sync Config ── */
+const GIST_FILENAME = 'rs3iron-progress.json';
+let syncStatus = 'idle'; // idle | syncing | synced | error
+let syncTimer = null;
+let isOwner = !!localStorage.getItem('rs3iron-gist-token');
 
-function saveProgress() {
-  localStorage.setItem('rs3iron-progress', JSON.stringify({
+/* ── Persistence ── */
+function buildProgressData() {
+  return {
     version: 1,
     completed: Array.from(completed),
     lastUpdated: new Date().toISOString()
-  }));
+  };
+}
+
+async function loadProgress() {
+  // Try localStorage first
+  try {
+    const raw = localStorage.getItem('rs3iron-progress');
+    if (raw) {
+      const data = JSON.parse(raw);
+      if (data && Array.isArray(data.completed)) {
+        completed = new Set(data.completed);
+      }
+    }
+  } catch (e) { /* ignore corrupt data */ }
+
+  // If no local data and we have a Gist ID, fetch from Gist
+  if (completed.size === 0 && GIST_ID) {
+    await fetchFromGist();
+  }
+}
+
+async function fetchFromGist() {
+  const gistId = localStorage.getItem('rs3iron-gist-id') || '';
+  if (!gistId) return;
+  try {
+    const resp = await fetch('https://api.github.com/gists/' + gistId, {
+      headers: { 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!resp.ok) return;
+    const gist = await resp.json();
+    const file = gist.files[GIST_FILENAME];
+    if (!file) return;
+    const data = JSON.parse(file.content);
+    if (data && Array.isArray(data.completed)) {
+      completed = new Set(data.completed);
+      saveProgressLocal();
+    }
+  } catch (e) { /* silent fail for visitors */ }
+}
+
+function saveProgressLocal() {
+  localStorage.setItem('rs3iron-progress', JSON.stringify(buildProgressData()));
+}
+
+function saveProgress() {
+  saveProgressLocal();
+  if (isOwner) debouncedSync();
+}
+
+/* ── Gist Sync ── */
+function debouncedSync() {
+  if (syncTimer) clearTimeout(syncTimer);
+  syncTimer = setTimeout(syncToGist, 2000);
+}
+
+async function syncToGist() {
+  const token = localStorage.getItem('rs3iron-gist-token') || '';
+  const gistId = localStorage.getItem('rs3iron-gist-id') || '';
+  if (!gistId || !token) return;
+  await syncToGistWithCreds(gistId, token);
+}
+
+async function createGist(token) {
+  const body = {
+    description: 'RS3 Ironman Progress Tracker',
+    public: true,
+    files: {}
+  };
+  body.files[GIST_FILENAME] = { content: JSON.stringify(buildProgressData(), null, 2) };
+  const resp = await fetch('https://api.github.com/gists', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'token ' + token,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!resp.ok) throw new Error('Failed to create gist');
+  const gist = await resp.json();
+  return gist.id;
+}
+
+function renderSyncStatus() {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  if (!isOwner && GIST_ID) {
+    el.textContent = '👁 viewing shared progress';
+    el.style.color = '#94a3b8';
+    return;
+  }
+  if (!isOwner) {
+    el.textContent = '';
+    return;
+  }
+  switch (syncStatus) {
+    case 'syncing': el.textContent = '⟳ syncing…'; el.style.color = '#94a3b8'; break;
+    case 'synced': el.textContent = '✓ synced'; el.style.color = '#22c55e'; break;
+    case 'error': el.textContent = '✕ sync failed'; el.style.color = '#f87171'; break;
+    default: el.textContent = ''; break;
+  }
 }
 
 /* ── Helpers ── */
@@ -915,11 +1035,116 @@ function celebrate() {
   frame();
 }
 
+/* ── Sync Setup UI ── */
+function openSyncSetup() {
+  const dialog = document.getElementById('sync-dialog');
+  dialog.style.display = 'flex';
+  document.getElementById('sync-token-input').value = GIST_TOKEN;
+  document.getElementById('sync-gist-input').value = GIST_ID;
+  document.getElementById('sync-error').style.display = 'none';
+  document.getElementById('sync-disconnect-btn').style.display = GIST_TOKEN ? '' : 'none';
+}
+
+function closeSyncSetup() {
+  document.getElementById('sync-dialog').style.display = 'none';
+}
+
+async function saveSyncSetup() {
+  const token = document.getElementById('sync-token-input').value.trim();
+  let gistId = document.getElementById('sync-gist-input').value.trim();
+  const errEl = document.getElementById('sync-error');
+  errEl.style.display = 'none';
+
+  // Viewer mode: just a gist ID, no token
+  if (!token && gistId) {
+    localStorage.setItem('rs3iron-gist-id', gistId);
+    localStorage.removeItem('rs3iron-gist-token');
+    isOwner = false;
+    closeSyncSetup();
+    completed = new Set();
+    localStorage.removeItem('rs3iron-progress');
+    await fetchFromGist();
+    currentPhase = findActivePhase();
+    selectedStep = null;
+    render();
+    renderReaper();
+    renderSyncStatus();
+    return;
+  }
+
+  if (!token) {
+    errEl.textContent = 'Enter a token to sync your progress, or just a Gist ID to view someone else\'s.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  // Owner mode: create gist if needed, then sync
+  if (!gistId) {
+    try {
+      gistId = await createGist(token);
+    } catch (e) {
+      errEl.textContent = 'Failed to create Gist. Check your token has the "gist" scope.';
+      errEl.style.display = 'block';
+      return;
+    }
+  }
+
+  localStorage.setItem('rs3iron-gist-token', token);
+  localStorage.setItem('rs3iron-gist-id', gistId);
+  isOwner = true;
+  closeSyncSetup();
+  await syncToGistWithCreds(gistId, token);
+
+  const siteUrl = window.location.origin + window.location.pathname;
+  alert('Synced! Share this link with your friend:\n\n' + siteUrl + '?gist=' + gistId);
+}
+
+async function syncToGistWithCreds(gistId, token) {
+  syncStatus = 'syncing';
+  renderSyncStatus();
+  try {
+    const body = { files: {} };
+    body.files[GIST_FILENAME] = { content: JSON.stringify(buildProgressData(), null, 2) };
+    const resp = await fetch('https://api.github.com/gists/' + gistId, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': 'token ' + token,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    syncStatus = resp.ok ? 'synced' : 'error';
+  } catch (e) {
+    syncStatus = 'error';
+  }
+  renderSyncStatus();
+}
+
+function disconnectSync() {
+  localStorage.removeItem('rs3iron-gist-token');
+  localStorage.removeItem('rs3iron-gist-id');
+  isOwner = false;
+  syncStatus = 'idle';
+  closeSyncSetup();
+  renderSyncStatus();
+}
+
 /* ── Init ── */
-loadProgress();
-currentPhase = findActivePhase();
-render();
-renderReaper();
+(async function init() {
+  // Support ?gist=ID in URL for easy sharing
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlGist = urlParams.get('gist');
+  if (urlGist && !localStorage.getItem('rs3iron-gist-id')) {
+    localStorage.setItem('rs3iron-gist-id', urlGist);
+  }
+
+  await loadProgress();
+  currentPhase = findActivePhase();
+  render();
+  renderReaper();
+  renderSyncStatus();
+})();
 </script>
 </body>
 </html>
