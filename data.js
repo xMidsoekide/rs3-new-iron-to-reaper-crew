@@ -1258,8 +1258,7 @@ const PHASES = [
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Ivar,_King_of_Bones" },
             { label: "RS Wiki — Strategy", url: "https://runescape.wiki/w/Ivar,_King_of_Bones/Strategies" },
-            { label: "PvME — Hermod Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/hermod/" },
-            { label: "PvME — Bossing Path", url: "https://pvme.io/pvme-guides/new-to-bossing/bossing-path/" },
+            { label: "PvME — AFK Ivar", url: "https://pvme.io/pvme-guides/afk/afk-ivar-king-of-bones/" },
             { label: "PvME — Learning PvM", url: "https://pvme.io/pvme-guides/new-to-bossing/learning-pvm/" }
           ]
         }
@@ -1339,7 +1338,8 @@ const PHASES = [
           moveOn: "After you're comfortable reading its attack patterns and have collected useful drops. Move on to further Necromancy training.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Silverquill,_the_Dreadhog" },
-            { label: "PvME — Hermod Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/hermod/" }
+            { label: "RS Wiki — Strategy", url: "https://runescape.wiki/w/Silverquill,_the_Dreadhog/Strategies" },
+            { label: "PvME — AFK Silverquill", url: "https://pvme.io/pvme-guides/afk/afk-silverquill-the-dreadhog/" }
           ]
         }
       },
