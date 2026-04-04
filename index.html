@@ -301,8 +301,12 @@ async function loadProgress() {
     }
   } catch (e) { /* ignore corrupt data */ }
 
-  // If no local data and we have a Gist ID, fetch from Gist
-  if (completed.size === 0 && localStorage.getItem('rs3iron-gist-id')) {
+  // Viewers (have gist ID but no token): always fetch fresh from Gist
+  // Owner with no local data: also fetch from Gist
+  const hasGist = !!localStorage.getItem('rs3iron-gist-id');
+  if (hasGist && !isOwner) {
+    await fetchFromGist();
+  } else if (hasGist && completed.size === 0) {
     await fetchFromGist();
   }
 }
@@ -311,8 +315,8 @@ async function fetchFromGist() {
   const gistId = localStorage.getItem('rs3iron-gist-id') || '';
   if (!gistId) return;
   try {
-    const resp = await fetch('https://api.github.com/gists/' + gistId, {
-      headers: { 'Accept': 'application/vnd.github.v3+json' }
+    const resp = await fetch('https://api.github.com/gists/' + gistId + '?t=' + Date.now(), {
+      headers: { 'Accept': 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
     });
     if (!resp.ok) return;
     const gist = await resp.json();
@@ -338,7 +342,7 @@ function saveProgress() {
 /* ── Gist Sync ── */
 function debouncedSync() {
   if (syncTimer) clearTimeout(syncTimer);
-  syncTimer = setTimeout(syncToGist, 2000);
+  syncTimer = setTimeout(syncToGist, 500);
 }
 
 async function syncToGist() {
@@ -717,8 +721,21 @@ function selectStep(id) {
   render();
 }
 
+const JEF_MESSAGES = [
+  "Shit pe, blijf is van mijn tracker",
+  "Jef, het is nu echt genoeg geweest",
+  "Kerel, komaan...",
+  "Sebiet crasht heel die vibecoded roemel hier",
+  "Ja oke, fuck it dan he"
+];
+let jefMsgIndex = 0;
+
 function toggleStep(e, id) {
   e.stopPropagation();
+  if (!isOwner && localStorage.getItem('rs3iron-gist-id')) {
+    showJefMessage();
+    return;
+  }
   if (completed.has(id)) {
     completed.delete(id);
   } else {
@@ -727,6 +744,16 @@ function toggleStep(e, id) {
   saveProgress();
   render();
   if (completed.has(id) && isMainPathComplete()) celebrate();
+}
+
+function showJefMessage() {
+  const msg = JEF_MESSAGES[jefMsgIndex % JEF_MESSAGES.length];
+  jefMsgIndex++;
+  const el = document.getElementById('banner-text');
+  el.textContent = msg;
+  el.style.transition = 'none';
+  el.style.color = '#fbbf24';
+  setTimeout(function() { el.style.color = ''; renderBanner(); }, 2000);
 }
 
 function onBannerClick() {
@@ -923,6 +950,10 @@ function toggleSkillBanner(skillId) {
 
 function toggleSkillItem(e, itemId) {
   e.stopPropagation();
+  if (!isOwner && localStorage.getItem('rs3iron-gist-id')) {
+    showJefMessage();
+    return;
+  }
   if (completed.has(itemId)) {
     completed.delete(itemId);
   } else {
