@@ -316,7 +316,7 @@ async function fetchFromGist() {
   if (!gistId) return;
   try {
     const resp = await fetch('https://api.github.com/gists/' + gistId + '?t=' + Date.now(), {
-      headers: { 'Accept': 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
+      headers: { 'Accept': 'application/vnd.github.v3+json' }
     });
     if (!resp.ok) return;
     const gist = await resp.json();
@@ -747,12 +747,27 @@ function toggleStep(e, id) {
 }
 
 function showJefMessage() {
-  const msg = JEF_MESSAGES[jefMsgIndex % JEF_MESSAGES.length];
+  if (jefMsgIndex >= JEF_MESSAGES.length) return; // already crashed
+  const msg = JEF_MESSAGES[jefMsgIndex];
   jefMsgIndex++;
   const el = document.getElementById('banner-text');
   el.textContent = msg;
   el.style.transition = 'none';
   el.style.color = '#fbbf24';
+
+  if (jefMsgIndex >= JEF_MESSAGES.length) {
+    setTimeout(function() {
+      document.getElementById('app').innerHTML = '';
+      document.body.style.background = '#000';
+      document.body.style.display = 'flex';
+      document.body.style.alignItems = 'center';
+      document.body.style.justifyContent = 'center';
+      document.body.style.height = '100vh';
+      document.body.innerHTML = '<div style="text-align:center;font-family:monospace"><h1 style="color:#f87171;font-size:48px">💀</h1><p style="color:#f87171;font-size:18px;margin-top:12px">Application has crashed</p><p style="color:#64748b;font-size:13px;margin-top:8px">Error: JEF_TOUCHING_THINGS_HE_SHOULDNT</p></div>';
+    }, 2000);
+    return;
+  }
+
   setTimeout(function() { el.style.color = ''; renderBanner(); }, 2000);
 }
 
@@ -1170,7 +1185,7 @@ function disconnectSync() {
   // Support ?gist=ID in URL for easy sharing
   const urlParams = new URLSearchParams(window.location.search);
   const urlGist = urlParams.get('gist');
-  if (urlGist && !localStorage.getItem('rs3iron-gist-id')) {
+  if (urlGist) {
     localStorage.setItem('rs3iron-gist-id', urlGist);
   }
 
