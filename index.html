@@ -302,7 +302,7 @@ async function loadProgress() {
   } catch (e) { /* ignore corrupt data */ }
 
   // If no local data and we have a Gist ID, fetch from Gist
-  if (completed.size === 0 && GIST_ID) {
+  if (completed.size === 0 && localStorage.getItem('rs3iron-gist-id')) {
     await fetchFromGist();
   }
 }
@@ -372,7 +372,7 @@ async function createGist(token) {
 function renderSyncStatus() {
   const el = document.getElementById('sync-status');
   if (!el) return;
-  if (!isOwner && GIST_ID) {
+  if (!isOwner && localStorage.getItem('rs3iron-gist-id')) {
     el.textContent = '👁 viewing shared progress';
     el.style.color = '#94a3b8';
     return;
@@ -415,11 +415,13 @@ function findActivePhase() {
 
 function findNextStep() {
   for (let i = currentPhase; i < PHASES.length; i++) {
+    if (!PHASES[i].steps) continue;
     for (const s of PHASES[i].steps) {
       if (!completed.has(s.id)) return { phaseIdx: i, step: s };
     }
   }
   for (let i = 0; i < currentPhase; i++) {
+    if (!PHASES[i].steps) continue;
     for (const s of PHASES[i].steps) {
       if (!completed.has(s.id)) return { phaseIdx: i, step: s };
     }
@@ -429,8 +431,10 @@ function findNextStep() {
 
 function getStep(id) {
   for (const p of PHASES) {
-    for (const s of p.steps) {
-      if (s.id === id) return s;
+    if (p.steps) {
+      for (const s of p.steps) {
+        if (s.id === id) return s;
+      }
     }
     if (p.skills) {
       for (const sk of p.skills) {
@@ -488,7 +492,7 @@ function renderTabs() {
 function renderProgress() {
   const phase = PHASES[currentPhase];
   const pc = phaseCompletion(phase);
-  const pct = phase.steps.length ? Math.round((pc.done / pc.total) * 100) : 0;
+  const pct = (phase.steps && phase.steps.length) ? Math.round((pc.done / pc.total) * 100) : (pc.total ? Math.round((pc.done / pc.total) * 100) : 0);
   document.getElementById('progress-label').textContent =
     'Phase ' + (currentPhase + 1) + ': ' + phase.name + ' — ' + pc.done + ' / ' + pc.total;
   document.getElementById('progress-fill').style.width = pct + '%';
@@ -1039,10 +1043,10 @@ function celebrate() {
 function openSyncSetup() {
   const dialog = document.getElementById('sync-dialog');
   dialog.style.display = 'flex';
-  document.getElementById('sync-token-input').value = GIST_TOKEN;
-  document.getElementById('sync-gist-input').value = GIST_ID;
+  document.getElementById('sync-token-input').value = localStorage.getItem('rs3iron-gist-token') || '';
+  document.getElementById('sync-gist-input').value = localStorage.getItem('rs3iron-gist-id') || '';
   document.getElementById('sync-error').style.display = 'none';
-  document.getElementById('sync-disconnect-btn').style.display = GIST_TOKEN ? '' : 'none';
+  document.getElementById('sync-disconnect-btn').style.display = localStorage.getItem('rs3iron-gist-token') ? '' : 'none';
 }
 
 function closeSyncSetup() {
