@@ -11,7 +11,7 @@ const PHASES = [
         detail: {
           title: "Create Ironman Account",
           subtitle: "Start your journey",
-          why: "Ironman mode restricts trading and most group content, forcing you to earn everything yourself. This is the foundation of the entire challenge.",
+          why: "Ironman mode restricts player trading and Grand Exchange shortcuts, forcing you to earn gear, supplies, and skilling materials from their original sources. This is the foundation of the entire challenge.",
           tips: [
             "Choose 'Ironman' when prompted during account creation.",
             "Hardcore Ironman adds permadeath — pick regular Ironman if this is your first time.",
@@ -386,9 +386,9 @@ const PHASES = [
         detail: {
           title: "Violet is Blue",
           subtitle: "3 generic XP lamps (1,000 XP each) — prerequisite for Violet is Blue Too",
-          why: "Required before Violet is Blue Too. Rewards 3 generic skill lamps (Lamp of Joy, Lamp of Wonder, Lamp of Laughter — 1,000 XP each, any skill). The Pathway recommends Farming to unlock Player-Owned Farm content earlier, which generates passive resources useful for Herblore and Prayer.",
+          why: "Required before Violet is Blue Too. Rewards 3 generic skill lamps (Lamp of Joy, Lamp of Wonder, Lamp of Laughter — 1,000 XP each, any skill). Use them on Farming to unlock Player-Owned Farm content earlier, which generates passive resources useful for Herblore and Prayer.",
           requirements: [],
-          tips: ["Short holiday quest — mostly dialogue.", "Pathway recommends using all 3 lamps on Farming."],
+          tips: ["Short holiday quest — mostly dialogue.", "Use all 3 lamps on Farming."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Violet_is_Blue" }
           ]
@@ -401,9 +401,9 @@ const PHASES = [
         detail: {
           title: "Violet is Blue Too",
           subtitle: "3 generic XP lamps (4,000 XP each, any skill)",
-          why: "Rewards 3 generic skill lamps (Lamp of Joy, Lamp of Wonder, Lamp of Laughter — 4,000 XP each, any skill). The Pathway recommends using them on Archaeology, Construction, and Summoning — Summoning is one of the hardest skills to train (requires charms from combat) and is essential for PvM.",
+          why: "Rewards 3 generic skill lamps (Lamp of Joy, Lamp of Wonder, Lamp of Laughter — 4,000 XP each, any skill). Use them on Archaeology, Construction, and Summoning: Summoning is one of the harder ironman skills to train because it depends on charms from combat, and it stays useful for PvM.",
           requirements: ["Violet is Blue completed"],
-          tips: ["Pathway recommends using lamps on Archaeology, Construction, and Summoning.", "All 3 lamps are generic — you can choose any skill for each."],
+          tips: ["Use the lamps on Archaeology, Construction, and Summoning.", "All 3 lamps are generic — you can choose any skill for each."],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Violet_is_Blue_Too" }
           ]
@@ -473,12 +473,12 @@ const PHASES = [
         detail: {
           title: "Demon Slayer",
           subtitle: "3 generic combat XP lamps (100 XP each) — builds off-style combat",
-          why: "Rewards 3 combat XP lamps (100 XP each, choose from Attack/Strength/Defence/Constitution/Ranged/Magic/Necromancy). The Pathway recommends Ranged to build your secondary combat style. You'll need Ranged for certain bosses later (Araxxor, Nex) and for chinchompa AoE training.",
+          why: "Rewards 3 combat XP lamps (100 XP each, choose from Attack/Strength/Defence/Constitution/Ranged/Magic/Necromancy). Put them into Ranged to start building your secondary combat style for later bosses and chinchompa AoE training.",
           requirements: [],
           tips: [
             "Start by talking to the Gypsy in Varrock.",
             "Requires killing Delrith — use Necromancy or Melee.",
-            "Pathway recommends using the lamps on Ranged."
+            "Use the lamps on Ranged."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Demon_Slayer" }
@@ -492,11 +492,11 @@ const PHASES = [
         detail: {
           title: "Swept Away",
           subtitle: "Generic XP bowl (any skill) — feeds Overload progression",
-          why: "Rewards an XP bowl with 10 portions of goulash that grant XP equal to 10x your level in any chosen skill (5x for Invention). The bowl works on any skill. The Pathway recommends Herblore, helping toward potion-making thresholds.",
+          why: "Rewards an XP bowl with 10 portions of goulash that grant XP equal to 10x your level in any chosen skill (5x for Invention). Put the XP into Herblore to help toward potion-making thresholds.",
           requirements: [],
           tips: [
             "During the quest: activate Port Sarim lodestone, buy 10 sardines and 1 chocolate bar.",
-            "Pathway recommends using the XP bowl on Herblore for maximum value.",
+            "Use the XP bowl on Herblore for maximum value.",
             "Short quest — mostly running between NPCs."
           ],
           links: [
@@ -694,8 +694,8 @@ const PHASES = [
         detail: {
           title: "Cooking to 50",
           subtitle: "Needed for A Tail of Two Cats (ironman) and general food supply",
-          why: "A Tail of Two Cats requires making a chocolate cake (50 Cooking on ironman). Also provides better food for PvM. Cook trout and salmon at the Yeti Town bonfire for bonus XP.",
-          method: "Fish trout/salmon at Barbarian Village, cook them on the nearby fire or at Yeti Town bonfire for 10% bonus XP. Alternatively, use the Lumbridge range for reduced burn rate.",
+          why: "A Tail of Two Cats requires making a chocolate cake (50 Cooking on ironman). Cooking also improves your self-supplied food stack for early PvM.",
+          method: "Fish trout/salmon at Barbarian Village, cook them on the nearby fire, or use the Yeti Town bonfire for its Cooking XP boost. The Lumbridge range is another good option because it reduces burn chance.",
           links: [
             { label: "RS Wiki — Cooking Training", url: "https://runescape.wiki/w/Cooking_training" }
           ]
@@ -775,12 +775,12 @@ const PHASES = [
         detail: {
           title: "The Tourist Trap",
           subtitle: "2x 4,650 XP in chosen skills (Agility/Fletching/Smithing/Thieving)",
-          why: "Rewards 4,650 XP twice in your choice of Agility, Fletching, Smithing, or Thieving (you can pick the same skill twice). This is direct XP, not lamps. The Pathway recommends Agility to reach the 35-36 Agility needed for Horror from the Deep and The Grand Tree.",
+          why: "Rewards 4,650 XP twice in your choice of Agility, Fletching, Smithing, or Thieving (you can pick the same skill twice). Put both rewards into Agility to reach the 35-36 Agility needed for Horror from the Deep and The Grand Tree.",
           requirements: ["10 Fletching", "20 Smithing"],
           tips: [
             "Located in the desert south of Al Kharid — bring waterskins.",
             "Involves some stealth and combat.",
-            "Pathway recommends choosing Agility twice for 9,300 Agility XP."
+            "Choose Agility twice for 9,300 Agility XP."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Tourist_Trap" }
@@ -923,7 +923,7 @@ const PHASES = [
           tips: [
             "Start by talking to King Narnode in the Grand Tree.",
             "Final boss (Black Demon) can be safespotted.",
-            "The Pathway recommends using the combat lamp on Attack."
+            "Use the combat lamp on Attack."
           ],
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/The_Grand_Tree" }
@@ -1460,7 +1460,7 @@ const PHASES = [
           title: "Prayer to 47",
           subtitle: "Needed for Rum Deal and protection prayers",
           why: "47 Prayer is needed for Rum Deal. Protection prayers (unlocked at 37-43) are essential for PvM. Train at the Chaos Temple in the Wilderness for 2x XP with dragon bones.",
-          method: "Collect dragon bones from blue dragons or buy from Boneyard. Use the Chaos Temple altar in level 38 Wilderness for guaranteed 2x XP. Bring 1 inventory at a time to minimize risk. ~200 dragon bones gets you from 1 to 47.",
+          method: "Collect dragon bones from blue dragons or gather bone spawns at the Boneyard. Use the Chaos Temple altar in level 38 Wilderness for guaranteed 2x XP. Bring 1 inventory at a time to minimize risk. ~200 dragon bones gets you from 1 to 47.",
           links: [
             { label: "RS Wiki — Prayer Training", url: "https://runescape.wiki/w/Prayer_training" }
           ]
@@ -1704,15 +1704,15 @@ const PHASES = [
         text: "Boss: Hermod, the Spirit of War",
         detail: {
           title: "Hermod, the Spirit of War",
-          subtitle: "Necromancy quest boss — teaches combat rotations",
-          why: "Hermod is a Necromancy quest boss encountered during the Spirit Warrior quest. He's a significant step up in difficulty and teaches proper combat rotations. Required for Reaper Crew.",
+          subtitle: "Hermodic plates for Necromancy gear upgrades",
+          why: "Hermod is the repeatable boss unlocked through The Spirit of War. This is where the route starts banking Hermodic plates for later Necromancy armour upgrades, while also giving you a controlled place to practise basic Necromancy rotations before broader bossing.",
           requirements: ["The Spirit of War quest (Necromancy quest line part 4)"],
-          suggested: ["40+ Necromancy", "Protection prayers", "Good food supply"],
+          suggested: ["65+ Necromancy (required for The Spirit of War)", "Tier 60 Death guard + skull lantern", "Protection prayers", "Good food supply"],
           drops: [
             { item: "Hermodic plate", why: "Crafting material (1/10)" },
             { item: "Hermod's armour spike", why: "Cosmetic unlock (1/2,000, threshold 400)" }
           ],
-          moveOn: "After defeating Hermod to continue the Necromancy quest line. Farm for Hermodic plates if desired.",
+          moveOn: "After the quest kill, farm Hermodic plates for the Necromancy armour upgrades you plan to make, then move on once the plate stack is covered.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Hermod,_the_Spirit_of_War" },
             { label: "PvME — Hermod Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/hermod/" }
@@ -1775,8 +1775,8 @@ const PHASES = [
         text: "Boss: Barrows Brothers",
         detail: {
           title: "Barrows Brothers",
-          subtitle: "Farm tier 70 tank armor sets",
-          why: "Barrows is your primary source of tier 70 power and tank armor. Multiple sets cover all three combat styles. The armor lasts well into mid-game and is a massive defensive upgrade. Hard Morytania achievements halve the prayer drain here.",
+          subtitle: "Reaper kill + Amulet of the Forsaken for Berserker's Fury",
+          why: "Barrows is the source of the Amulet of the Forsaken, which is needed to create Dharok's Memento for the Berserker's Fury relic. Barrows armour is useful side loot, but for this Necromancy-first route the amulet is the important progression target.",
           requirements: ["Nature Spirit or another Barrows access method"],
           suggested: [
             "60+ Necromancy (or 65+ in any style)",
@@ -1786,16 +1786,17 @@ const PHASES = [
             "Salve amulet (e) — works on all brothers"
           ],
           drops: [
+            { item: "Amulet of the forsaken", why: "Required with the Saradominist I lock of hair to create Dharok's Memento for Berserker's Fury" },
             {
               item: "Barrows armor sets (Ahrim, Dharok, Karil, etc.)",
-              why: "Tier 70 armor for all combat styles — your main armor upgrade"
-            },
-            { item: "Amulet of the forsaken", why: "Boosts Barrows set effects" }
+              why: "Optional tier 70 armour for off-styles or defensive swaps"
+            }
           ],
-          moveOn: "After completing at least one full armor set for your primary combat style. Ahrim's for magic, Karil's for ranged. For Necromancy, the Deathwarden/tier 60+ gear may be better — use Barrows for your off-styles. Move on to mid-game content.",
+          moveOn: "Get the Reaper Crew kill, then farm Amulet of the Forsaken for Berserker's Fury if you do not already have it. Do not require a full armour set before moving on.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Barrows" },
             { label: "RS Wiki — Strategy", url: "https://runescape.wiki/w/Barrows/Strategies" },
+            { label: "RS Wiki — Amulet of the forsaken", url: "https://runescape.wiki/w/Amulet_of_the_forsaken" },
             { label: "PvME — Barrows Guide", url: "https://pvme.io/pvme-guides/basic-guides/barrows-basic/" }
           ]
         }
@@ -1852,7 +1853,7 @@ const PHASES = [
           title: "Thieving to 42",
           subtitle: "Needed for Temple of Ikov and Rum Deal",
           why: "Temple of Ikov requires 42 Thieving (wiki says 40 but guide lists 40). Thieves' Guild training is fast and efficient.",
-          method: "Train at Thieves' Guild cell doors from 25 to 41, then complete Lost Her Marbles miniquest for bonus XP to reach 43. Access Thieves' Guild via the trapdoor in Lumbridge.",
+          method: "Train at Thieves' Guild cell doors from 25 to 41, then complete Lost Her Marbles for its XP reward to reach 43. Access Thieves' Guild via the trapdoor in Lumbridge.",
           links: [
             { label: "RS Wiki — Thieving Training", url: "https://runescape.wiki/w/Thieving_training" },
             { label: "RS Wiki — Lost Her Marbles", url: "https://runescape.wiki/w/Lost_Her_Marbles" }
@@ -1876,19 +1877,21 @@ const PHASES = [
       {
         id: "reward-barrows-armor",
         type: "reward",
-        text: "Collect Barrows armor set(s)",
+        text: "Farm Barrows for Amulet of the Forsaken",
         detail: {
-          title: "Barrows Armor Sets",
-          subtitle: "Tier 70 armor for all combat styles",
-          why: "Barrows armor is a massive defensive upgrade that lasts well into mid-game. Having a full set for your primary and off-styles makes questing and bossing much safer.",
+          title: "Amulet of the Forsaken",
+          subtitle: "Required item for Dharok's Memento and Berserker's Fury",
+          why: "Berserker's Fury is unlocked by using Dharok's Memento at the monolith. Dharok's Memento is created from the Saradominist I lock of hair plus an unused Amulet of the Forsaken, so Barrows should be framed as the amulet grind rather than a mandatory full-set armour grind.",
           tips: [
-            "Priority: Ahrim's (magic), Karil's (ranged) — for Necromancy, Deathwarden gear may be better.",
-            "Keep farming until you have at least one complete set for your primary style.",
-            "Amulet of the forsaken is a nice bonus but don't farm specifically for it.",
+            "Keep one unused Amulet of the Forsaken for Dharok's Memento.",
+            "Complete the Saradominist I Archaeology collection at 56 for the lock of hair.",
+            "Barrows armour pieces are useful side loot, especially Ahrim's/Karil's for off-styles, but do not require a complete set here.",
             "Hard Morytania achievements halve prayer drain at Barrows — worth doing later."
           ],
           links: [
-            { label: "RS Wiki — Barrows Equipment", url: "https://runescape.wiki/w/Barrows_equipment" }
+            { label: "RS Wiki — Dharok's Memento", url: "https://runescape.wiki/w/Dharok%27s_Memento" },
+            { label: "RS Wiki — Amulet of the forsaken", url: "https://runescape.wiki/w/Amulet_of_the_forsaken" },
+            { label: "RS Wiki — Berserker's Fury", url: "https://runescape.wiki/w/Berserker%27s_Fury" }
           ]
         }
       },
@@ -2155,7 +2158,7 @@ const PHASES = [
           subtitle: "Blood Barrage, Ice Barrage, and the full ancient spell set",
           why: "Blood Barrage heals you for damage dealt while hitting in an AoE — it's one of the best sustain tools in PvM. Ice Barrage freezes targets in place. These spells are used at bosses throughout the entire game.",
           tips: [
-            "Switch spellbooks at the altar in Jaldraocht Pyramid or any player-owned house altar.",
+            "Switch spellbooks at the altar in Jaldraocht Pyramid, or at your own player-owned house altar once you have built one.",
             "Blood Barrage: Heals 5% of damage dealt as HP. Amazing for Slayer and multi-target bosses.",
             "Ice Barrage: AoE freeze for 9.6 seconds. Useful for mob control.",
             "You can auto-cast these on your action bar like regular spells."
@@ -2446,8 +2449,8 @@ const PHASES = [
         text: "Boss: King Black Dragon",
         detail: {
           title: "King Black Dragon",
-          subtitle: "Classic dragon boss — Reaper Crew requirement",
-          why: "An accessible early-mid boss. KBD drops Dragon Rider boots and gloves (T60 hybrid) and counts toward Reaper Crew. Good practice for dealing with dragonfire mechanics.",
+          subtitle: "Classic dragon boss — dragonfire practice",
+          why: "An accessible early-mid boss with simple dragonfire pressure. Dragon Rider boots/gloves and visage are optional, but the main value is getting comfortable with antifire setup and basic boss positioning.",
           requirements: [],
           suggested: ["70+ combat stats", "60+ Defence", "Anti-dragon shield or Super antifire", "Protection prayers"],
           drops: [
@@ -2468,8 +2471,8 @@ const PHASES = [
         text: "Boss: Chaos Elemental",
         detail: {
           title: "Chaos Elemental",
-          subtitle: "Wilderness boss — Reaper Crew requirement",
-          why: "Located in the Wilderness. Counts toward Reaper Crew. Bring minimal risk gear since the Wilderness is dangerous. The boss can unequip your items and teleport you.",
+          subtitle: "Wilderness boss — low-risk setup check",
+          why: "Located in the Wilderness, so the important lesson is risk control: bring minimal gear, expect item unequips/teleports, and leave after the kill unless you specifically want rare Wilderness drops.",
           requirements: [],
           suggested: ["70+ combat stats", "Cheap/welfare gear (risk of PK)", "Protection prayers"],
           drops: [
@@ -2493,7 +2496,7 @@ const PHASES = [
         detail: {
           title: "Dagannoth Kings",
           subtitle: "Three kings — Berserker ring + dragon hatchet",
-          why: "Three bosses in one lair, each weak to a different combat style. The Berserker ring and Warrior ring are useful melee accessories. Dragon hatchet is the best hatchet in the game. All three count as one Reaper Crew kill.",
+          why: "Three bosses in one lair, each weak to a different combat style. Berserker ring and dragon hatchet are the meaningful ironman rewards; the rest of the rings are optional unless you want off-style upgrades.",
           requirements: ["The Fremennik Trials completed"],
           suggested: ["75+ in all combat styles (tribrid recommended)", "70+ Defence", "Protection prayers"],
           drops: [
@@ -2519,8 +2522,8 @@ const PHASES = [
         text: "Boss: Kalphite Queen",
         detail: {
           title: "Kalphite Queen",
-          subtitle: "Two-phase boss — Reaper Crew requirement",
-          why: "The Kalphite Queen has two phases — one immune to ranged/magic, one immune to melee. Teaches style switching. Counts toward Reaper Crew. Not a major drop source but good practice.",
+          subtitle: "Two-phase boss — style switching practice",
+          why: "The Kalphite Queen has two phases with different style immunities, making it useful style-switching practice. The drops are not important for this route, so treat it as a mechanics check rather than a farm.",
           requirements: [],
           suggested: ["70+ in two combat styles", "70+ Defence", "Protection prayers"],
           drops: [
@@ -2767,7 +2770,7 @@ const PHASES = [
         detail: {
           title: "Corporeal Beast",
           subtitle: "Spirit shields — Divine, Elysian, Arcane, Spectral",
-          why: "The Corporeal Beast drops sigils that create the Spirit shield family — some of the best shields in the game. The Divine spirit shield is particularly useful for tanking. Corp is a classic boss and required for Reaper Crew.",
+          why: "The Corporeal Beast drops sigils for the Spirit shield family. They are useful defensive side goals, but not central to a Necromancy-first Reaper route, so this placement is mostly an early-mid mechanics check before moving on to more relevant unlocks.",
           requirements: ["Summer's End quest completed"],
           suggested: ["80+ combat stats", "70+ Prayer (Piety)", "T75+ weapons (spears deal full damage, other weapons deal half)"],
           drops: [
@@ -2783,7 +2786,7 @@ const PHASES = [
             { item: "Spectral sigil", why: "Creates Spectral spirit shield — prayer drain reduction (1/1,280)" },
             { item: "Holy elixir", why: "Required to create blessed spirit shields (1/171)" }
           ],
-          moveOn: "After one kill for Reaper Crew, or after obtaining desired spirit shield.",
+          moveOn: "After one kill. Spirit shields are optional side farms and not required for the main route.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Corporeal_Beast" },
             { label: "RS Wiki — Strategy", url: "https://runescape.wiki/w/Corporeal_Beast/Strategies" }
@@ -2965,8 +2968,8 @@ const PHASES = [
         text: "Boss: Commander Zilyana",
         detail: {
           title: "Commander Zilyana — God Wars Dungeon 1",
-          subtitle: "Saradomin sword + completes GWD1 Reaper set",
-          why: "Commander Zilyana drops the Saradomin sword (decent T75 2H melee) and Saradomin hilt. More importantly, killing all four GWD1 generals counts toward Reaper Crew. Zilyana is fast and uses melee/magic — protect from melee and DPS quickly.",
+          subtitle: "Saradomin sword + finishes the GWD1 block",
+          why: "Commander Zilyana is the fast Saradomin-side GWD1 kill. Her drops are optional for this route, so the practical goal is finishing the GWD1 block while practising quick protect-from-melee uptime.",
           requirements: ["70 Agility (to access Saradomin area)", "40 Saradomin killcount (or War's Blessing)"],
           suggested: ["80+ in any combat style", "70+ Defence", "70+ Prayer"],
           drops: [
@@ -3009,9 +3012,9 @@ const PHASES = [
         text: "Earn Dungeoneering tokens for key rewards",
         detail: {
           title: "Dungeoneering Token Rewards",
-          subtitle: "Charming imp, Ring of Vigour, Herbicide, Bonecrusher",
-          why: "Several game-changing items come from Dungeoneering tokens. Charming imp auto-collects charms (essential for Summoning), Ring of Vigour saves 10% adrenaline on ultimates, and Herbicide/Bonecrusher provide passive XP.",
-          method: "Do Dungeoneering floors or ED3 trash runs for tokens. ED3 trash runs are fastest for tokens + combat XP. Priority purchases: 1) Charming imp (100k tokens), 2) Ring of Vigour (50k tokens), 3) Herbicide (34k tokens), 4) Bonecrusher (34k tokens, unless you already have the Bonecrusher maul).",
+          subtitle: "Big token spend before passive Ring of Vigour",
+          why: "The token rewards are excellent, but forcing Charming imp + Ring of Vigour immediately after 40 Dungeoneering is too steep for the route. Treat this as a later focused token block: Ring of Vigour is needed before the Extinction passive unlock, while Charming imp is a strong QoL pickup once the token stack is actually there.",
+          method: "Do regular Dungeoneering floors and use any token boxes or other account-appropriate token sources you unlock. Do not plan around old ED3 trash-run token rates; Elite Dungeon bosses award tokens, but the reliable baseline is still Dungeoneering itself. Priority if tokens are limited: 1) Ring of Vigour (50k tokens, required for passive RoV), 2) Charming imp (100k tokens, major charm QoL), 3) Herbicide/Bonecrusher later as optional cleanup.",
           links: [
             { label: "RS Wiki — Dungeoneering Rewards", url: "https://runescape.wiki/w/Dungeoneering/Rewards" },
             {
@@ -3031,13 +3034,13 @@ const PHASES = [
         text: "Obtain Charming imp & Ring of Vigour",
         detail: {
           title: "Charming Imp & Ring of Vigour",
-          subtitle: "Two of the most important Dungeoneering rewards for PvM",
-          why: "Charming imp auto-collects charms from kills, making Summoning training passive and effortless. Ring of Vigour retains 10% adrenaline after ultimate abilities — a direct DPS increase that compounds over every boss fight.",
+          subtitle: "Token rewards after the account can justify the grind",
+          why: "Charming imp auto-collects charms from kills, making Summoning training passive and effortless. Ring of Vigour retains 10% adrenaline after ultimate abilities, and later becomes passive through Extinction. These are strong rewards, but the combined token cost is big enough that they should not block early-mid bossing.",
           tips: [
             "Charming imp: Configure to auto-collect gold + green + crimson + blue charms.",
             "Add Charming imp to your tool belt for 500 Slayer points (so you never forget it).",
-            "Ring of Vigour: Wear for every boss fight. Later, the Extinction quest makes this passive (frees ring slot).",
-            "Also grab Herbicide when you can — destroys grimy herb drops for double the cleaning Herblore XP during Slayer."
+            "Ring of Vigour: buy this first if tokens are limited, because it is required for the passive Ring of Vigour unlock.",
+            "Grab Herbicide/Bonecrusher later when tokens stop feeling scarce; they are useful, but not Reaper Crew blockers."
           ],
           links: [
             { label: "RS Wiki — Charming Imp", url: "https://runescape.wiki/w/Charming_imp" },
@@ -3118,18 +3121,19 @@ const PHASES = [
         type: "reward",
         text: "Add basic Invention perks to gear",
         detail: {
-          title: "Basic PvM Invention Perks",
-          subtitle: "Precise, Equilibrium, Biting & Crackling",
-          why: "Even entry-level perks give a huge DPS boost. Precise 6 + Equilibrium 4 on weapons increases average ability damage by ~9%. Biting and Crackling on armor add crit chance and free periodic damage.",
+          title: "Starter PvM Invention Perks",
+          subtitle: "Regular gizmos: Precise/Eruptive, Biting, Scavenging",
+          why: "Do not chase ancient-gizmo perks here. This step is just about getting useful regular-gizmo perks onto gear while you level Invention: Precise/Eruptive on weapons for damage, plus Biting or Scavenging on body armour depending on what components you can spare.",
           tips: [
-            "WEAPONS: Precise 6 (9x Historic components, ancient gizmo) + Equilibrium 4 (9x Timeworn components).",
-            "ARMOR: Biting 2-3 (Direct + Noxious components), Crackling 3-4 (Explosive components).",
-            "Later add: Impatient 4 (extra adrenaline), Enhanced Devoted 4 (damage reduction).",
-            "Augment your primary weapon first, then armor. Use divine charges to power them."
+            "WEAPONS: use regular weapon gizmos with Precise and Eruptive. At low Invention levels, accept low ranks like Precise 2 / Eruptive 2 and replace them as your level and components improve.",
+            "ARMOUR: put Biting 2 on body armour if direct components are easy; otherwise Scavenging 2 is very ironman-friendly because it generates components while killing monsters.",
+            "Optional later starter upgrades: Crackling if you have spare explosive components, or Enhanced Devoted / Devoted once you can make them comfortably.",
+            "Skip for now: Precise 6, Eruptive 4, Aftershock, Biting 4, ancient gizmos, and anything needing Noxious components. Those belong in the advanced-perks step."
           ],
           links: [
-            { label: "RS Wiki — Optimal Perks", url: "https://runescape.wiki/w/Optimal_PvM_perk_setup" },
-            { label: "PvME — Perks Guide", url: "https://pvme.io/pvme-guides/invention-and-perks/perks/" }
+            { label: "RS Wiki — Low-level Invention perks", url: "https://runescape.wiki/w/Low-level_Invention_perk_setup" },
+            { label: "RS Wiki — Ironman Invention", url: "https://runescape.wiki/w/Ironman_Mode/Strategies/Invention" },
+            { label: "PvME — Invention Basics", url: "https://pvme.io/pvme-guides/invention-and-perks/invention-basics/" }
           ]
         }
       },
@@ -3140,10 +3144,11 @@ const PHASES = [
         detail: {
           title: "Archaeology to 56",
           subtitle: "Unlock Berserker's Fury relic",
-          why: "Berserker's Fury is one of the strongest PvM relics — up to +5.5% damage when below max HP (which you almost always are during bossing). This single relic is a significant passive DPS boost.",
-          method: "Excavate at dig sites following the Archaeology training guide. At 56, unlock and activate Berserker's Fury at the monolith.",
+          why: "Berserker's Fury is one of the strongest PvM relics — up to +5.5% damage when below max HP (which you almost always are during bossing). The Archaeology level alone is not enough: you also need the Barrows Amulet of the Forsaken to create Dharok's Memento.",
+          method: "Train Archaeology to 56, complete the Saradominist I collection for the lock of hair, then combine it with an unused Amulet of the Forsaken from Barrows to create Dharok's Memento.",
           links: [
             { label: "RS Wiki — Archaeology Training", url: "https://runescape.wiki/w/Archaeology_training" },
+            { label: "RS Wiki — Dharok's Memento", url: "https://runescape.wiki/w/Dharok%27s_Memento" },
             { label: "RS Wiki — Berserker's Fury", url: "https://runescape.wiki/w/Berserker%27s_Fury" }
           ]
         }
@@ -3155,13 +3160,16 @@ const PHASES = [
         detail: {
           title: "Berserker's Fury Relic",
           subtitle: "Up to +5.5% damage when below max HP",
-          why: "During bossing, you're almost always below max HP. This relic passively boosts your damage by up to 5.5% based on how low your HP is. It costs 250 relic power at the monolith — well worth the budget.",
+          why: "During bossing, you're almost always below max HP. This relic passively boosts your damage by up to 5.5% based on how low your HP is. It costs 250 relic power at the monolith and requires Dharok's Memento, made from the Saradominist I lock of hair and an unused Amulet of the Forsaken.",
           tips: [
+            "Make sure you kept one unused Amulet of the Forsaken from Barrows.",
+            "Complete Saradominist I for the lock of hair before trying to make Dharok's Memento.",
             "Activate at the mysterious monolith at the Archaeology campus.",
             "This relic stays active permanently — set it and forget it.",
             "Later, combine with Fury of the Small (97 Archaeology) and Persistent Rage (98) for the optimal PvM relic loadout."
           ],
           links: [
+            { label: "RS Wiki — Dharok's Memento", url: "https://runescape.wiki/w/Dharok%27s_Memento" },
             { label: "RS Wiki — Berserker's Fury", url: "https://runescape.wiki/w/Berserker%27s_Fury" }
           ]
         }
@@ -3508,11 +3516,11 @@ const PHASES = [
       {
         id: "cinderbanes-amulet-of-souls",
         type: "unlock",
-        text: "Obtain Cinderbane Gloves + Amulet of Souls",
+        text: "Optional EoF prep: Cinderbane Gloves + Amulet of Souls",
         detail: {
           title: "Cinderbane Gloves & Amulet of Souls",
-          subtitle: "Stage 1 PvME upgrades for ALL combat styles",
-          why: "Cinderbane Gloves are the best-in-slot gloves for ALL four combat styles — they apply a poison effect that stacks with Weapon Poison+++ for massive extra damage. The Amulet of Souls makes protection prayers block 60% instead of 50% and gives Soul Split a 50% chance to heal 25-50% more (averaging ~18.75% more healing). Both are core PvM items.",
+          subtitle: "Optional endgame prep, not a GWD2/Araxxor blocker",
+          why: "Cinderbane Gloves and Amulet of Souls are strong PvM upgrades, but both are expensive Ironman detours: Cinderbanes come from high-level Lost Grove Slayer monsters or Solak, and Amulet of Souls needs hydrix/Reaper-point materials plus high Crafting. Treat this as Essence of Finality prep or optional endgame power, not as a requirement before GWD2, Araxxor, or first-kill Reaper progression.",
           tips: [
             "Cinderbane Gloves: Dropped by creatures in The Lost Grove (Moss golems, Vinecrawlers, Bulbous crawlers). Drop rate is 1/1,500 on task, 1/5,000 off task. Also dropped by Solak (1/1,000).",
             "Weapon Poison+++ synergy: Always use Weapon Poison+++ alongside Cinderbanes for maximum DPS. Craft from Weapon poison++ (3) + poison slime + primal extract (100 Herblore).",
@@ -3568,9 +3576,9 @@ const PHASES = [
         detail: {
           title: "Dragon Rider Lance",
           subtitle: "T85 halberd-range melee weapon — the ironman staple",
-          why: "Halberd range means it hits enemies 2 tiles away, and AoE abilities hit everything in that range. This makes Slayer tasks, ED trash runs, and multi-target bosses dramatically faster. Augment it with Precise + Equilibrium immediately.",
+          why: "Halberd range means it hits enemies 2 tiles away, and AoE abilities hit everything in that range. This makes Slayer tasks, ED trash runs, and multi-target bosses dramatically faster. Augment it with the best regular Precise/Eruptive gizmos you can make.",
           tips: [
-            "Augment with Invention immediately for Precise 6 + Equilibrium 4.",
+            "Augment with Invention immediately and use your current best Precise/Eruptive weapon perks.",
             "Use for all Slayer tasks where melee works.",
             "This weapon carries you until Noxious scythe (T90 from Araxxor).",
             "Halberd range is uniquely powerful — no other weapon type offers this."
@@ -3690,7 +3698,7 @@ const PHASES = [
           tips: [
             "Requires 90 Crafting to assemble (spider leg + hilt).",
             "Priority: Scythe (melee + halberd range) > Staff (magic) > Longbow (ranged).",
-            "Augment immediately with Precise 6 + Equilibrium 4.",
+            "Augment immediately with your best Precise/Eruptive weapon perks. Upgrade to ancient-gizmo perks later when the advanced-perks step makes sense.",
             "Noxious scythe replaces Dragon Rider Lance. Noxious staff replaces Cywir wand+orb for 2H content."
           ],
           links: [
@@ -3733,7 +3741,7 @@ const PHASES = [
         detail: {
           title: "Rex Matriarchs — Orikalka, Pthentraken & Rathis",
           subtitle: "BIS combat rings (tierless) + dinosaur components",
-          why: "The three Rex Matriarchs on Anachronia each use a different combat style and drop best-in-slot combat rings (tierless). All three must be killed for Reaper Crew. They're good mid-level bosses for practicing style-switching.",
+          why: "The three Rex Matriarchs on Anachronia each use a different combat style and drop best-in-slot combat rings. They are good mid-level style-switching practice, with ring farming left optional unless a specific combat style becomes a priority.",
           requirements: ["Access to Anachronia", "Slayer task recommended (not required)"],
           suggested: ["80+ combat stats", "70+ Prayer", "T80+ weapons"],
           drops: [
@@ -3906,8 +3914,8 @@ const PHASES = [
           why: "The Scripture of Jas has a 6.6% chance per hit to create a Time Rift that deals 20% of accumulated damage (capped at 30k). This is a significant passive DPS boost at every boss.",
           tips: [
             "Replaces God books as your pocket slot item.",
-            "Requires pages to charge — pages drop from Kerapac or can be bought on GE (non-ironman).",
-            "As an ironman, farm extra Kerapac kills for pages to keep it charged.",
+            "Requires pages to charge — as an ironman, those pages come from Kerapac drops.",
+            "Plan extra Kerapac kills if you want to keep the scripture charged for difficult bosses.",
             "Eventually replaced by Erethdor's Grimoire from Solak (end-game)."
           ],
           links: [
@@ -3950,9 +3958,9 @@ const PHASES = [
         text: "Train Archaeology to 118",
         detail: {
           title: "Archaeology to 118",
-          subtitle: "Unlock Conservation of Energy relic",
-          why: "Conservation of Energy refunds 10% adrenaline when you use an ultimate ability. Combined with Fury of the Small and Persistent Rage, this forms the optimal PvM relic loadout (550 relic power total). A long grind but the payoff is permanent.",
-          method: "Continue excavating at the highest sites. Use mattocks with Honed and Fortune perks. Complete collections for Tetracompass pieces. This is a long-term goal — don't rush it at the expense of bossing progression.",
+          subtitle: "Optional endgame relic goal",
+          why: "Conservation of Energy refunds 10% adrenaline when you use an ultimate ability, but 98 → 118 Archaeology is a massive detour. Treat this as a later optimisation goal, not a blocker before the Reaper Crew boss push.",
+          method: "Return to this after the main boss route is secure or when you specifically want the best relic setup. Continue excavating at the highest sites, use mattocks with strong perks, and complete collections for Tetracompass pieces.",
           links: [
             { label: "RS Wiki — Conservation of Energy", url: "https://runescape.wiki/w/Conservation_of_Energy" },
             { label: "RS Wiki — Archaeology Training", url: "https://runescape.wiki/w/Archaeology_training" }
@@ -4046,10 +4054,10 @@ const PHASES = [
           title: "Summoning to 87",
           subtitle: "Unlock Nihil familiars (+5% accuracy)",
           why: "Nihils provide a 5% accuracy boost for a specific combat style. At bosses with high defence (like Nex, Telos), accuracy matters enormously — a missed hit is 0 damage. Blood/Shadow/Smoke/Ice nihils each boost one style.",
-          method: "Use charms collected from Slayer and bossing via Charming Imp. Do DXP weekends for Summoning if possible. Crimson and blue charms give the best XP — save them for higher levels.",
+          method: "Use charms collected from Slayer and bossing via Charming Imp. Save crimson and blue charms for higher-value pouches, and push Summoning when you have the secondary ingredients ready.",
           tips: [
             "Blood nihil: +5% melee accuracy. Shadow nihil: +5% magic accuracy. Smoke nihil: +5% ranged accuracy. Ice nihil: +5% necromancy accuracy.",
-            "Nihils require Nex ingredient drops (from Nex: Angel of Death or trading with other players isn't an option on ironman — you'll need to farm Nex).",
+            "Nihils require Nex ingredient drops on ironman, so plan to farm the components yourself.",
             "Use Charming Imp (Dungeoneering reward) to auto-collect charms from all combat."
           ],
           links: [
@@ -4081,7 +4089,7 @@ const PHASES = [
           title: "Summoning to 96",
           subtitle: "Unlock Ripper Demon familiar (BIS DPS) + Pack Yak",
           why: "Ripper Demon is the #1 DPS familiar in the game. Its special attack (Death From Above) deals massive damage, and spamming it with Spiritual Prayer potions is a huge DPS increase at every boss. Pack Yak (also 96) gives 30 extra inventory slots — essential for learning bosses.",
-          method: "This is the big Summoning goal. Save blue charms for the final push. Use DXP events if available. The jump from 90 to 96 requires significant charm stockpiling.",
+          method: "This is the big Summoning goal. Save blue charms and high-XP secondary ingredients for the final push; the jump from 90 to 96 requires significant charm stockpiling.",
           tips: [
             "Ripper Demon spec: Use Spiritual Prayer potions to restore familiar spec points and spam Death From Above.",
             "Pack Yak: 30-slot beast of burden. Use when learning new bosses or for extended trips.",
@@ -4333,7 +4341,7 @@ const PHASES = [
         detail: {
           title: "Liberation of Mazcab — Raids",
           subtitle: "Achto armor (T90 tank) + Teci currency",
-          why: "Raids feature two bosses: Beastmaster Durzag (entry-level group boss) and Yakamaru (advanced group boss). They drop Achto Primeval/Teralith/Tempest armor (T90 tank armor with reset cooldown passive) and Teci currency for raids rewards. Both are required for Reaper Crew.",
+          why: "Raids feature two bosses: Beastmaster Durzag and Yakamaru. The real route constraint is team availability more than a solo gear checkpoint, while Achto armour, codices, and Teci rewards remain optional group-farm goals.",
           requirements: [],
           suggested: ["95+ combat stats", "95 Prayer", "96 Herblore", "T90 weapons", "Team of 10 recommended"],
           drops: [
@@ -4818,7 +4826,7 @@ const PHASES = [
         detail: {
           title: "Zemouregal & Vorkath",
           subtitle: "Dracolich armor (T90 power ranged) + Lord of Bones codex",
-          why: "Zemouregal & Vorkath is a Necromancy boss from the Battle of Forinthry quest line. It drops undead dragonhide and Vorkath's spikes to craft T90 Dracolich ranged power armor, plus the Invoke Lord of Bones codex for Necromancy. Required for Reaper Crew.",
+          why: "Zemouregal & Vorkath sits on the Fort Forinthry quest line and drops materials for Dracolich ranged armour plus the Invoke Lord of Bones codex. For a Necromancy-first route, the codex is the interesting reward, while the ranged armour can stay optional unless ranged becomes a priority.",
           requirements: ["Battle of Forinthry quest progression"],
           suggested: ["90+ Necromancy", "90+ Defence", "95 Prayer", "T90+ Necromancy weapons"],
           drops: [
@@ -4844,7 +4852,7 @@ const PHASES = [
         detail: {
           title: "Amascut, the Devourer",
           subtitle: "Tumeken's armor + Shard of Genesis Essence — enrage-scaling group boss",
-          why: "Amascut is an enrage-scaling group boss (up to 5 players) in the Golden Palace at Menaphos. She drops Tumeken's resplendence armor, Shard of Genesis Essence (for T95 weapon upgrades), and the Devourer's Nexus. Required for Reaper Crew.",
+          why: "Amascut is an enrage-scaling group boss in the Golden Palace at Menaphos. Her drops are mostly late magic/T95-upgrade goals, so for this route she belongs after the Ode/Eclipse quest chain and after the account is already in late cleanup shape.",
           requirements: ["Eclipse of the Heart quest completed"],
           suggested: ["99 combat stats", "95 Prayer", "96 Herblore", "T92+ weapons with advanced perks", "Team of up to 5 recommended"],
           drops: [
@@ -4871,17 +4879,17 @@ const PHASES = [
         text: "Boss: Gate of Elidinis",
         detail: {
           title: "Gate of Elidinis",
-          subtitle: "Skilling boss — Scripture of Elidinis + prayer codex",
-          why: "The Gate of Elidinis is a skilling boss atop the Sanctum of Rebirth, similar to Croesus. You fight it using Agility, Construction, Crafting, Divination, and Mining. Scales for 1-10 players. Required for Reaper Crew.",
+          subtitle: "Skilling boss — Memory dowser, Runic attuner, Scripture, prayer codex",
+          why: "The Gate of Elidinis should not sit at the very end of the route. The Memory dowser is valuable for gathering the Divination energy that powers augmented gear, while Runic attuner helps Runecrafting. Put Gate after the 86 Archaeology/Ode unlock path and before the route starts leaning hard on advanced Invention and long divine-charge upkeep.",
           requirements: ["Ode of the Devourer quest completed", "75 Necromancy", "86 Archaeology", "54 Construction"],
-          suggested: ["90+ in relevant skills (Agility, Construction, Crafting, Divination, Mining)", "Team of 4+ recommended"],
+          suggested: ["80+ Divination for Memory dowser value", "80+ Runecrafting if you want to use Runic attuner", "90+ in relevant gathering/support skills makes kills smoother"],
           drops: [
             { item: "Scripture of Elidinis", why: "Pocket slot item (1/480)" },
             { item: "Eclipsed Soul prayer codex", why: "Prayer unlock (1/480)" },
-            { item: "Memory dowser", why: "Divination tool — very valuable (1/480)" },
-            { item: "Runic attuner", why: "Runecrafting tool (1/480)" }
+            { item: "Memory dowser", why: "Divination off-hand — high value for energy gathering and divine-charge upkeep (1/480)" },
+            { item: "Runic attuner", why: "Runecrafting off-hand — useful if Runecrafting becomes a supply/XP focus (1/480)" }
           ],
-          moveOn: "After one kill for Reaper Crew, or farm for unique drops.",
+          moveOn: "Get the Reaper Crew kill here. If divine-charge upkeep becomes painful, this is a sensible place to spend extra time chasing Memory dowser; do not require every unique before moving on.",
           links: [
             { label: "RS Wiki", url: "https://runescape.wiki/w/Gate_of_Elidinis" }
           ]
@@ -4894,9 +4902,9 @@ const PHASES = [
         detail: {
           title: "Flesh-hatcher Mhekarnahz",
           subtitle: "Daemonheim stalker boss — Hexhunter bow (ultra-rare)",
-          why: "Flesh-hatcher Mhekarnahz is a Daemonheim boss located in the Warped Depths, accessed through the eastern Wilderness. It's a 'solo-together' encounter where multiple players fight individual instances. Required for Reaper Crew.",
+          why: "Flesh-hatcher Mhekarnahz is a Daemonheim boss accessed through the eastern Wilderness resource dungeon. The main route reason is simple access cleanup: once 40 Dungeoneering is covered, this is an efficient point to take the kill without pretending the ultra-rare Hexhunter bow is part of the plan.",
           requirements: ["40 Dungeoneering", "Access via eastern Wilderness resource dungeon"],
-          suggested: ["90+ combat stats", "95 Prayer", "96 Herblore", "T90+ weapons"],
+          suggested: ["70+ Necromancy or another comfortable combat style", "43+ Prayer", "Tier 60+ weapon", "Good food supply"],
           drops: [
             { item: "Dragon harpoon", why: "Pre-roll drop — useful for Fishing" },
             {
@@ -4994,7 +5002,7 @@ const PHASES = [
   {
     id: "skill-xp-reference",
     name: "Skill XP Reference",
-    subtitle: "Side quests and activities from the Pathway Guide not covered in the main tracker",
+    subtitle: "Side quests and activities not covered in the main tracker",
     steps: [],
     skills: [
       {
@@ -5064,6 +5072,16 @@ const PHASES = [
             note: "Archaeology 56 — +5.5% damage below max HP"
           },
           {
+            id: "xp-memory-dowser",
+            text: "Memory dowser",
+            note: "Gate of Elidinis — Divination off-hand for energy/divine charge gathering"
+          },
+          {
+            id: "xp-runic-attuner",
+            text: "Runic attuner",
+            note: "Gate of Elidinis — Runecrafting off-hand for altar-focused RC"
+          },
+          {
             id: "xp-fury-of-small",
             text: "Fury of the Small relic",
             note: "Archaeology 97 — extra adrenaline per basic"
@@ -5095,4 +5113,1216 @@ const PHASES = [
       }
     ]
   }
+];
+
+const ROUTE_ORDER_OPTIMIZATIONS = {
+  insertions: {
+    "necro-24": {
+      id: "necro-24",
+      type: "skill",
+      text: "Train Necromancy to level 24",
+      detail: {
+        title: "Necromancy to 24",
+        subtitle: "Requirement checkpoint for Rune Mythos",
+        why: "Rune Mythos requires 24 Necromancy. Do this short push before adding the quest to the route so the requirement is already met.",
+        method: "Continue City of Um combat and rituals after Kili Row.",
+        links: [
+          { label: "RS Wiki — Rune Mythos", url: "https://runescape.wiki/w/Rune_Mythos" },
+          { label: "RS Wiki — Necromancy training", url: "https://runescape.wiki/w/Necromancy_training" }
+        ]
+      }
+    },
+    "train-agility-10": {
+      id: "train-agility-10",
+      type: "skill",
+      text: "Train Agility to level 10",
+      detail: {
+        title: "Agility to 10",
+        subtitle: "Requirement checkpoint for The Dig Site",
+        why: "The Dig Site requires 10 Agility. This keeps the early quest chain requirement-clean.",
+        method: "Run the Burthorpe/Taverley or Gnome Stronghold course briefly.",
+        links: [
+          { label: "RS Wiki — The Dig Site", url: "https://runescape.wiki/w/The_Dig_Site" },
+          { label: "RS Wiki — Agility training", url: "https://runescape.wiki/w/Agility_training" }
+        ]
+      }
+    },
+    "train-mining-20": {
+      id: "train-mining-20",
+      type: "skill",
+      text: "Train Mining to level 20",
+      detail: {
+        title: "Mining to 20",
+        subtitle: "Requirement checkpoint for Nature Spirit",
+        why: "Nature Spirit requires 20 Mining and 20 Smithing. The Knight's Sword covers Smithing; this small Mining push closes the remaining gate.",
+        method: "Mine copper/tin/iron near Burthorpe, Varrock, or the Mining Guild path.",
+        links: [
+          { label: "RS Wiki — Nature Spirit", url: "https://runescape.wiki/w/Nature_Spirit" },
+          { label: "RS Wiki — Mining training", url: "https://runescape.wiki/w/Mining_training" }
+        ]
+      }
+    },
+    "train-crafting-25": {
+      id: "train-crafting-25",
+      type: "skill",
+      text: "Train Crafting to level 25",
+      detail: {
+        title: "Crafting to 25",
+        subtitle: "Requirement checkpoint for In Aid of the Myreque",
+        why: "In Aid of the Myreque requires 25 Crafting. This also keeps Crafting moving toward Haunted Mine and later quest gates.",
+        method: "Continue pottery, silver jewellery, or gem cutting with gems gathered from Mining and shops.",
+        links: [
+          { label: "RS Wiki — In Aid of the Myreque", url: "https://runescape.wiki/w/In_Aid_of_the_Myreque" },
+          { label: "RS Wiki — Crafting training", url: "https://runescape.wiki/w/Crafting_training" }
+        ]
+      }
+    },
+    "train-firemaking-30": {
+      id: "train-firemaking-30",
+      type: "skill",
+      text: "Train Firemaking to level 30",
+      detail: {
+        title: "Firemaking to 30",
+        subtitle: "Requirement checkpoint for Sea Slug",
+        why: "Sea Slug requires 30 Firemaking, so this short skilling stop belongs before the quest.",
+        method: "Burn the best logs available from Woodcutting or shops.",
+        links: [
+          { label: "RS Wiki — Sea Slug", url: "https://runescape.wiki/w/Sea_Slug" },
+          { label: "RS Wiki — Firemaking training", url: "https://runescape.wiki/w/Firemaking_training" }
+        ]
+      }
+    },
+    "train-crafting-35": {
+      id: "train-crafting-35",
+      type: "skill",
+      text: "Train Crafting to level 35",
+      detail: {
+        title: "Crafting to 35",
+        subtitle: "Requirement checkpoint for Haunted Mine",
+        why: "Haunted Mine requires 35 Crafting. Reaching it before the quest keeps the Salve amulet path clean.",
+        method: "Use pottery, silver jewellery, gold jewellery, and gem cutting depending on available materials.",
+        links: [
+          { label: "RS Wiki — Haunted Mine", url: "https://runescape.wiki/w/Haunted_Mine" },
+          { label: "RS Wiki — Crafting training", url: "https://runescape.wiki/w/Crafting_training" }
+        ]
+      }
+    },
+    "train-dungeoneering-40": {
+      id: "train-dungeoneering-40",
+      type: "skill",
+      text: "Train Dungeoneering to level 40",
+      detail: {
+        title: "Dungeoneering to 40",
+        subtitle: "Access checkpoint for Flesh-hatcher Mhekarnahz",
+        why: "Flesh-hatcher Mhekarnahz is a mid-level boss, but it still needs the Daemonheim/Warped Depths access gate covered before the route sends you there.",
+        method: "Run early Daemonheim floors solo or with your friend until level 40. This also starts building toward later Dungeoneering token goals.",
+        links: [
+          { label: "RS Wiki — Dungeoneering training", url: "https://runescape.wiki/w/Dungeoneering_training" },
+          { label: "RS Wiki — Flesh-hatcher Mhekarnahz", url: "https://runescape.wiki/w/Flesh-hatcher_Mhekarnahz" }
+        ]
+      }
+    },
+    "train-construction-42-fort": {
+      id: "train-construction-42-fort",
+      type: "skill",
+      text: "Train Construction to 42 for Fort Forinthry",
+      detail: {
+        title: "Construction to 42",
+        subtitle: "New Foundations, Fort lodestone, and Town Hall Tier 1",
+        why: "New Foundations gives strong Construction progress and unlocks the Fort hub. Train enough Construction and gather the limestone bricks before starting it so the early Fort unlocks happen in one pass.",
+        method: "Prepare at least 362 limestone bricks: 352 for New Foundations and 10 for the Fort Forinthry lodestone. Build Town Hall Tier 1 afterwards for rested experience.",
+        links: [
+          { label: "RS Wiki — Construction training", url: "https://runescape.wiki/w/Construction_training" },
+          { label: "RS Wiki — New Foundations", url: "https://runescape.wiki/w/New_Foundations" }
+        ]
+      }
+    },
+    "new-foundations": {
+      id: "new-foundations",
+      type: "quest",
+      text: "Complete New Foundations",
+      detail: {
+        title: "New Foundations",
+        subtitle: "Start Fort Forinthry and unlock the Fort build system",
+        why: "New Foundations starts the Fort Forinthry line. It is not just a later quest prerequisite: it opens the Fort hub, gives Construction progress, and sets up later Fort quest requirements.",
+        requirements: ["Construction 41", "352 limestone bricks"],
+        links: [
+          { label: "RS Wiki — New Foundations", url: "https://runescape.wiki/w/New_Foundations" },
+          { label: "RS Wiki — Fort Forinthry", url: "https://runescape.wiki/w/Fort_Forinthry" }
+        ]
+      }
+    },
+    "fort-lodestone-build": {
+      id: "fort-lodestone-build",
+      type: "unlock",
+      text: "Build the Fort Forinthry lodestone",
+      detail: {
+        title: "Fort Forinthry Lodestone",
+        subtitle: "Fast travel into the Fort hub",
+        why: "Build this immediately after New Foundations. It makes every later Fort quest/build step less annoying and costs only a small extra limestone-brick stack.",
+        requirements: ["New Foundations completed", "10 limestone bricks"],
+        links: [
+          { label: "RS Wiki — Fort Forinthry", url: "https://runescape.wiki/w/Fort_Forinthry" }
+        ]
+      }
+    },
+    "fort-town-hall-t1": {
+      id: "fort-town-hall-t1",
+      type: "unlock",
+      text: "Build Fort Town Hall Tier 1",
+      detail: {
+        title: "Town Hall Tier 1",
+        subtitle: "Rested experience and Fort progression",
+        why: "Town Hall Tier 1 finishes the early Fort setup. It unlocks rested experience and leaves the Fort ready for the later Command Centre, Chapel, and quest chain.",
+        requirements: ["New Foundations completed", "Construction 42"],
+        links: [
+          { label: "RS Wiki — Town Hall", url: "https://runescape.wiki/w/Town_Hall_(Fort_Forinthry)" }
+        ]
+      }
+    },
+    "fort-construction-materials": {
+      id: "fort-construction-materials",
+      type: "skill",
+      text: "Prepare Fort Forinthry construction materials",
+      detail: {
+        title: "Fort Construction Materials",
+        subtitle: "Prep before Command Centre, Chapel, and Fort quests",
+        why: "Prepare the Fort building materials before starting the next Fort run. The upcoming buildings and quests consume a lot of logs and limestone bricks, so doing the gathering now keeps the chain from turning into repeated bank/material detours.",
+        method: "Gather 96 logs, 120 oak logs, 288 willow logs, 168 maple logs, 216 acadia logs, and 168 limestone bricks.",
+        requirements: ["New Foundations completed"],
+        links: [
+          { label: "RS Wiki — Fort Forinthry", url: "https://runescape.wiki/w/Fort_Forinthry" }
+        ]
+      }
+    },
+    "fort-command-centre-t1": {
+      id: "fort-command-centre-t1",
+      type: "unlock",
+      text: "Build Fort Command Centre Tier 1",
+      detail: {
+        title: "Command Centre Tier 1",
+        subtitle: "First late Fort building before the quest chain",
+        why: "Build Command Centre Tier 1 before the Fort quest chain. This keeps the construction sequence explicit instead of hiding it inside a vague quest-chain step.",
+        requirements: ["New Foundations completed", "Fort construction materials prepared"],
+        links: [
+          { label: "RS Wiki — Command Centre", url: "https://runescape.wiki/w/Command_Centre" }
+        ]
+      }
+    },
+    "fort-chapel-t1": {
+      id: "fort-chapel-t1",
+      type: "unlock",
+      text: "Build Fort Chapel Tier 1",
+      detail: {
+        title: "Chapel Tier 1",
+        subtitle: "Second late Fort building before the quest chain",
+        why: "Build Chapel Tier 1 immediately before the Fort quest sequence. Keep it explicit so the route shows the actual Fort work instead of compressing it into a placeholder.",
+        requirements: ["New Foundations completed", "Fort construction materials prepared"],
+        links: [
+          { label: "RS Wiki — Chapel", url: "https://runescape.wiki/w/Chapel_(Fort_Forinthry)" }
+        ]
+      }
+    },
+    "murder-on-the-border": {
+      id: "murder-on-the-border",
+      type: "quest",
+      text: "Complete Murder on the Border",
+      detail: {
+        title: "Murder on the Border",
+        subtitle: "Fort quest chain: Kitchen Tier 1 during quest",
+        why: "This starts the concrete Fort quest sequence that eventually feeds Ancient Awakening, Battle of Forinthry, and Requiem for a Dragon.",
+        requirements: ["New Foundations completed", "Kitchen Tier 1 built during the quest"],
+        links: [
+          { label: "RS Wiki — Murder on the Border", url: "https://runescape.wiki/w/Murder_on_the_Border" }
+        ]
+      }
+    },
+    "unwelcome-guests": {
+      id: "unwelcome-guests",
+      type: "quest",
+      text: "Complete Unwelcome Guests",
+      detail: {
+        title: "Unwelcome Guests",
+        subtitle: "Fort quest chain: Guardhouse Tier 1 during quest",
+        why: "Unwelcome Guests continues the Fort chain after Murder on the Border and includes the Guardhouse build. Keeping it explicit makes the actual Fort work visible instead of hiding it under chain progress.",
+        requirements: ["Murder on the Border completed", "Guardhouse Tier 1 built during the quest"],
+        links: [
+          { label: "RS Wiki — Unwelcome Guests", url: "https://runescape.wiki/w/Unwelcome_Guests" }
+        ]
+      }
+    },
+    "dead-and-buried": {
+      id: "dead-and-buried",
+      type: "quest",
+      text: "Complete Dead and Buried",
+      detail: {
+        title: "Dead and Buried",
+        subtitle: "Fort quest chain: Ranger's Workroom Tier 1 during quest",
+        why: "Dead and Buried is the next Fort quest and advances the chain needed before Battle of Forinthry and later Zemouregal & Vorkath.",
+        requirements: ["Unwelcome Guests completed", "Ranger's Workroom Tier 1 built during the quest"],
+        links: [
+          { label: "RS Wiki — Dead and Buried", url: "https://runescape.wiki/w/Dead_and_Buried" }
+        ]
+      }
+    },
+    "ancient-awakening": {
+      id: "ancient-awakening",
+      type: "quest",
+      text: "Complete Ancient Awakening",
+      detail: {
+        title: "Ancient Awakening",
+        subtitle: "Fort quest chain: border wall, Grove cabin, Botanist's Workbench",
+        why: "Ancient Awakening belongs before Battle of Forinthry so the later Requiem/Gate path has its prerequisites spelled out instead of implied.",
+        requirements: ["Dead and Buried completed", "Eastern border wall built", "Grove cabin Tier 1 built", "Botanist's Workbench Tier 1 built"],
+        links: [
+          { label: "RS Wiki — Ancient Awakening", url: "https://runescape.wiki/w/Ancient_Awakening" }
+        ]
+      }
+    },
+    "train-necro-75": {
+      id: "train-necro-75",
+      type: "skill",
+      text: "Train Necromancy to level 75",
+      detail: {
+        title: "Necromancy to 75",
+        subtitle: "Quest gate for the Gate of Elidinis unlock chain",
+        why: "Gate of Elidinis is not a final cleanup boss for this route. Its Divination and Runecrafting rewards are useful before sustained augmented-gear upkeep, so cover the 75 Necromancy gate before the Ode of the Devourer path.",
+        method: "Continue rituals, Slayer, and boss practice with your current Necromancy gear. Keep Kili's Knowledge upgrades current while pushing toward the later tier 90 route.",
+        links: [
+          { label: "RS Wiki — Necromancy training", url: "https://runescape.wiki/w/Necromancy_training" },
+          { label: "RS Wiki — Gate of Elidinis", url: "https://runescape.wiki/w/Gate_of_Elidinis" }
+        ]
+      }
+    },
+    "archaeology-86": {
+      id: "archaeology-86",
+      type: "skill",
+      text: "Train Archaeology to 86",
+      detail: {
+        title: "Archaeology to 86",
+        subtitle: "Gate of Elidinis, Requiem/Ode, and later Rasial prep",
+        why: "86 Archaeology is the long gate behind the Gate of Elidinis unlock path, and it also lines up with the later Necromancy quest chain for Rasial. Do this after the early 56 Archaeology relic, but before the route starts leaning heavily on Invention charges and advanced perks.",
+        method: "Continue Archaeology training from the 56 relic checkpoint. Restore collections and use chronotes/monolith unlocks as you go; this is also a stepping stone toward the later 97/98 relic push.",
+        links: [
+          { label: "RS Wiki — Archaeology training", url: "https://runescape.wiki/w/Archaeology_training" },
+          { label: "RS Wiki — Gate of Elidinis", url: "https://runescape.wiki/w/Gate_of_Elidinis" },
+          { label: "RS Wiki — Rasial", url: "https://runescape.wiki/w/Rasial" }
+        ]
+      }
+    },
+    "elder-kiln-reqs": {
+      id: "elder-kiln-reqs",
+      type: "skill",
+      text: "Meet The Elder Kiln skill requirements",
+      detail: {
+        title: "Elder Kiln Requirements",
+        subtitle: "Prep for Har-Aken access",
+        why: "Har-Aken is reached through the Fight Kiln, which is unlocked by completing The Elder Kiln. Check these requirements before adding Har-Aken to the boss route.",
+        method: "Train the remaining Elder Kiln requirements, including the Magic, Agility, and Mining gates if your quest log still shows them incomplete.",
+        links: [
+          { label: "RS Wiki — The Elder Kiln", url: "https://runescape.wiki/w/The_Elder_Kiln" },
+          { label: "RS Wiki — Fight Kiln", url: "https://runescape.wiki/w/Fight_Kiln" }
+        ]
+      }
+    },
+    "the-elder-kiln": {
+      id: "the-elder-kiln",
+      type: "quest",
+      text: "Complete The Elder Kiln",
+      detail: {
+        title: "The Elder Kiln",
+        subtitle: "Unlock Fight Kiln and Har-Aken",
+        why: "Har-Aken is the final boss of the Fight Kiln and counts for Reaper Crew. This quest needs to happen before the Har-Aken step.",
+        requirements: ["Elder Kiln skill requirements met", "TzHaar quest chain progress"],
+        links: [
+          { label: "RS Wiki — The Elder Kiln", url: "https://runescape.wiki/w/The_Elder_Kiln" },
+          { label: "RS Wiki — Har-Aken", url: "https://runescape.wiki/w/Har-Aken" }
+        ]
+      }
+    },
+    "impressing-the-locals": {
+      id: "impressing-the-locals",
+      type: "quest",
+      text: "Complete Impressing the Locals",
+      detail: {
+        title: "Impressing the Locals",
+        subtitle: "Unlock The Arc and Temple of Aminishi access",
+        why: "Elite Dungeon 1 is on Aminishi, so this belongs before the ED1 full-clear boss step.",
+        requirements: [],
+        links: [
+          { label: "RS Wiki — Impressing the Locals", url: "https://runescape.wiki/w/Impressing_the_Locals" },
+          { label: "RS Wiki — Temple of Aminishi", url: "https://runescape.wiki/w/Temple_of_Aminishi" }
+        ]
+      }
+    },
+    "elder-god-quest-reqs": {
+      id: "elder-god-quest-reqs",
+      type: "skill",
+      text: "Meet Elder God Wars quest-chain skill gates",
+      detail: {
+        title: "Elder God Wars Quest Requirements",
+        subtitle: "Prep for Extinction and passive Ring of Vigour",
+        why: "The Elder God Wars quest chain gates Extinction. Since passive Ring of Vigour is a permanent DPS increase, clear these skill gates before the late boss push.",
+        method: "Check the quest list before starting Desperate Measures: important gates include Archaeology, Divination, Magic, Slayer, Agility, and one level-85 production skill for Sins of the Father.",
+        links: [
+          { label: "RS Wiki — Extinction", url: "https://runescape.wiki/w/Extinction" },
+          { label: "RS Wiki — City of Senntisten", url: "https://runescape.wiki/w/City_of_Senntisten" }
+        ]
+      }
+    },
+    "raksha-miniquest": {
+      id: "raksha-miniquest",
+      type: "quest",
+      text: "Complete Raksha, the Shadow Colossus miniquest",
+      detail: {
+        title: "Raksha, the Shadow Colossus",
+        subtitle: "Unlock Raksha boss encounter",
+        why: "Raksha itself is not the unlock step; the miniquest should be completed before attempting the boss.",
+        requirements: ["The Vault of Shadows completed", "Access to Anachronia"],
+        links: [
+          { label: "RS Wiki — Raksha miniquest", url: "https://runescape.wiki/w/Raksha,_the_Shadow_Colossus_(miniquest)" },
+          { label: "RS Wiki — Raksha", url: "https://runescape.wiki/w/Raksha" }
+        ]
+      }
+    },
+    "train-necro-95": {
+      id: "train-necro-95",
+      type: "skill",
+      text: "Train Necromancy to level 95",
+      detail: {
+        title: "Necromancy to 95",
+        subtitle: "Rasial requirement and main style breakpoint",
+        why: "Rasial is a high-priority farm target for Necromancy weapons and armour, and requires 95 Necromancy.",
+        method: "Use rituals and high-value combat training. Keep Kili's gear path current while pushing to this level.",
+        links: [
+          { label: "PvME — Necromancy Upgrade Order", url: "https://pvme.io/pvme-guides/upgrading-info/upgrade-order/necromancy/" },
+          { label: "RS Wiki — Necromancy training", url: "https://runescape.wiki/w/Necromancy_training" }
+        ]
+      }
+    },
+    "necro-t90-gear": {
+      id: "necro-t90-gear",
+      type: "reward",
+      text: "Upgrade to tier 90 Necromancy gear",
+      detail: {
+        title: "Tier 90 Necromancy Gear",
+        subtitle: "Minimum practical Rasial farming setup",
+        why: "Rasial can technically be attempted once the quest and skill requirements are met, but farming him efficiently wants tier 90 Necromancy gear first. Use Kili's Knowledge, Hermodic plates, rituals, and gathered materials to finish the tier 90 setup before committing to Rasial farming.",
+        requirements: ["95 Necromancy", "Kili's Knowledge progression", "Hermodic plates from Hermod"],
+        tips: [
+          "Prioritise the weapons and the armour path you can sustain.",
+          "If Rasial kills are inconsistent, come back after more perks, stats, or supplies rather than forcing the farm."
+        ],
+        links: [
+          { label: "PvME — Necromancy Upgrade Order", url: "https://pvme.io/pvme-guides/upgrading-info/upgrade-order/necromancy/" },
+          { label: "RS Wiki — Kili's Knowledge", url: "https://runescape.wiki/w/Kili%27s_Knowledge" },
+          { label: "RS Wiki — Rasial", url: "https://runescape.wiki/w/Rasial" }
+        ]
+      }
+    },
+    "tomes-of-the-warlock": {
+      id: "tomes-of-the-warlock",
+      type: "quest",
+      text: "Complete Tomes of the Warlock",
+      detail: {
+        title: "Tomes of the Warlock",
+        subtitle: "Necromancy quest-chain step for Requiem, Ode, Gate, and Rasial",
+        why: "Tomes of the Warlock belongs earlier than the Rasial block because it also feeds the Requiem/Ode chain that unlocks Gate of Elidinis. Completing it here keeps the Gate placement requirement-clean and still covers the later Alpha vs Omega path.",
+        requirements: ["Necromancy quest-chain progress", "75 Necromancy", "86 Archaeology"],
+        links: [
+          { label: "RS Wiki — Tomes of the Warlock", url: "https://runescape.wiki/w/Tomes_of_the_Warlock" },
+          { label: "RS Wiki — Alpha vs Omega", url: "https://runescape.wiki/w/Alpha_vs_Omega" }
+        ]
+      }
+    },
+    "alpha-vs-omega": {
+      id: "alpha-vs-omega",
+      type: "quest",
+      text: "Complete Alpha vs Omega",
+      detail: {
+        title: "Alpha vs Omega",
+        subtitle: "Direct unlock for Rasial",
+        why: "Rasial requires Alpha vs Omega. Put the quest immediately before the Rasial farm block.",
+        requirements: ["Tomes of the Warlock completed", "Rasial quest-chain requirements met"],
+        links: [
+          { label: "RS Wiki — Alpha vs Omega", url: "https://runescape.wiki/w/Alpha_vs_Omega" },
+          { label: "RS Wiki — Rasial", url: "https://runescape.wiki/w/Rasial" }
+        ]
+      }
+    },
+    "soul-searching": {
+      id: "soul-searching",
+      type: "quest",
+      text: "Complete Soul Searching",
+      detail: {
+        title: "Soul Searching",
+        subtitle: "Unlock Sanctum of Rebirth",
+        why: "Sanctum of Rebirth requires Soul Searching, so it belongs before the Sanctum boss sequence.",
+        requirements: ["Necromancy! completed"],
+        links: [
+          { label: "RS Wiki — Soul Searching", url: "https://runescape.wiki/w/Soul_Searching" },
+          { label: "RS Wiki — Sanctum of Rebirth", url: "https://runescape.wiki/w/Sanctum_of_Rebirth" }
+        ]
+      }
+    },
+    "battle-of-forinthry": {
+      id: "battle-of-forinthry",
+      type: "quest",
+      text: "Complete Battle of Forinthry",
+      detail: {
+        title: "Battle of Forinthry",
+        subtitle: "Direct Fort quest before Requiem and Zemouregal & Vorkath",
+        why: "Battle of Forinthry should be an explicit quest step, not shorthand for the whole Fort chain. It unlocks the Zemouregal & Vorkath path and is part of the prerequisite route into Requiem for a Dragon.",
+        requirements: ["Ancient Awakening completed"],
+        links: [
+          { label: "RS Wiki — Battle of Forinthry", url: "https://runescape.wiki/w/Battle_of_Forinthry" },
+          { label: "RS Wiki — Zemouregal & Vorkath", url: "https://runescape.wiki/w/Zemouregal_%26_Vorkath" }
+        ]
+      }
+    },
+    "requiem-for-a-dragon": {
+      id: "requiem-for-a-dragon",
+      type: "quest",
+      text: "Complete Requiem for a Dragon",
+      detail: {
+        title: "Requiem for a Dragon",
+        subtitle: "Bridge quest into Ode of the Devourer",
+        why: "Ode of the Devourer is the direct Gate of Elidinis unlock, and Requiem for a Dragon is the prerequisite that makes Ode available. Put it immediately before Ode so the Gate block is self-contained.",
+        requirements: ["Battle of Forinthry completed", "Tomes of the Warlock completed", "86 Archaeology", "75 Necromancy"],
+        links: [
+          { label: "RS Wiki — Requiem for a Dragon", url: "https://runescape.wiki/w/Requiem_for_a_Dragon" },
+          { label: "RS Wiki — Ode of the Devourer", url: "https://runescape.wiki/w/Ode_of_the_Devourer" }
+        ]
+      }
+    },
+    "eclipse-of-the-heart": {
+      id: "eclipse-of-the-heart",
+      type: "quest",
+      text: "Complete Eclipse of the Heart",
+      detail: {
+        title: "Eclipse of the Heart",
+        subtitle: "Unlock Amascut, the Devourer",
+        why: "Amascut is available after Eclipse of the Heart, so this quest belongs before the Reaper Crew kill.",
+        requirements: ["Ode of the Devourer completed", "Desert quest-chain progress"],
+        links: [
+          { label: "RS Wiki — Eclipse of the Heart", url: "https://runescape.wiki/w/Eclipse_of_the_Heart" },
+          { label: "RS Wiki — Amascut", url: "https://runescape.wiki/w/Amascut,_the_Devourer" }
+        ]
+      }
+    },
+    "ode-of-the-devourer": {
+      id: "ode-of-the-devourer",
+      type: "quest",
+      text: "Complete Ode of the Devourer",
+      detail: {
+        title: "Ode of the Devourer",
+        subtitle: "Unlock Gate of Elidinis",
+        why: "Gate of Elidinis requires Ode of the Devourer, and Gate's skilling rewards are useful well before final boss cleanup. Put Ode directly before Gate after the Requiem/Fort/Necromancy requirements are covered.",
+        requirements: ["Soul Searching completed", "Requiem for a Dragon completed", "Desert quest-chain progress", "86 Archaeology", "75 Necromancy"],
+        links: [
+          { label: "RS Wiki — Ode of the Devourer", url: "https://runescape.wiki/w/Ode_of_the_Devourer" },
+          { label: "RS Wiki — Gate of Elidinis", url: "https://runescape.wiki/w/Gate_of_Elidinis" }
+        ]
+      }
+    }
+  }
+};
+
+function applyRouteOrderOptimizations() {
+  const findStep = (stepId) => {
+    for (const phase of PHASES) {
+      const index = phase.steps.findIndex((step) => step.id === stepId);
+      if (index !== -1) {
+        return { phase, index, step: phase.steps[index] };
+      }
+    }
+    return null;
+  };
+
+  const insertBefore = (step, targetId) => {
+    if (findStep(step.id)) return;
+    const target = findStep(targetId);
+    if (!target) return;
+    target.phase.steps.splice(target.index, 0, step);
+  };
+
+  const moveBefore = (stepId, targetId) => {
+    const source = findStep(stepId);
+    if (!source) return;
+    const [step] = source.phase.steps.splice(source.index, 1);
+    const target = findStep(targetId);
+    if (!target) {
+      source.phase.steps.splice(source.index, 0, step);
+      return;
+    }
+    target.phase.steps.splice(target.index, 0, step);
+  };
+
+  const insertions = ROUTE_ORDER_OPTIMIZATIONS.insertions;
+
+  moveBefore("one-piercing-note", "necro-tutorial");
+  moveBefore("reward-devotion", "necro-tutorial");
+  moveBefore("blood-pact", "necro-20");
+
+  insertBefore(insertions["necro-24"], "rune-mythos");
+  moveBefore("train-crafting-20", "the-golem");
+  insertBefore(insertions["train-agility-10"], "dig-site");
+  insertBefore(insertions["train-mining-20"], "nature-spirit");
+  insertBefore(insertions["train-crafting-25"], "in-aid-of-myreque");
+  moveBefore("train-magic-20", "in-aid-of-myreque");
+  insertBefore(insertions["train-firemaking-30"], "sea-slug");
+  insertBefore(insertions["train-crafting-35"], "haunted-mine");
+  insertBefore(insertions["train-construction-42-fort"], "swept-away");
+  insertBefore(insertions["new-foundations"], "swept-away");
+  insertBefore(insertions["fort-lodestone-build"], "swept-away");
+  insertBefore(insertions["fort-town-hall-t1"], "swept-away");
+  insertBefore(insertions["train-dungeoneering-40"], "mhekarnahz");
+  moveBefore("reward-barrows-armor", "big-chompy-bird-hunting");
+
+  moveBefore("croesus", "gwd1-graardor");
+  moveBefore("train-dungeoneering-40", "corporeal-beast");
+  moveBefore("mhekarnahz", "corporeal-beast");
+  insertBefore(insertions["elder-kiln-reqs"], "har-aken");
+  insertBefore(insertions["the-elder-kiln"], "har-aken");
+  insertBefore(insertions["impressing-the-locals"], "ed1-full");
+
+  [
+    "desperate-measures",
+    "desperate-creatures",
+    "vault-of-shadows",
+    "azzanadras-quest",
+    "battle-of-monolith",
+    "city-of-senntisten-quest",
+    "eye-of-het-1",
+    "eye-of-het-2",
+    "sins-of-father",
+    "extinction",
+    "reward-passive-rov",
+    "advanced-perks",
+  ].forEach((stepId) => moveBefore(stepId, "ed2-full"));
+  insertBefore(insertions["elder-god-quest-reqs"], "desperate-measures");
+  insertBefore(insertions["raksha-miniquest"], "raksha");
+  moveBefore("dungeoneering-tokens", "reward-passive-rov");
+  moveBefore("reward-charming-imp", "reward-passive-rov");
+  insertBefore(insertions["fort-construction-materials"], "rune-mysteries");
+  insertBefore(insertions["fort-command-centre-t1"], "rune-mysteries");
+  insertBefore(insertions["fort-chapel-t1"], "rune-mysteries");
+  insertBefore(insertions["murder-on-the-border"], "rune-mysteries");
+  insertBefore(insertions["unwelcome-guests"], "rune-mysteries");
+  insertBefore(insertions["dead-and-buried"], "rune-mysteries");
+  insertBefore(insertions["ancient-awakening"], "rune-mysteries");
+  insertBefore(insertions["train-necro-75"], "archaeology-97");
+  insertBefore(insertions["archaeology-86"], "archaeology-97");
+  insertBefore(insertions["requiem-for-a-dragon"], "archaeology-97");
+
+  insertBefore(insertions["train-necro-95"], "nex-aod");
+  insertBefore(insertions["tomes-of-the-warlock"], "nex-aod");
+  insertBefore(insertions["alpha-vs-omega"], "nex-aod");
+  moveBefore("rasial", "nex-aod");
+  insertBefore(insertions["necro-t90-gear"], "rasial");
+  moveBefore("essence-of-finality", "nex-aod");
+  moveBefore("cinderbanes-amulet-of-souls", "essence-of-finality");
+
+  insertBefore(insertions["soul-searching"], "sanctum-of-rebirth");
+  insertBefore(insertions["battle-of-forinthry"], "zemouregal-vorkath");
+  insertBefore(insertions["ode-of-the-devourer"], "gate-of-elidinis");
+  insertBefore(insertions["eclipse-of-the-heart"], "amascut");
+  moveBefore("tomes-of-the-warlock", "requiem-for-a-dragon");
+  moveBefore("soul-searching", "requiem-for-a-dragon");
+  moveBefore("battle-of-forinthry", "requiem-for-a-dragon");
+  moveBefore("gate-of-elidinis", "archaeology-97");
+  moveBefore("ode-of-the-devourer", "gate-of-elidinis");
+  moveBefore("sanctum-of-rebirth", "cinderbanes-amulet-of-souls");
+  moveBefore("telos", "raksha");
+  moveBefore("limitless-ingenuity", "vorago");
+  moveBefore("train-summoning-87", "bis-optimization");
+  moveBefore("train-summoning-90", "bis-optimization");
+  moveBefore("train-summoning-96", "bis-optimization");
+  moveBefore("archaeology-118", "bis-optimization");
+}
+
+applyRouteOrderOptimizations();
+
+function movePostRouteStepsToNextSteps() {
+  const postRouteStepIds = [
+    "train-summoning-87",
+    "train-summoning-90",
+    "train-summoning-96",
+    "archaeology-118",
+    "bis-optimization"
+  ];
+
+  const movedSteps = [];
+  for (const stepId of postRouteStepIds) {
+    for (const phase of PHASES) {
+      if (!phase.steps) continue;
+      const index = phase.steps.findIndex((step) => step.id === stepId);
+      if (index === -1) continue;
+      movedSteps.push(phase.steps.splice(index, 1)[0]);
+      break;
+    }
+  }
+
+  if (!movedSteps.length) return;
+
+  const nextStepsPhase = {
+    id: "next-steps",
+    name: "Next Steps",
+    subtitle: "Optional optimisation after the Reaper Crew route is done",
+    optional: true,
+    steps: movedSteps
+  };
+
+  const existingIndex = PHASES.findIndex((phase) => phase.id === "next-steps");
+  if (existingIndex !== -1) {
+    PHASES[existingIndex] = nextStepsPhase;
+    return;
+  }
+
+  const referenceIndex = PHASES.findIndex((phase) => phase.id === "skill-xp-reference");
+  PHASES.splice(referenceIndex === -1 ? PHASES.length : referenceIndex, 0, nextStepsPhase);
+}
+
+movePostRouteStepsToNextSteps();
+
+function applyReaperStepSplits() {
+  const findStep = (stepId) => {
+    for (const phase of PHASES) {
+      const index = phase.steps.findIndex((step) => step.id === stepId);
+      if (index !== -1) return { phase, index, step: phase.steps[index] };
+    }
+    return null;
+  };
+
+  const makeBossStep = (baseStep, overrides) => ({
+    ...baseStep,
+    id: overrides.id,
+    text: overrides.text,
+    detail: {
+      ...baseStep.detail,
+      title: overrides.title,
+      subtitle: overrides.subtitle ?? baseStep.detail.subtitle,
+      why: overrides.why,
+      requirements: overrides.requirements ?? baseStep.detail.requirements ?? [],
+      drops: overrides.drops ?? [],
+      moveOn: overrides.moveOn,
+      links: overrides.links ?? baseStep.detail.links ?? []
+    }
+  });
+
+  const replaceComposite = (sourceId, replacements) => {
+    const source = findStep(sourceId);
+    if (!source) return;
+    const newSteps = replacements.map((replacement) => makeBossStep(source.step, replacement));
+    source.phase.steps.splice(source.index, 1, ...newSteps);
+  };
+
+  replaceComposite("gwd2-twins-greg", [
+    {
+      id: "twin-furies",
+      text: "Boss: Twin Furies",
+      title: "Twin Furies — Nymora & Avaryss",
+      subtitle: "GWD2 Reaper Crew kill",
+      why: "Twin Furies are one of the four Heart of Gielinor bosses needed before Telos access. Take the kill here for the GWD2 completion path; weapon farming is optional for a Necromancy-first route.",
+      moveOn: "After one kill for Reaper Crew and Telos access. Farm weapons only if they support your next style goal.",
+      links: [
+        { label: "RS Wiki — Twin Furies", url: "https://runescape.wiki/w/Twin_Furies" },
+        { label: "PvME — Twin Furies", url: "https://pvme.io/pvme-guides/basic-guides/twin-furies-basic/" }
+      ]
+    },
+    {
+      id: "gregorovic",
+      text: "Boss: Gregorovic",
+      title: "Gregorovic — Heart of Gielinor",
+      subtitle: "GWD2 Reaper Crew kill",
+      why: "Gregorovic finishes another piece of the Heart of Gielinor/Telos access set. The fight belongs with the other GWD2 cleanup rather than being delayed into endgame.",
+      moveOn: "After one kill for Reaper Crew and Telos access. Farm weapons only if they support your next style goal.",
+      links: [
+        { label: "RS Wiki — Gregorovic", url: "https://runescape.wiki/w/Gregorovic" },
+        { label: "PvME — Gregorovic", url: "https://pvme.io/pvme-guides/basic-guides/gregorovic-basic/" }
+      ]
+    }
+  ]);
+
+  replaceComposite("ed1-full", [
+    {
+      id: "ed1-sanctum-guardian",
+      text: "Boss: Sanctum Guardian",
+      title: "Sanctum Guardian — Temple of Aminishi",
+      subtitle: "Elite Dungeon 1 first boss",
+      why: "Sanctum Guardian is the first checkpoint in ED1. The value here is learning the dungeon rhythm and opening the path toward a full Seiryu clear, not stopping for a separate farm.",
+      moveOn: "After one kill, continue the dungeon toward Masuta.",
+      links: [
+        { label: "RS Wiki — Sanctum Guardian", url: "https://runescape.wiki/w/Sanctum_Guardian" },
+        { label: "PvME — ED1 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed1-basic/" }
+      ]
+    },
+    {
+      id: "ed1-masuta",
+      text: "Boss: Masuta the Ascended",
+      title: "Masuta the Ascended — Temple of Aminishi",
+      subtitle: "Elite Dungeon 1 second boss",
+      why: "Masuta is the second ED1 checkpoint and the last major stop before Seiryu. Treat it as part of the same full-clear objective rather than a standalone grind.",
+      moveOn: "After one kill, continue the dungeon toward Seiryu.",
+      links: [
+        { label: "RS Wiki — Masuta", url: "https://runescape.wiki/w/Masuta_the_Ascended" },
+        { label: "PvME — ED1 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed1-basic/" }
+      ]
+    },
+    {
+      id: "ed1-seiryu",
+      text: "Boss: Seiryu the Azure Serpent",
+      title: "Seiryu the Azure Serpent — Temple of Aminishi",
+      subtitle: "Elite Dungeon 1 final boss",
+      why: "Seiryu is the payoff for the ED1 full clear. Mizuyari and other drops are optional side goals, so finish the dungeon once and move on unless you specifically want ED1 loot.",
+      moveOn: "After one full ED1 clear for Reaper Crew. Mizuyari and other drops are optional side goals.",
+      links: [
+        { label: "RS Wiki — Seiryu", url: "https://runescape.wiki/w/Seiryu_the_Azure_Serpent" },
+        { label: "PvME — ED1 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed1-basic/" }
+      ]
+    }
+  ]);
+
+  replaceComposite("ed2-full", [
+    {
+      id: "ed2-astellarn",
+      text: "Boss: Astellarn",
+      title: "Astellarn — Dragonkin Laboratory",
+      subtitle: "Elite Dungeon 2 first boss",
+      why: "Astellarn starts the ED2 full clear. Since ED2 is mainly here for route completion and optional melee codices later, the first boss should be treated as forward progress through the dungeon.",
+      moveOn: "After one kill, continue the dungeon toward Verak Lith.",
+      links: [
+        { label: "RS Wiki — Astellarn", url: "https://runescape.wiki/w/Astellarn" },
+        { label: "PvME — ED2 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed2-basic/" }
+      ]
+    },
+    {
+      id: "ed2-verak-lith",
+      text: "Boss: Verak Lith",
+      title: "Verak Lith — Dragonkin Laboratory",
+      subtitle: "Elite Dungeon 2 second boss",
+      why: "Verak Lith is the second ED2 checkpoint. The goal is to finish the Dragonkin Laboratory clear cleanly, with codex farming left for a later melee-focused plan.",
+      moveOn: "After one kill, continue the dungeon toward the Black Stone Dragon.",
+      links: [
+        { label: "RS Wiki — Verak Lith", url: "https://runescape.wiki/w/Verak_Lith" },
+        { label: "PvME — ED2 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed2-basic/" }
+      ]
+    },
+    {
+      id: "ed2-black-stone-dragon",
+      text: "Boss: Black Stone Dragon",
+      title: "Black Stone Dragon — Dragonkin Laboratory",
+      subtitle: "Elite Dungeon 2 final boss",
+      why: "Black Stone Dragon is the ED2 finish line. ED2 codices can be farmed later if melee becomes a priority, but they are not a Necromancy-first blocker.",
+      moveOn: "After one full ED2 clear for Reaper Crew. Farm codices later if melee becomes a priority.",
+      links: [
+        { label: "RS Wiki — Black Stone Dragon", url: "https://runescape.wiki/w/Black_Stone_Dragon" },
+        { label: "PvME — ED2 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed2-basic/" }
+      ]
+    }
+  ]);
+
+  replaceComposite("ed3-full", [
+    {
+      id: "ed3-crassian-leviathan",
+      text: "Boss: Crassian Leviathan",
+      title: "Crassian Leviathan — The Shadow Reef",
+      subtitle: "Elite Dungeon 3 first boss",
+      why: "Crassian Leviathan starts the ED3 full clear. It is a checkpoint on the way to Ambassador rather than a place where this Necromancy-first route needs to farm drops.",
+      moveOn: "After one kill, continue the dungeon toward Taraket.",
+      links: [
+        { label: "RS Wiki — Crassian Leviathan", url: "https://runescape.wiki/w/Crassian_Leviathan" },
+        { label: "PvME — ED3 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed3-basic/" }
+      ]
+    },
+    {
+      id: "ed3-taraket",
+      text: "Boss: Taraket the Necromancer",
+      title: "Taraket the Necromancer — The Shadow Reef",
+      subtitle: "Elite Dungeon 3 second boss",
+      why: "Taraket is the second ED3 checkpoint and the last stop before Ambassador. Clear it as part of the dungeon objective; Eldritch crossbow farming can wait unless ranged becomes explicit.",
+      moveOn: "After one kill, continue the dungeon toward The Ambassador.",
+      links: [
+        { label: "RS Wiki — Taraket", url: "https://runescape.wiki/w/Taraket_the_Necromancer" },
+        { label: "PvME — ED3 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed3-basic/" }
+      ]
+    },
+    {
+      id: "ed3-ambassador",
+      text: "Boss: The Ambassador",
+      title: "The Ambassador — The Shadow Reef",
+      subtitle: "Elite Dungeon 3 final boss",
+      why: "The Ambassador is the ED3 finish line and the only Shadow Reef point where the Eldritch crossbow farm becomes relevant. For this route, finish the clear once and leave ranged farming optional.",
+      moveOn: "After one full clear and Ambassador kill for Reaper Crew. Eldritch crossbow is optional ranged progression.",
+      links: [
+        { label: "RS Wiki — The Ambassador", url: "https://runescape.wiki/w/The_Ambassador" },
+        { label: "PvME — ED3 Guide", url: "https://pvme.io/pvme-guides/basic-guides/ed3-basic/" }
+      ]
+    }
+  ]);
+
+  replaceComposite("raids-bm-yaka", [
+    {
+      id: "beastmaster-durzag",
+      text: "Boss: Beastmaster Durzag",
+      title: "Beastmaster Durzag — Liberation of Mazcab",
+      subtitle: "Raids first boss",
+      why: "Beastmaster Durzag is the easier half of Mazcab raids and a good target whenever a group is available. The limiting factor is usually team timing, not a special solo unlock.",
+      moveOn: "After one Beastmaster kill for Reaper Crew. Codices and Achto are optional if your team is available.",
+      links: [
+        { label: "RS Wiki — Beastmaster Durzag", url: "https://runescape.wiki/w/Beastmaster_Durzag" },
+        { label: "PvME — Duo BM", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/beastmaster-durzag/duo-bm/" }
+      ]
+    },
+    {
+      id: "yakamaru",
+      text: "Boss: Yakamaru",
+      title: "Yakamaru — Liberation of Mazcab",
+      subtitle: "Raids second boss",
+      why: "Yakamaru completes the Mazcab raid pair and is more group-coordination heavy than Beastmaster. Do it when the team opportunity is there rather than letting it dictate the solo route.",
+      moveOn: "After one Yakamaru kill for Reaper Crew. Codices and Achto are optional if your team is available.",
+      links: [
+        { label: "RS Wiki — Yakamaru", url: "https://runescape.wiki/w/Yakamaru" }
+      ]
+    }
+  ]);
+
+  replaceComposite("sanctum-of-rebirth", [
+    {
+      id: "sanctum-vermyx",
+      text: "Boss: Vermyx, Brood Mother",
+      title: "Vermyx, Brood Mother — Sanctum of Rebirth",
+      subtitle: "Sanctum first boss",
+      why: "Vermyx opens the Sanctum sequence. At this point the route already has Rasial/T90 Necromancy momentum, so the goal is a clean normal-mode Sanctum clear rather than farming the first room.",
+      moveOn: "After one kill, continue toward Kezalam.",
+      links: [
+        { label: "RS Wiki — Vermyx", url: "https://runescape.wiki/w/Vermyx,_Brood_Mother" },
+        { label: "PvME — Sanctum HM Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/sanctum/sanctum-hm-mechanics-overview/" }
+      ]
+    },
+    {
+      id: "sanctum-kezalam",
+      text: "Boss: Kezalam, the Wanderer",
+      title: "Kezalam, the Wanderer — Sanctum of Rebirth",
+      subtitle: "Sanctum second boss",
+      why: "Kezalam is the middle Sanctum checkpoint. Continue through it while the mechanics are fresh so the full Sanctum clear stays one coherent push.",
+      moveOn: "After one kill, continue toward Nakatra.",
+      links: [
+        { label: "RS Wiki — Kezalam", url: "https://runescape.wiki/w/Kezalam,_the_Wanderer" },
+        { label: "PvME — Sanctum HM Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/sanctum/sanctum-hm-mechanics-overview/" }
+      ]
+    },
+    {
+      id: "sanctum-nakatra",
+      text: "Boss: Nakatra, Devourer Eternal",
+      title: "Nakatra, Devourer Eternal — Sanctum of Rebirth",
+      subtitle: "Sanctum final boss",
+      why: "Nakatra is the normal-mode Sanctum finish line. Weapons and Genesis shards can be farmed later if they become priority upgrades, but the route does not need to park here before other cleanup bosses.",
+      moveOn: "After clearing Vermyx, Kezalam, and Nakatra for Reaper Crew. Farm weapons or Genesis shards later if they become priority upgrades.",
+      links: [
+        { label: "RS Wiki — Nakatra", url: "https://runescape.wiki/w/Nakatra,_Devourer_Eternal" },
+        { label: "PvME — Sanctum HM Guide", url: "https://pvme.io/pvme-guides/rs3-full-boss-guides/sanctum/sanctum-hm-mechanics-overview/" }
+      ]
+    }
+  ]);
+}
+
+applyReaperStepSplits();
+
+const ROUTE_COPY_REVISIONS = {
+  ivar: {
+    moveOn: "After one kill for Reaper Crew. Do a few extra only if you want the Bonecrusher maul or more prayer-switching practice."
+  },
+  silverquill: {
+    moveOn: "After one kill for Reaper Crew. Extra kills are optional practice; it is not a required farm for the route."
+  },
+  hermod: {
+    moveOn: "Farm Hermodic plates for Necromancy gear upgrades, then move on once the plates you need are covered."
+  },
+  "giant-mole": {
+    moveOn: "After one kill for Reaper Crew. Use it as mechanics practice if useful; do not stay for drops."
+  },
+  barrows: {
+    moveOn: "After the Reaper Crew kill and one unused Amulet of the Forsaken for Berserker's Fury. Farm full sets only if you want off-style armour or collection progress; Necromancy gear remains the main route."
+  },
+  "dagannoth-kings": {
+    moveOn: "After one kill of each king for Reaper Crew. Berserker ring and dragon hatchet are useful optional farms."
+  },
+  "queen-black-dragon": {
+    moveOn: "After one kill for Reaper Crew. Royal crossbow is an optional ranged sidegrade, not a blocker for Necromancy-first progression."
+  },
+  "corporeal-beast": {
+    moveOn: "After one kill for Reaper Crew. Spirit shields are optional and not required for the main route."
+  },
+  "gwd1-graardor": {
+    moveOn: "After one kill for Reaper Crew. Farm Bandos only if you want melee armour or components later."
+  },
+  "gwd1-kril": {
+    moveOn: "After one kill for Reaper Crew. Subjugation is useful for magic/off-style progression, but not mandatory for the Necromancy-first path."
+  },
+  "gwd1-kreearra": {
+    moveOn: "After one kill for Reaper Crew. Armadyl armour is optional ranged/off-style progression."
+  },
+  "gwd2-vindicta": {
+    moveOn: "After one kill for Reaper Crew and Telos access. Dragon Rider Lance is useful, but optional if Necromancy is carrying progression."
+  },
+  "gwd2-helwyr": {
+    moveOn: "After one kill for Reaper Crew and Telos access. Cywir wand/orb and Planted Feet components are optional unlocks."
+  },
+  "gwd2-twins-greg": {
+    moveOn: "After at least one kill of each boss for Reaper Crew and Telos access. Farm weapons only if they support your next style goal."
+  },
+  araxxor: {
+    moveOn: "After one kill for Reaper Crew. Noxious weapons are strong optional farms, but Necromancy can carry the route without forcing them here."
+  },
+  nex: {
+    moveOn: "After one kill for Reaper Crew. Farm armour only if you need a specific off-style set or Nex components."
+  },
+  "kalphite-king": {
+    moveOn: "After one kill for Reaper Crew. Drygores are optional melee progression, not a blocker for the Reaper Crew route."
+  },
+  legiones: {
+    moveOn: "After the required Reaper Crew kills. Ascension crossbows are optional ranged progression and are a long ironman farm."
+  },
+  "ed1-full": {
+    moveOn: "After one full clear for Reaper Crew. Mizuyari and other drops are optional side goals."
+  },
+  croesus: {
+    moveOn: "After one kill for Reaper Crew. Cryptbloom is excellent defensive gear, but treat it as an optional long farm."
+  },
+  "kerapac-nm": {
+    moveOn: "Farm Scripture of Jas and Greater Concentrated Blast if you want those PvM unlocks; otherwise one kill covers Reaper Crew and you can return later."
+  },
+  "ed2-full": {
+    moveOn: "After one full clear for Reaper Crew. Farm codices later if melee becomes a priority."
+  },
+  "ed3-full": {
+    moveOn: "After one full clear and Ambassador kill for Reaper Crew. Eldritch crossbow is optional ranged progression."
+  },
+  magister: {
+    moveOn: "After one kill for Reaper Crew. Stay only if you are deliberately working on vital sparks/Limitless or khopeshes."
+  },
+  "tzkal-zuk": {
+    moveOn: "After one normal-mode kill for Reaper Crew. Farm the Necromancy cape if it is realistic; return for other style capes and hard mode later."
+  },
+  raksha: {
+    moveOn: "After one kill for Reaper Crew. Greater Ricochet/Greater Chain are excellent unlocks for other styles, but optional for Necromancy-first progression."
+  },
+  telos: {
+    moveOn: "After one kill for Reaper Crew. Push enrage or farm T92s later if you specifically want traditional-style weapons."
+  },
+  "rise-of-the-six": {
+    moveOn: "After one kill for Reaper Crew. Malevolent energy and shields are optional group-farm rewards."
+  },
+  "raids-bm-yaka": {
+    moveOn: "After one Beastmaster and one Yakamaru kill for Reaper Crew. Codices and Achto are optional if your team is available."
+  },
+  "kerapac-hm": {
+    moveOn: "After one hard-mode kill for Reaper Crew. Fractured Staff of Armadyl is a major magic goal, but not required before finishing the boss list."
+  },
+  "nex-aod": {
+    moveOn: "After one kill for Reaper Crew. Farm Praesul codices only if your team setup makes AoD efficient and you want T99 curses before cleanup."
+  },
+  vorago: {
+    moveOn: "After one kill for Reaper Crew. Seismics and tectonic energy are optional magic progression."
+  },
+  solak: {
+    moveOn: "After one kill for Reaper Crew. Erethdor's Grimoire is a huge DPS item, but it is a separate farm from the achievement route."
+  },
+  zamorak: {
+    moveOn: "After one kill for Reaper Crew. Farm later for Bow of the Last Guardian, codices, or Vestments if those become explicit goals."
+  },
+  "sanctum-of-rebirth": {
+    moveOn: "After clearing Vermyx, Kezalam, and Nakatra for Reaper Crew. Farm weapons or Genesis shards later if they become priority upgrades."
+  },
+  "arch-glacor-hm": {
+    moveOn: "After one hard-mode kill for Reaper Crew. Leng swords are optional melee progression."
+  },
+  "zemouregal-vorkath": {
+    moveOn: "After one kill for Reaper Crew. Dracolich and Lord of Bones are useful, but not blockers for the main route."
+  },
+  amascut: {
+    moveOn: "After one kill for Reaper Crew. Push enrage or farm Genesis shards only after the achievement path is secure."
+  }
+};
+
+function applyRouteCopyRevisions() {
+  const steps = PHASES.flatMap((phase) => phase.steps);
+  for (const [stepId, revisions] of Object.entries(ROUTE_COPY_REVISIONS)) {
+    const step = steps.find((candidate) => candidate.id === stepId);
+    if (!step) continue;
+    step.detail = { ...step.detail, ...revisions };
+  }
+}
+
+applyRouteCopyRevisions();
+
+const HIGH_VALUE_ROUTE_STEPS = new Set([
+  "one-piercing-note",
+  "reward-devotion",
+  "necro-tutorial",
+  "necro-5-quest",
+  "kili-row",
+  "reward-necro-t20",
+  "dungeoneering-tokens",
+  "reward-charming-imp",
+  "world-wakes",
+  "reward-sunshine-ds",
+  "unlock-invention",
+  "reward-basic-perks",
+  "reward-barrows-armor",
+  "archaeology-56",
+  "reward-berserkers-fury",
+  "temple-at-senntisten",
+  "reward-curses",
+  "overloads",
+  "kerapac-nm",
+  "gate-of-elidinis",
+  "extinction",
+  "reward-passive-rov",
+  "advanced-perks",
+  "train-necro-95",
+  "tomes-of-the-warlock",
+  "alpha-vs-omega",
+  "necro-t90-gear",
+  "rasial",
+  "essence-of-finality",
+  "limitless-ingenuity"
+]);
+
+const OPTIONAL_FARM_ROUTE_STEPS = new Set([
+  "barrows",
+  "gwd1-graardor",
+  "gwd1-kril",
+  "gwd1-kreearra",
+  "gwd1-zilyana",
+  "gwd2-vindicta",
+  "gwd2-helwyr",
+  "twin-furies",
+  "gregorovic",
+  "araxxor",
+  "nex",
+  "kalphite-king",
+  "legiones",
+  "cinderbanes-amulet-of-souls",
+  "croesus",
+  "archaeology-118",
+  "ed2-black-stone-dragon",
+  "ed3-ambassador",
+  "magister",
+  "raksha",
+  "telos",
+  "beastmaster-durzag",
+  "yakamaru",
+  "train-summoning-87",
+  "train-summoning-90",
+  "train-summoning-96",
+  "kerapac-hm",
+  "nex-aod",
+  "vorago",
+  "solak",
+  "zamorak",
+  "arch-glacor-hm",
+  "amascut"
+]);
+
+const COMFORT_ROUTE_STEPS = new Set([
+  "configure-interface",
+  "unlock-lodestones",
+  "free-items",
+  "wars-retreat",
+  "reward-bonecrusher-maul",
+  "daily-weekly-setup",
+  "player-owned-farm",
+  "anachronia-base-camp"
+]);
+
+function applyRouteMetadata() {
+  const steps = PHASES.flatMap((phase) => phase.steps ?? []);
+  for (const step of steps) {
+    if (HIGH_VALUE_ROUTE_STEPS.has(step.id)) {
+      step.routeRole = "high-value-farm";
+    } else if (OPTIONAL_FARM_ROUTE_STEPS.has(step.id)) {
+      step.routeRole = "optional-farm";
+    } else if (COMFORT_ROUTE_STEPS.has(step.id)) {
+      step.routeRole = "comfort-qol";
+    } else if (step.type === "boss") {
+      step.routeRole = "reaper-kill";
+    } else {
+      step.routeRole = "required";
+    }
+
+    if (step.type === "boss") {
+      step.verifiedAgainst = ["RS Wiki boss page", "PvME where available", "Reaper Crew tracker"];
+    } else if (step.routeRole === "high-value-farm") {
+      step.verifiedAgainst = ["RS Wiki", "PvM unlock guide", "PvME where available"];
+    } else if (step.type === "quest" || step.type === "skill") {
+      step.verifiedAgainst = ["RS Wiki", "Efficient Ironman Pathway where relevant"];
+    } else {
+      step.verifiedAgainst = ["RS Wiki", "Project route review"];
+    }
+  }
+}
+
+applyRouteMetadata();
+
+const REAPER_CREW = [
+  { name: "Ivar, King of Bones", stepIds: ["ivar"] },
+  { name: "Silverquill, the Dreadhog", stepIds: ["silverquill"] },
+  { name: "Flesh-hatcher Mhekarnahz", stepIds: ["mhekarnahz"] },
+  { name: "Hermod, the Spirit of War", stepIds: ["hermod"] },
+  { name: "Giant Mole", stepIds: ["giant-mole"] },
+  { name: "The Barrows Brothers", stepIds: ["barrows"] },
+  { name: "King Black Dragon", stepIds: ["king-black-dragon"] },
+  { name: "Chaos Elemental", stepIds: ["chaos-elemental"] },
+  { name: "Dagannoth Kings", stepIds: ["dagannoth-kings"] },
+  { name: "Kalphite Queen", stepIds: ["kalphite-queen"] },
+  { name: "Queen Black Dragon", stepIds: ["queen-black-dragon"] },
+  { name: "Corporeal Beast", stepIds: ["corporeal-beast"] },
+  { name: "TzTok-Jad", stepIds: ["tztok-jad"] },
+  { name: "Har-Aken", stepIds: ["har-aken"] },
+  { name: "Arch-Glacor", stepIds: ["arch-glacor-learner", "arch-glacor-nm5", "arch-glacor-hm"] },
+  { name: "General Graardor", stepIds: ["gwd1-graardor"] },
+  { name: "K'ril Tsutsaroth", stepIds: ["gwd1-kril"] },
+  { name: "Kree'arra", stepIds: ["gwd1-kreearra"] },
+  { name: "Commander Zilyana", stepIds: ["gwd1-zilyana"] },
+  { name: "Vindicta & Gorvek", stepIds: ["gwd2-vindicta"] },
+  { name: "Helwyr", stepIds: ["gwd2-helwyr"] },
+  { name: "Twin Furies", stepIds: ["twin-furies"], legacyStepIds: ["gwd2-twins-greg"] },
+  { name: "Gregorovic", stepIds: ["gregorovic"], legacyStepIds: ["gwd2-twins-greg"] },
+  { name: "Rex Matriarchs", stepIds: ["rex-matriarchs"] },
+  { name: "Osseous", stepIds: ["osseous"] },
+  { name: "Araxxor / Araxxi", stepIds: ["araxxor"] },
+  { name: "Nex", stepIds: ["nex"] },
+  { name: "Kalphite King", stepIds: ["kalphite-king"] },
+  { name: "Legiones", stepIds: ["legiones"] },
+  { name: "Sanctum Guardian", stepIds: ["ed1-sanctum-guardian"], legacyStepIds: ["ed1-full"] },
+  { name: "Masuta the Ascended", stepIds: ["ed1-masuta"], legacyStepIds: ["ed1-full"] },
+  { name: "Seiryu the Azure Serpent", stepIds: ["ed1-seiryu"], legacyStepIds: ["ed1-full"] },
+  { name: "Croesus", stepIds: ["croesus"] },
+  { name: "Kerapac, the Bound", stepIds: ["kerapac-nm", "kerapac-hm"] },
+  { name: "Astellarn", stepIds: ["ed2-astellarn"], legacyStepIds: ["ed2-full"] },
+  { name: "Verak Lith", stepIds: ["ed2-verak-lith"], legacyStepIds: ["ed2-full"] },
+  { name: "Black Stone Dragon", stepIds: ["ed2-black-stone-dragon"], legacyStepIds: ["ed2-full"] },
+  { name: "Crassian Leviathan", stepIds: ["ed3-crassian-leviathan"], legacyStepIds: ["ed3-full"] },
+  { name: "Taraket the Necromancer", stepIds: ["ed3-taraket"], legacyStepIds: ["ed3-full"] },
+  { name: "The Ambassador", stepIds: ["ed3-ambassador"], legacyStepIds: ["ed3-full"] },
+  { name: "The Magister", stepIds: ["magister"] },
+  { name: "TzKal-Zuk", stepIds: ["tzkal-zuk"] },
+  { name: "Raksha", stepIds: ["raksha"] },
+  { name: "Telos, the Warden", stepIds: ["telos"] },
+  { name: "Rise of the Six", stepIds: ["rise-of-the-six"] },
+  { name: "Beastmaster Durzag", stepIds: ["beastmaster-durzag"], legacyStepIds: ["raids-bm-yaka"] },
+  { name: "Yakamaru", stepIds: ["yakamaru"], legacyStepIds: ["raids-bm-yaka"] },
+  { name: "Rasial", stepIds: ["rasial"] },
+  { name: "Nex: Angel of Death", stepIds: ["nex-aod"] },
+  { name: "Vorago", stepIds: ["vorago"] },
+  { name: "Solak", stepIds: ["solak"] },
+  { name: "Zamorak, Lord of Chaos", stepIds: ["zamorak"] },
+  { name: "Vermyx, Brood Mother", stepIds: ["sanctum-vermyx"], legacyStepIds: ["sanctum-of-rebirth"] },
+  { name: "Kezalam, the Wanderer", stepIds: ["sanctum-kezalam"], legacyStepIds: ["sanctum-of-rebirth"] },
+  { name: "Nakatra, Devourer Eternal", stepIds: ["sanctum-nakatra"], legacyStepIds: ["sanctum-of-rebirth"] },
+  { name: "Zemouregal & Vorkath", stepIds: ["zemouregal-vorkath"] },
+  { name: "Amascut, the Devourer", stepIds: ["amascut"] },
+  { name: "Gate of Elidinis", stepIds: ["gate-of-elidinis"] }
 ];

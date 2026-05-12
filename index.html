@@ -6,120 +6,124 @@
 <title>Tutorial Island to Reaper Crew</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#e2e8f0}
+html,body{height:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0c111d;color:#e8dfc9}
 #app{display:flex;flex-direction:column;height:100vh;overflow:hidden}
 
 /* Banner */
-#banner{background:linear-gradient(135deg,#1e40af,#7c3aed);padding:12px 24px;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:48px;flex-shrink:0}
-#banner:hover{filter:brightness(1.1)}
+#banner{background:linear-gradient(135deg,#17324f,#4a2c13 48%,#7a561f);padding:13px 24px;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:50px;flex-shrink:0;border-bottom:1px solid #8b6b2e;box-shadow:0 10px 24px rgba(0,0,0,.2)}
+#banner:hover{filter:brightness(1.08)}
 #banner .banner-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.8}
-#banner .banner-text{font-size:15px;font-weight:600}
+#banner .banner-text{font-size:15px;font-weight:700}
 #banner .banner-arrow{margin-left:auto;font-size:18px;opacity:.7}
 
 /* Tabs */
-#tabs{display:flex;overflow-x:auto;background:#1e293b;border-bottom:1px solid #334155;flex-shrink:0;scrollbar-width:thin}
+#tabs{display:flex;overflow-x:auto;background:#151c2a;border-bottom:1px solid #2f3c51;flex-shrink:0;scrollbar-width:thin}
 #tabs::-webkit-scrollbar{height:4px}
-#tabs::-webkit-scrollbar-thumb{background:#334155;border-radius:2px}
-.tab{padding:10px 20px;cursor:pointer;white-space:nowrap;font-size:14px;color:#94a3b8;border-bottom:2px solid transparent;transition:all .15s;flex-shrink:0;user-select:none}
-.tab:hover{color:#e2e8f0;background:#334155}
-.tab.active{color:#e2e8f0;border-bottom-color:#3b82f6}
-.tab.done{color:#22c55e}
+#tabs::-webkit-scrollbar-thumb{background:#3d4b63;border-radius:2px}
+.tab{padding:10px 20px;cursor:pointer;white-space:nowrap;font-size:14px;color:#aeb6c4;border-bottom:2px solid transparent;transition:all .15s;flex-shrink:0;user-select:none}
+.tab:hover{color:#f2ead8;background:#263247}
+.tab.active{color:#f8e7b2;border-bottom-color:#d7a83f;background:#1d2738}
+.tab.done{color:#6ee7a4}
+.tab.optional{color:#8f9caf}
+.tab.active.optional{color:#f8e7b2}
+.tab.optional::before{content:"⋯ ";color:#d7a83f}
 .tab .tab-icon{margin-right:6px}
 
 /* Progress bar */
-#progress-bar{background:#1e293b;padding:8px 24px;display:flex;align-items:center;gap:12px;font-size:13px;color:#94a3b8;flex-shrink:0;border-bottom:1px solid #334155}
-#progress-bar .bar-track{flex:1;height:6px;background:#334155;border-radius:3px;overflow:hidden;max-width:400px}
-#progress-bar .bar-fill{height:100%;background:#3b82f6;border-radius:3px;transition:width .3s}
-#progress-bar .bar-label{font-weight:600;color:#e2e8f0}
+#progress-bar{background:#121a28;padding:8px 24px;display:flex;align-items:center;gap:12px;font-size:13px;color:#aeb6c4;flex-shrink:0;border-bottom:1px solid #2f3c51}
+#progress-bar .bar-track{flex:1;height:6px;background:#293446;border-radius:3px;overflow:hidden;max-width:400px}
+#progress-bar .bar-fill{height:100%;background:linear-gradient(90deg,#b98b2e,#f3d27a);border-radius:3px;transition:width .3s}
+#progress-bar .bar-label{font-weight:700;color:#f2ead8}
 
 /* Main split */
 #main{display:flex;flex:1;overflow:hidden}
 
 /* Left panel */
-#checklist-panel{width:420px;min-width:320px;overflow-y:auto;background:#1e293b;border-right:1px solid #334155;flex-shrink:0}
+#checklist-panel{width:430px;min-width:320px;overflow-y:auto;background:#151c2a;border-right:1px solid #2f3c51;flex-shrink:0}
 #checklist-panel::-webkit-scrollbar{width:6px}
-#checklist-panel::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+#checklist-panel::-webkit-scrollbar-thumb{background:#3d4b63;border-radius:3px}
 
-.step-row{display:flex;align-items:center;padding:10px 16px;gap:10px;cursor:pointer;border-left:3px solid transparent;transition:all .12s;border-bottom:1px solid #1e293b}
-.step-row:hover{background:#334155}
-.step-row.current{background:#1e3a5f;border-left-color:#3b82f6}
-.step-row.selected{background:#334155;border-left-color:#60a5fa}
-.step-row.completed .step-text{text-decoration:line-through;color:#94a3b8}
-.step-row.boss-row{background:#1c1108}
-.step-row.boss-row:hover{background:#2a1a0e}
-.step-row.boss-row.current{background:#1e3a5f}
+.step-row{display:flex;align-items:center;padding:10px 16px;gap:10px;cursor:pointer;border-left:3px solid transparent;transition:background .12s,border-color .12s,transform .12s;border-bottom:1px solid #111827}
+.step-row:hover{background:#263247}
+.step-row.current{background:#1e3147;border-left-color:#d7a83f}
+.step-row.selected{background:#29364a;border-left-color:#f3d27a}
+.step-row.completed .step-text{text-decoration:line-through;color:#8c96a8}
+.step-row.boss-row{background:linear-gradient(90deg,#24140b,#171d2a)}
+.step-row.boss-row:hover{background:linear-gradient(90deg,#352013,#263247)}
+.step-row.boss-row.current{background:linear-gradient(90deg,#4b2e13,#1e3147);border-left-color:#f0b44d}
 
-.step-cb{width:20px;height:20px;border-radius:4px;border:2px solid #94a3b8;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all .12s;font-size:13px;color:transparent}
-.step-cb:hover{border-color:#e2e8f0}
-.step-cb.checked{background:#22c55e;border-color:#22c55e;color:#fff}
+.step-cb{width:20px;height:20px;border-radius:4px;border:2px solid #9ca8ba;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all .12s;font-size:13px;color:transparent}
+.step-cb:hover{border-color:#f2ead8}
+.step-cb.checked{background:#2ea66b;border-color:#2ea66b;color:#fff}
 
 .step-text{flex:1;font-size:14px;line-height:1.3}
 .step-icon{margin-right:2px}
 
 .type-tag{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;flex-shrink:0;text-transform:capitalize}
-.type-tag.quest{background:#2563eb;color:#dbeafe}
-.type-tag.skill{background:#3b1f7a;color:#a78bfa}
-.type-tag.boss{background:#78350f;color:#fbbf24}
-.type-tag.unlock{background:#064e3b;color:#34d399}
-.type-tag.reward{background:#4a1d6a;color:#e879f9}
+.type-tag.quest{background:#203f72;color:#d9e7ff}
+.type-tag.skill{background:#33275f;color:#c4b5fd}
+.type-tag.boss{background:#6f3d12;color:#ffd27a}
+.type-tag.unlock{background:#0b4d3b;color:#6ee7a4}
+.type-tag.reward{background:#55311d;color:#f5c16c}
 
 /* Right panel */
-#detail-panel{flex:1;overflow-y:auto;padding:32px;background:#0f172a;position:relative}
+#detail-panel{flex:1;overflow-y:auto;padding:34px;background:radial-gradient(circle at top right,rgba(122,86,31,.14),transparent 34%),#0c111d;position:relative}
 #detail-panel::-webkit-scrollbar{width:6px}
-#detail-panel::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+#detail-panel::-webkit-scrollbar-thumb{background:#3d4b63;border-radius:3px}
 
-.detail-empty{display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:16px}
+.detail-empty{display:flex;align-items:center;justify-content:center;height:100%;color:#aeb6c4;font-size:16px}
 
 .detail-header{margin-bottom:24px}
-.detail-title{font-size:24px;font-weight:700;margin-bottom:4px}
-.detail-subtitle{font-size:14px;color:#94a3b8}
+.detail-title{font-size:25px;font-weight:700;margin-bottom:4px;color:#f2ead8}
+.detail-subtitle{font-size:14px;color:#aeb6c4}
 
-.why-box{background:#1e293b;border-left:3px solid #3b82f6;padding:12px 16px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:14px;line-height:1.5;color:#e2e8f0}
-.why-box .why-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:4px}
+.why-box{background:#151c2a;border-left:3px solid #d7a83f;padding:12px 16px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:14px;line-height:1.5;color:#e8dfc9;box-shadow:0 10px 22px rgba(0,0,0,.12)}
+.why-box .why-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#b6a678;margin-bottom:4px}
 
 .detail-section{margin-bottom:20px}
-.detail-section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px}
+.detail-section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#b6a678;margin-bottom:8px}
 
 .tag-list{display:flex;flex-wrap:wrap;gap:6px}
-.tag-item{font-size:13px;padding:4px 10px;background:#334155;border-radius:6px;color:#e2e8f0}
+.tag-item{font-size:13px;padding:4px 10px;background:#263247;border-radius:6px;color:#e8dfc9;border:1px solid rgba(215,168,63,.12)}
 
 .tips-list{list-style:none;padding:0}
-.tips-list li{font-size:14px;padding:6px 0;color:#e2e8f0;line-height:1.4}
-.tips-list li::before{content:"→ ";color:#3b82f6;font-weight:700}
+.tips-list li{font-size:14px;padding:6px 0;color:#e8dfc9;line-height:1.4}
+.tips-list li::before{content:"→ ";color:#d7a83f;font-weight:700}
 
-.method-box{background:#1e293b;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5}
+.method-box{background:#151c2a;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5;border:1px solid #263247}
 
 .drops-table{width:100%;border-collapse:collapse}
-.drops-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;padding:6px 10px;border-bottom:1px solid #334155}
-.drops-table td{padding:8px 10px;font-size:14px;border-bottom:1px solid #1e293b}
-.drops-table tr:hover td{background:#1e293b}
-.drops-table .drop-item{font-weight:600;color:#fbbf24}
+.drops-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#b6a678;padding:6px 10px;border-bottom:1px solid #2f3c51}
+.drops-table td{padding:8px 10px;font-size:14px;border-bottom:1px solid #151c2a}
+.drops-table tr:hover td{background:#151c2a}
+.drops-table .drop-item{font-weight:600;color:#f3d27a}
 
-.moveon-box{background:#064e3b;border-radius:8px;padding:12px 16px;font-size:14px;color:#34d399;line-height:1.4}
+.moveon-box{background:#0b3d31;border-radius:8px;padding:12px 16px;font-size:14px;color:#7ee6b0;line-height:1.4;border:1px solid rgba(126,230,176,.2)}
 .moveon-box .moveon-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;opacity:.7;margin-bottom:4px}
 
 .link-list{display:flex;flex-wrap:wrap;gap:8px}
-.link-list a{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#60a5fa;text-decoration:none;padding:4px 10px;background:#1e293b;border-radius:6px;transition:background .12s}
-.link-list a:hover{background:#334155}
+.link-list a{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#92c5ff;text-decoration:none;padding:4px 10px;background:#151c2a;border-radius:6px;transition:background .12s,color .12s}
+.link-list a:hover{background:#263247;color:#d9e7ff}
 
 /* Reaper Crew sidebar */
-#reaper-panel{width:48px;background:#1e293b;border-left:1px solid #334155;flex-shrink:0;overflow:hidden;transition:width .25s ease;display:flex;flex-direction:column;position:relative}
+#reaper-panel{width:48px;background:#151c2a;border-left:1px solid #2f3c51;flex-shrink:0;overflow:hidden;transition:width .25s ease;display:flex;flex-direction:column;position:relative}
 #reaper-panel.open{width:320px}
-#reaper-toggle{display:flex;align-items:center;gap:8px;padding:12px;cursor:pointer;border-bottom:1px solid #334155;white-space:nowrap;user-select:none;flex-shrink:0;background:linear-gradient(180deg,#2a1a00 0%,#1e293b 100%)}
+#reaper-toggle{display:flex;align-items:center;gap:8px;padding:12px;cursor:pointer;border-bottom:1px solid #2f3c51;white-space:nowrap;user-select:none;flex-shrink:0;background:linear-gradient(180deg,#33200b 0%,#151c2a 100%)}
 #reaper-toggle:hover{filter:brightness(1.2)}
 #reaper-toggle .reaper-icon{font-size:24px;flex-shrink:0;width:28px;text-align:center}
-#reaper-toggle .reaper-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fbbf24}
-#reaper-toggle .reaper-count{font-size:16px;font-weight:700;color:#fbbf24;margin-left:auto}
+#reaper-toggle .reaper-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#f3d27a}
+#reaper-toggle .reaper-count{font-size:16px;font-weight:700;color:#f3d27a;margin-left:auto}
 #reaper-progress{padding:0 12px;flex-shrink:0;overflow:hidden}
 #reaper-panel.open #reaper-progress{padding:8px 12px}
-#reaper-progress .rp-bar-track{height:6px;background:#334155;border-radius:3px;overflow:hidden}
+#reaper-progress .rp-bar-track{height:6px;background:#293446;border-radius:3px;overflow:hidden}
 #reaper-progress .rp-bar-fill{height:100%;background:linear-gradient(90deg,#b45309,#fbbf24);border-radius:3px;transition:width .3s;box-shadow:0 0 8px rgba(251,191,36,0.4)}
 #reaper-list{flex:1;overflow-y:auto;padding:4px 0;opacity:0;transition:opacity .15s}
 #reaper-panel.open #reaper-list{opacity:1}
 #reaper-list::-webkit-scrollbar{width:4px}
 #reaper-list::-webkit-scrollbar-thumb{background:#334155;border-radius:2px}
-.reaper-entry{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:14px;color:#94a3b8;white-space:nowrap}
-.reaper-entry.killed{color:#fbbf24}
+.reaper-entry{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:14px;color:#aeb6c4;white-space:nowrap;cursor:pointer;border-left:3px solid transparent;transition:background .12s,border-color .12s,color .12s}
+.reaper-entry:hover{background:#263247;color:#f2ead8;border-left-color:#d7a83f}
+.reaper-entry.killed{color:#f3d27a}
 .reaper-entry.killed .re-icon{color:#fbbf24;text-shadow:0 0 4px rgba(251,191,36,0.5)}
 .reaper-entry .re-icon{width:20px;text-align:center;flex-shrink:0;font-size:14px}
 .reaper-entry .re-name{overflow:hidden;text-overflow:ellipsis}
@@ -273,6 +277,11 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Ro
 let completed = new Set();
 let currentPhase = 0;
 let selectedStep = null;
+const ROUTE_CELEBRATION_KEY = 'rs3iron-route-celebration-played';
+let routeCelebrationPlayed = false;
+try {
+  routeCelebrationPlayed = localStorage.getItem(ROUTE_CELEBRATION_KEY) === '1';
+} catch (e) { /* ignore unavailable storage */ }
 
 /* ── Gist Sync Config ── */
 const GIST_FILENAME = 'rs3iron-progress.json';
@@ -289,11 +298,23 @@ function isViewer() {
   return !isOwner && !!getGistId();
 }
 
+function setRouteCelebrationPlayed(value) {
+  routeCelebrationPlayed = !!value;
+  try {
+    if (routeCelebrationPlayed) {
+      localStorage.setItem(ROUTE_CELEBRATION_KEY, '1');
+    } else {
+      localStorage.removeItem(ROUTE_CELEBRATION_KEY);
+    }
+  } catch (e) { /* ignore unavailable storage */ }
+}
+
 /* ── Persistence ── */
 function buildProgressData() {
   return {
     version: 1,
     completed: Array.from(completed),
+    routeCelebrationPlayed: routeCelebrationPlayed,
     lastUpdated: new Date().toISOString()
   };
 }
@@ -306,6 +327,9 @@ async function loadProgress() {
       const data = JSON.parse(raw);
       if (data && Array.isArray(data.completed)) {
         completed = new Set(data.completed);
+        if (typeof data.routeCelebrationPlayed === 'boolean') {
+          setRouteCelebrationPlayed(data.routeCelebrationPlayed);
+        }
       }
     }
   } catch (e) { /* ignore corrupt data */ }
@@ -318,6 +342,8 @@ async function loadProgress() {
   } else if (hasGist && completed.size === 0) {
     await fetchFromGist();
   }
+  migrateCompletedIds();
+  if (!isMainPathComplete()) setRouteCelebrationPlayed(false);
 }
 
 async function fetchFromGist() {
@@ -334,6 +360,9 @@ async function fetchFromGist() {
     const data = JSON.parse(file.content);
     if (data && Array.isArray(data.completed)) {
       completed = new Set(data.completed);
+      if (typeof data.routeCelebrationPlayed === 'boolean') {
+        setRouteCelebrationPlayed(data.routeCelebrationPlayed);
+      }
       saveProgressLocal();
     }
   } catch (e) { /* silent fail for visitors */ }
@@ -405,6 +434,22 @@ function renderSyncStatus() {
 /* ── Helpers ── */
 function isMobile() { return window.innerWidth <= 768; }
 
+function migrateCompletedIds() {
+  let changed = false;
+  REAPER_CREW.forEach(function(entry) {
+    const legacyIds = entry.legacyStepIds || [];
+    const hasLegacyCompletion = legacyIds.some(function(id) { return completed.has(id); });
+    if (!hasLegacyCompletion) return;
+    entry.stepIds.forEach(function(id) {
+      if (!completed.has(id)) {
+        completed.add(id);
+        changed = true;
+      }
+    });
+  });
+  if (changed) saveProgressLocal();
+}
+
 function phaseCompletion(phase) {
   if (phase.skills) {
     let total = 0, done = 0;
@@ -419,21 +464,40 @@ function phaseCompletion(phase) {
   return { done, total, complete: done === total };
 }
 
-function findActivePhase() {
+function isMainRoutePhase(phase) {
+  return !!(phase && phase.steps && phase.steps.length && !phase.optional && !phase.skills);
+}
+
+function isPhaseVisible(phase) {
+  return !!(phase && (!phase.optional || routeCelebrationPlayed));
+}
+
+function mainRoutePhaseIndexes() {
+  const indexes = [];
   for (let i = 0; i < PHASES.length; i++) {
+    if (isMainRoutePhase(PHASES[i])) indexes.push(i);
+  }
+  return indexes;
+}
+
+function findActivePhase() {
+  const indexes = mainRoutePhaseIndexes();
+  for (const i of indexes) {
     if (!phaseCompletion(PHASES[i]).complete) return i;
   }
-  return PHASES.length - 1;
+  return indexes.length ? indexes[indexes.length - 1] : 0;
 }
 
 function findNextStep() {
   for (let i = currentPhase; i < PHASES.length; i++) {
+    if (!isMainRoutePhase(PHASES[i])) continue;
     if (!PHASES[i].steps) continue;
     for (const s of PHASES[i].steps) {
       if (!completed.has(s.id)) return { phaseIdx: i, step: s };
     }
   }
   for (let i = 0; i < currentPhase; i++) {
+    if (!isMainRoutePhase(PHASES[i])) continue;
     if (!PHASES[i].steps) continue;
     for (const s of PHASES[i].steps) {
       if (!completed.has(s.id)) return { phaseIdx: i, step: s };
@@ -460,6 +524,26 @@ function getStep(id) {
   return null;
 }
 
+function findStepLocation(id) {
+  for (let phaseIdx = 0; phaseIdx < PHASES.length; phaseIdx++) {
+    const phase = PHASES[phaseIdx];
+    if (!phase.steps) continue;
+    for (let stepIdx = 0; stepIdx < phase.steps.length; stepIdx++) {
+      if (phase.steps[stepIdx].id === id) {
+        return { phaseIdx, stepIdx, step: phase.steps[stepIdx] };
+      }
+    }
+  }
+  return null;
+}
+
+function ensureCurrentPhaseVisible() {
+  if (!isPhaseVisible(PHASES[currentPhase])) {
+    currentPhase = findActivePhase();
+    selectedStep = null;
+  }
+}
+
 function escHtml(str) {
   const d = document.createElement('div');
   d.textContent = str;
@@ -468,6 +552,7 @@ function escHtml(str) {
 
 /* ── Render ── */
 function render() {
+  ensureCurrentPhaseVisible();
   renderBanner();
   renderTabs();
   renderProgress();
@@ -490,11 +575,13 @@ function renderTabs() {
   const container = document.getElementById('tabs');
   let html = '';
   PHASES.forEach((phase, i) => {
+    if (!isPhaseVisible(phase)) return;
     const pc = phaseCompletion(phase);
     let icon = '';
     if (pc.complete) icon = '✓';
     else if (i === currentPhase) icon = '●';
-    const cls = i === currentPhase ? 'tab active' : (pc.complete ? 'tab done' : 'tab');
+    let cls = i === currentPhase ? 'tab active' : (pc.complete ? 'tab done' : 'tab');
+    if (phase.optional) cls += ' optional';
     html += '<div class="' + cls + '" onclick="switchPhase(' + i + ')">';
     if (icon) html += '<span class="tab-icon">' + icon + '</span>';
     html += escHtml(phase.name) + '</div>';
@@ -506,8 +593,11 @@ function renderProgress() {
   const phase = PHASES[currentPhase];
   const pc = phaseCompletion(phase);
   const pct = (phase.steps && phase.steps.length) ? Math.round((pc.done / pc.total) * 100) : (pc.total ? Math.round((pc.done / pc.total) * 100) : 0);
+  const routeIndexes = mainRoutePhaseIndexes();
+  const routePhaseNumber = routeIndexes.indexOf(currentPhase) + 1;
+  const labelPrefix = routePhaseNumber > 0 ? 'Phase ' + routePhaseNumber + ': ' + phase.name : phase.name;
   document.getElementById('progress-label').textContent =
-    'Phase ' + (currentPhase + 1) + ': ' + phase.name + ' — ' + pc.done + ' / ' + pc.total;
+    labelPrefix + ' — ' + pc.done + ' / ' + pc.total;
   document.getElementById('progress-fill').style.width = pct + '%';
 }
 
@@ -715,6 +805,7 @@ function closeDetail() {
 
 /* ── Events ── */
 function switchPhase(idx) {
+  if (!isPhaseVisible(PHASES[idx])) return;
   currentPhase = idx;
   selectedStep = null;
   render();
@@ -745,14 +836,17 @@ function toggleStep(e, id) {
     showJefMessage();
     return;
   }
+  const wasMainComplete = isMainPathComplete();
   if (completed.has(id)) {
     completed.delete(id);
   } else {
     completed.add(id);
   }
+  const isMainCompleteNow = isMainPathComplete();
+  if (!isMainCompleteNow) setRouteCelebrationPlayed(false);
   saveProgress();
   render();
-  if (completed.has(id) && isMainPathComplete()) celebrate();
+  if (!wasMainComplete && completed.has(id) && isMainCompleteNow) celebrate();
 }
 
 function showJefMessage() {
@@ -801,11 +895,7 @@ function closeOverlay() {
 }
 
 function exportProgress() {
-  const data = {
-    version: 1,
-    completed: Array.from(completed),
-    lastUpdated: new Date().toISOString()
-  };
+  const data = buildProgressData();
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -823,6 +913,7 @@ function importProgress(event) {
       const data = JSON.parse(e.target.result);
       if (data && Array.isArray(data.completed)) {
         completed = new Set(data.completed);
+        setRouteCelebrationPlayed(!!data.routeCelebrationPlayed && isMainPathComplete());
         saveProgress();
         currentPhase = findActivePhase();
         selectedStep = null;
@@ -848,6 +939,7 @@ function closeConfirm() {
 
 function doReset() {
   completed = new Set();
+  setRouteCelebrationPlayed(false);
   saveProgress();
   currentPhase = findActivePhase();
   selectedStep = null;
@@ -856,67 +948,6 @@ function doReset() {
 }
 
 /* ── Reaper Crew ── */
-const REAPER_CREW = [
-  { name: "Ivar, King of Bones", stepIds: ["ivar"] },
-  { name: "Silverquill, the Dreadhog", stepIds: ["silverquill"] },
-  { name: "Hermod, the Spirit of War", stepIds: ["hermod"] },
-  { name: "Giant Mole", stepIds: ["giant-mole"] },
-  { name: "The Barrows Brothers", stepIds: ["barrows"] },
-  { name: "King Black Dragon", stepIds: ["king-black-dragon"] },
-  { name: "Chaos Elemental", stepIds: ["chaos-elemental"] },
-  { name: "Dagannoth Kings", stepIds: ["dagannoth-kings"] },
-  { name: "Kalphite Queen", stepIds: ["kalphite-queen"] },
-  { name: "Queen Black Dragon", stepIds: ["queen-black-dragon"] },
-  { name: "Corporeal Beast", stepIds: ["corporeal-beast"] },
-  { name: "TzTok-Jad", stepIds: ["tztok-jad"] },
-  { name: "Har-Aken", stepIds: ["har-aken"] },
-  { name: "Rex Matriarchs", stepIds: ["rex-matriarchs"] },
-  { name: "Osseous", stepIds: ["osseous"] },
-  { name: "General Graardor", stepIds: ["gwd1-graardor"] },
-  { name: "K'ril Tsutsaroth", stepIds: ["gwd1-kril"] },
-  { name: "Kree'arra", stepIds: ["gwd1-kreearra"] },
-  { name: "Commander Zilyana", stepIds: ["gwd1-zilyana"] },
-  { name: "Nex", stepIds: ["nex"] },
-  { name: "Vindicta & Gorvek", stepIds: ["gwd2-vindicta"] },
-  { name: "Helwyr", stepIds: ["gwd2-helwyr"] },
-  { name: "Twin Furies", stepIds: ["gwd2-twins-greg"] },
-  { name: "Gregorovic", stepIds: ["gwd2-twins-greg"] },
-  { name: "Araxxor / Araxxi", stepIds: ["araxxor"] },
-  { name: "Kalphite King", stepIds: ["kalphite-king"] },
-  { name: "Legiones", stepIds: ["legiones"] },
-  { name: "Sanctum Guardian", stepIds: ["ed1-full"] },
-  { name: "Masuta the Ascended", stepIds: ["ed1-full"] },
-  { name: "Seiryu the Azure Serpent", stepIds: ["ed1-full"] },
-  { name: "Croesus", stepIds: ["croesus"] },
-  { name: "Kerapac, the Bound", stepIds: ["kerapac-nm", "kerapac-hm"] },
-  { name: "Arch-Glacor", stepIds: ["arch-glacor-learner", "arch-glacor-nm5", "arch-glacor-hm"] },
-  { name: "Astellarn", stepIds: ["ed2-full"] },
-  { name: "Verak Lith", stepIds: ["ed2-full"] },
-  { name: "Black Stone Dragon", stepIds: ["ed2-full"] },
-  { name: "Crassian Leviathan", stepIds: ["ed3-full"] },
-  { name: "Taraket the Necromancer", stepIds: ["ed3-full"] },
-  { name: "The Ambassador", stepIds: ["ed3-full"] },
-  { name: "The Magister", stepIds: ["magister"] },
-  { name: "TzKal-Zuk", stepIds: ["tzkal-zuk"] },
-  { name: "Raksha", stepIds: ["raksha"] },
-  { name: "Telos, the Warden", stepIds: ["telos"] },
-  { name: "Rise of the Six", stepIds: ["rise-of-the-six"] },
-  { name: "Beastmaster Durzag", stepIds: ["raids-bm-yaka"] },
-  { name: "Yakamaru", stepIds: ["raids-bm-yaka"] },
-  { name: "Nex: Angel of Death", stepIds: ["nex-aod"] },
-  { name: "Vorago", stepIds: ["vorago"] },
-  { name: "Solak", stepIds: ["solak"] },
-  { name: "Zamorak, Lord of Chaos", stepIds: ["zamorak"] },
-  { name: "Rasial", stepIds: ["rasial"] },
-  { name: "Vermyx, Brood Mother", stepIds: ["sanctum-of-rebirth"] },
-  { name: "Kezalam, the Wanderer", stepIds: ["sanctum-of-rebirth"] },
-  { name: "Nakatra, Devourer Eternal", stepIds: ["sanctum-of-rebirth"] },
-  { name: "Zemouregal & Vorkath", stepIds: ["zemouregal-vorkath"] },
-  { name: "Amascut, the Devourer", stepIds: ["amascut"] },
-  { name: "Gate of Elidinis", stepIds: ["gate-of-elidinis"] },
-  { name: "Flesh-hatcher Mhekarnahz", stepIds: ["mhekarnahz"] }
-];
-
 let reaperOpen = false;
 try { reaperOpen = localStorage.getItem('rs3iron-reaper-open') === '1'; } catch(e) {}
 
@@ -927,7 +958,28 @@ function toggleReaper() {
 }
 
 function isReaperKilled(entry) {
-  return entry.stepIds.some(function(id) { return completed.has(id); });
+  const ids = entry.stepIds.concat(entry.legacyStepIds || []);
+  return ids.some(function(id) { return completed.has(id); });
+}
+
+function reaperRoutePosition(entry) {
+  let best = Infinity;
+  entry.stepIds.forEach(function(id) {
+    const location = findStepLocation(id);
+    if (!location) return;
+    const score = location.phaseIdx * 1000 + location.stepIdx;
+    if (score < best) best = score;
+  });
+  return best;
+}
+
+function getReaperEntriesInRouteOrder() {
+  return REAPER_CREW.map(function(entry, index) {
+    return { entry: entry, index: index, routePosition: reaperRoutePosition(entry) };
+  }).sort(function(a, b) {
+    if (a.routePosition !== b.routePosition) return a.routePosition - b.routePosition;
+    return a.index - b.index;
+  });
 }
 
 function renderReaper() {
@@ -938,16 +990,34 @@ function renderReaper() {
   document.getElementById('reaper-fill').style.width = pct + '%';
 
   let html = '';
-  REAPER_CREW.forEach(function(entry) {
-    const done = isReaperKilled(entry);
-    html += '<div class="reaper-entry' + (done ? ' killed' : '') + '">';
+  getReaperEntriesInRouteOrder().forEach(function(item) {
+    const done = isReaperKilled(item.entry);
+    html += '<div class="reaper-entry' + (done ? ' killed' : '') + '" onclick="jumpToReaperEntry(' + item.index + ')">';
     html += '<span class="re-icon">' + (done ? '💀' : '☠') + '</span>';
-    html += '<span class="re-name">' + escHtml(entry.name) + '</span>';
+    html += '<span class="re-name">' + escHtml(item.entry.name) + '</span>';
     html += '</div>';
   });
   document.getElementById('reaper-list').innerHTML = html;
 
   document.getElementById('reaper-panel').classList.toggle('open', reaperOpen);
+}
+
+function jumpToReaperEntry(index) {
+  const entry = REAPER_CREW[index];
+  if (!entry) return;
+  const targetId = entry.stepIds.find(function(id) { return !completed.has(id) && findStepLocation(id); }) ||
+    entry.stepIds.find(function(id) { return findStepLocation(id); });
+  const location = targetId ? findStepLocation(targetId) : null;
+  if (!location) return;
+  currentPhase = location.phaseIdx;
+  selectedStep = location.step.id;
+  render();
+  const row = document.querySelector('.step-row[data-id="' + location.step.id + '"]');
+  if (row) {
+    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    row.classList.add('pulse');
+    row.addEventListener('animationend', function() { row.classList.remove('pulse'); }, { once: true });
+  }
 }
 
 /* ── Skill XP Reference rendering ── */
@@ -1034,7 +1104,7 @@ function renderSkillChecklist() {
 function isMainPathComplete() {
   for (var i = 0; i < PHASES.length; i++) {
     var p = PHASES[i];
-    if (p.skills) continue;
+    if (!isMainRoutePhase(p)) continue;
     for (var j = 0; j < p.steps.length; j++) {
       if (!completed.has(p.steps[j].id)) return false;
     }
@@ -1043,6 +1113,11 @@ function isMainPathComplete() {
 }
 
 function celebrate() {
+  if (!routeCelebrationPlayed) {
+    setRouteCelebrationPlayed(true);
+    saveProgress();
+    render();
+  }
   var el = document.getElementById('celebration');
   var canvas = document.getElementById('confetti-canvas');
   var ctx = canvas.getContext('2d');
